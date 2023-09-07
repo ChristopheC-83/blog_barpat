@@ -1,7 +1,6 @@
 <div class="animTitres">
 
-    <h1>Titre Site / Accueil</h1>
-    <h2>Accueil Contiendra</h2>
+    <h1>Blog BARPAT</h1>
 
     
 
