@@ -14,8 +14,10 @@
 </head>
 
 <body>
-
+    
+    
     <?php require_once("views/commons/header.php") ?>
+    <script src="<?= URL ?>public/javascript/darkMode.js"></script>
 
     <div class="overlay dnone"></div>
 

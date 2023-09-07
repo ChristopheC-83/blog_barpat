@@ -100,6 +100,57 @@ header {
   background-color: #c4c4c4;
   height: -moz-fit-content;
   height: fit-content;
+  position: relative;
+  /* The switch - the box around the slider */
+  /* Hide default HTML checkbox */
+  /* The slider */
+}
+header .switch {
+  font-size: 17px;
+  position: absolute;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+header .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header .slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 0.5s;
+  border-radius: 30px;
+}
+header .slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: 0.5s;
+}
+header input:checked + .slider {
+  background-color: #522ba7;
+}
+header input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
 }
 
 .navigation {
@@ -562,6 +613,16 @@ body {
   border-bottom: 1px solid transparent;
   display: flex;
   flex-direction: column;
+}
+body h1 {
+  color: black;
+}
+
+.darkMode {
+  background-color: #333;
+}
+.darkMode h1 {
+  color: #f1f1f1;
 }
 
 .bodycontent {
