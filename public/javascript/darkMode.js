@@ -2,35 +2,33 @@ const darkModeBtn = document.querySelector("#darkMode");
 
 const isDarkModeStored = localStorage.getItem("darkMode");
 
-let test = isDarkModeStored;
+let stateDarkMode = isDarkModeStored;
 
-if (isDarkModeStored != null || isDarkModeStored != undefined ) {
+function setUpDarkMode(bool) {
+  bool ?
+  document.body.classList.add("darkMode"):
+  document.body.classList.remove("darkMode");
+  stateDarkMode = bool;
+  darkModeBtn.checked = !bool;
+}
+
+if (isDarkModeStored != null) {
   if (isDarkModeStored === "true") {
-    document.body.classList.add("darkMode");
-    test = true;
-    darkModeBtn.checked = false;
-    console.log("btn : " + darkModeBtn.checked);
+    setUpDarkMode(true);
   } else {
-    document.body.classList.remove("darkMode");
-    test = false;
-    darkModeBtn.checked = true;
-    console.log("btn : " + darkModeBtn.checked);
+    setUpDarkMode(false);
   }
 } else {
   localStorage.setItem("darkMode", false);
-  document.body.classList.remove("darkMode");
-  test = false;
-  darkModeBtn.checked = true;
-  console.log("btn : " + darkModeBtn.checked);
+  setUpDarkMode(false);
 }
+
 
 function toggleDarkMode() {
   document.body.classList.toggle("darkMode");
-  test = !test;
-  localStorage.setItem("darkMode", test);
-  darkModeBtn.checked = !test;
-  console.log("isDarkModeStored : " + isDarkModeStored);
-  console.log("btn : " + darkModeBtn.checked);
+  stateDarkMode = !stateDarkMode;
+  localStorage.setItem("darkMode", stateDarkMode);
+  darkModeBtn.checked = !stateDarkMode;
 }
 
 darkModeBtn.addEventListener("change", toggleDarkMode);
