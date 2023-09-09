@@ -1,4 +1,5 @@
 const darkModeBtn = document.querySelector("#darkMode");
+const darkOverlay = document.querySelector(".overlay");
 
 const isDarkModeStored = localStorage.getItem("darkMode");
 
