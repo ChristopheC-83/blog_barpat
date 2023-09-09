@@ -25,6 +25,7 @@ if (isDarkModeStored != null) {
 
 
 function toggleDarkMode() {
+
   document.body.classList.toggle("darkMode");
   stateDarkMode = !stateDarkMode;
   localStorage.setItem("darkMode", stateDarkMode);
