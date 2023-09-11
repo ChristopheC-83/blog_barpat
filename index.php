@@ -23,7 +23,6 @@ try {
     switch ($url[0]) {
         case "accueil":
             pageAccueil();
-       
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");

@@ -2,10 +2,11 @@
 @import "libs/reset";
 @import "libs/mixins";
 @import "libs/polices";
-@import "communs/header";
+@import "communs/header_menu";
 @import "communs/footer";
 @import "communs/overlay";
 @import "communs/alertes";
+@import "communs/titreAccueil";
 @import "pages/login";
 @import "pages/profil";
 @import "pages/droits";
@@ -21,6 +22,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 0.5s;
+  overflow: hidden;
   a{color:$noir}
 }
 

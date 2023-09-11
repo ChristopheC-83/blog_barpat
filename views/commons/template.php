@@ -14,10 +14,9 @@
 </head>
 
 <body>
-    
-    
+
+
     <?php require_once("views/commons/header.php") ?>
-    <script src="<?= URL ?>public/javascript/darkMode.js"></script>
 
     <div class="overlay dnone"></div>
 
@@ -40,6 +39,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script src="<?= URL ?>public/javascript/darkMode.js"></script>
+    <script src="<?= URL ?>public/javascript/titreAccueil.js"></script>
     <script src="<?= URL ?>public/javascript/js_title.js"></script>
     <script src="<?= URL ?>public/javascript/menuBurger.js"></script>
 

@@ -9,9 +9,9 @@ function pageAccueil()
     
 
     $data_page = [
-        "meta_description" => "Description accueil",
-        "page_title" => "titre accueil",
-        "view" => "views/pages/visiteur/accueil.view.php",
+        "meta_description" => "les coulisses d'un dev d'autodidacte à développeur",
+        "page_title" => "l'apprentissage du développement web",
+        "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
 
     ];
