@@ -11,8 +11,10 @@ const lb10 = document.querySelector(".lb10");
 const lb11 = document.querySelector(".lb11");
 const lb12 = document.querySelector(".lb12");
 const lb13 = document.querySelector(".lb13");
-const portable = document.querySelector('#portable')
-const livre = document.querySelector('#livre')
+const portable = document.querySelector("#portable");
+const livre = document.querySelector("#livre");
+const portableImg = document.querySelector("#portableImg");
+const livreImg = document.querySelector("#livreImg");
 
 const isDarkModeStored2 = localStorage.getItem("darkMode");
 
@@ -62,10 +64,16 @@ tlTitre1.to(
 );
 tlTitre1.from(
   portable,
-  { x: -250, autoAlpha: 0, duration: 1, ease: "elastic.out(2, 0.4)"},
+  { x: -250, autoAlpha: 0, duration: 1, ease: "elastic.out(2, 0.4)" },
   2.5
 );
-
+tlTitre1.from(
+  livre,
+  { x: 250, autoAlpha: 0, duration: 1, ease: "elastic.out(2, 0.4)" },
+  3
+);
+tlTitre1.from(portableImg, { onComplete: addDecoMove1 }, 3.5);
+tlTitre1.from(livreImg, { onComplete: addDecoMove2 }, 4);
 
 function effetNeon() {
   lb_1.forEach((element) => {
@@ -75,10 +83,23 @@ function effetNeon() {
 
   setTimeout(() => {
     lb_2.forEach((element2) => {
-      element2.classList.toggle("effetNeonDarkMode", isDarkModeStored2 === "true");
+      element2.classList.toggle(
+        "effetNeonDarkMode",
+        isDarkModeStored2 === "true"
+      );
       element2.classList.toggle("effetNeon", isDarkModeStored2 !== "true");
     });
   }, 250);
 }
 
-  
+function effetSunRise() {
+  lb_1.forEach((let) => {
+    let.classList.add("effetClip");
+  });
+}
+function addDecoMove1() {
+  portableImg.classList.add("decoMove");
+}
+function addDecoMove2() {
+  livreImg.classList.add("decoMove");
+}

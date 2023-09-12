@@ -3,7 +3,8 @@
   flex-direction: column;
   width: 100vw;
   min-height: 40vh;
-  overflow: hidden;
+  // overflow: hidden;
+  position: relative;
 }
 
 .titrePart {
@@ -11,9 +12,10 @@
   height: 100%;
   @include flexMid;
   align-items: end;
-  flex-grow: 1;
+  height: 20vh;
 }
 .titrePart1 {
+  flex-grow: 1;
   .content {
     flex-grow: 1;
     @include flexMid;
@@ -21,19 +23,62 @@
       width: 50%;
       height: 50%;
       @include flexMid;
-      filter:drop-shadow(0px 0px 20px $blanc);
-      fill:$blanc;
+      filter: drop-shadow(0px 0px 20px $noir);
+      transition: all 1s;
+    }
 
+    &:hover{
+      filter: drop-shadow(0px 0px 30px #f5e400);
+    
+    }
+
+    .decoMove {
+      animation: decoMove 6s linear infinite;
+    }
+
+    @keyframes decoMove {
+      0% {
+        transform: translate(0px, 0px);
+      }
+      12% {
+        transform: translate(30px, 30px);
+      }
+      25% {
+        transform: translate(60px, 0px);
+      }
+      37% {
+        transform: translate(30px, -30px);
+      }
+      50% {
+        transform: translate(0px, 0px);
+      }
+      62% {
+        transform: translate(-30px, 30px);
+      }
+      75% {
+        transform: translate(-60px, 0px);
+      }
+      87% {
+        transform: translate(-30px, -30px);
+      }
+      100% {
+        transform: translate(0px, 0px);
+      }
+    }
+
+    .darkDeco {
+      filter: drop-shadow(0px 0px 5px $blanc);
     }
     transform: translateY(50%);
   }
 }
-#portable{
-  fill : white;
+#portable {
+  transform: rotateY(180deg) translateY(50%);
 }
 
 .titrePart2 {
   align-items: start;
+  flex-grow: 1;
 }
 .lb {
   @include flexMid;
@@ -41,6 +86,12 @@
   font-weight: bold;
   font-size: clamp(50px, calc(40px + 5vw), 100px);
   letter-spacing: calc(10px + 1vw);
+  transition: all 0.33s;
+  cursor: default;
+
+  &:hover {
+    font-size: clamp(60px, calc(48px + 6vw), 120px);
+  }
 }
 
 .effetNeon {
@@ -51,18 +102,25 @@
   0% {
     text-shadow: 0px 0px 1px $noir;
   }
-  25% {
+  15% {
     text-shadow: 0px 0px 5px $noir;
   }
-  50% {
+  30% {
     text-shadow: 0px 0px 10px $noir;
   }
-  75% {
+  45% {
     text-shadow: 0px 0px 15px $noir;
   }
-  100% {
+  60% {
     text-shadow: 0px 0px 20px $noir;
     color: $blanc;
+  }
+
+  100% {
+    background-image: linear-gradient(45deg, #fd3a9c, #ffa230 70%);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 0px 40px #33333390;
   }
 }
 
@@ -74,17 +132,40 @@
   0% {
     text-shadow: 0px 0px 1px $blanc;
   }
-  25% {
+  15% {
     text-shadow: 0px 0px 5px $blanc;
   }
-  50% {
+  30% {
     text-shadow: 0px 0px 10px $blanc;
   }
-  75% {
+  45% {
     text-shadow: 0px 0px 15px $blanc;
   }
-  100% {
+  60% {
     text-shadow: 0px 0px 20px $blanc;
     color: $noir;
+  }
+  100% {
+    background-image: linear-gradient(45deg, #ff0080, #ff8c00 70%);
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0px 0px 40px #f1f1f195;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .titrePart1 {
+    margin-top: 50px;
+    .content {
+      position: absolute;
+    }
+    #portable {
+      top: 0;
+      transform: rotateY(180deg) translateY(0%);
+    }
+    #livre {
+      bottom: 0;
+      transform: translateY(0);
+    }
   }
 }

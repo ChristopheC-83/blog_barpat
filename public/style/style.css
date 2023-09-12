@@ -353,7 +353,7 @@ footer {
   flex-direction: column;
   width: 100vw;
   min-height: 40vh;
-  overflow: hidden;
+  position: relative;
 }
 
 .titrePart {
@@ -363,9 +363,12 @@ footer {
   justify-content: center;
   align-items: center;
   align-items: end;
-  flex-grow: 1;
+  height: 20vh;
 }
 
+.titrePart1 {
+  flex-grow: 1;
+}
 .titrePart1 .content {
   flex-grow: 1;
   display: flex;
@@ -379,16 +382,55 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0px 0px 20px #f1f1f1);
-  fill: #f1f1f1;
+  filter: drop-shadow(0px 0px 20px #222);
+  transition: all 1s;
+}
+.titrePart1 .content:hover {
+  filter: drop-shadow(0px 0px 30px #f5e400);
+}
+.titrePart1 .content .decoMove {
+  animation: decoMove 6s linear infinite;
+}
+@keyframes decoMove {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  12% {
+    transform: translate(30px, 30px);
+  }
+  25% {
+    transform: translate(60px, 0px);
+  }
+  37% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(0px, 0px);
+  }
+  62% {
+    transform: translate(-30px, 30px);
+  }
+  75% {
+    transform: translate(-60px, 0px);
+  }
+  87% {
+    transform: translate(-30px, -30px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+.titrePart1 .content .darkDeco {
+  filter: drop-shadow(0px 0px 5px #f1f1f1);
 }
 
 #portable {
-  fill: white;
+  transform: rotateY(180deg) translateY(50%);
 }
 
 .titrePart2 {
   align-items: start;
+  flex-grow: 1;
 }
 
 .lb {
@@ -399,6 +441,11 @@ footer {
   font-weight: bold;
   font-size: clamp(50px, 40px + 5vw, 100px);
   letter-spacing: calc(10px + 1vw);
+  transition: all 0.33s;
+  cursor: default;
+}
+.lb:hover {
+  font-size: clamp(60px, 48px + 6vw, 120px);
 }
 
 .effetNeon {
@@ -409,18 +456,25 @@ footer {
   0% {
     text-shadow: 0px 0px 1px #222;
   }
-  25% {
+  15% {
     text-shadow: 0px 0px 5px #222;
   }
-  50% {
+  30% {
     text-shadow: 0px 0px 10px #222;
   }
-  75% {
+  45% {
     text-shadow: 0px 0px 15px #222;
   }
-  100% {
+  60% {
     text-shadow: 0px 0px 20px #222;
     color: #f1f1f1;
+  }
+  100% {
+    background-image: linear-gradient(45deg, #fd3a9c, #ffa230 70%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    text-shadow: 0px 0px 40px rgba(51, 51, 51, 0.5647058824);
   }
 }
 .effetNeonDarkMode {
@@ -431,18 +485,41 @@ footer {
   0% {
     text-shadow: 0px 0px 1px #f1f1f1;
   }
-  25% {
+  15% {
     text-shadow: 0px 0px 5px #f1f1f1;
   }
-  50% {
+  30% {
     text-shadow: 0px 0px 10px #f1f1f1;
   }
-  75% {
+  45% {
     text-shadow: 0px 0px 15px #f1f1f1;
   }
-  100% {
+  60% {
     text-shadow: 0px 0px 20px #f1f1f1;
     color: #222;
+  }
+  100% {
+    background-image: linear-gradient(45deg, #ff0080, #ff8c00 70%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    text-shadow: 0px 0px 40px rgba(241, 241, 241, 0.5843137255);
+  }
+}
+@media screen and (max-width: 900px) {
+  .titrePart1 {
+    margin-top: 50px;
+  }
+  .titrePart1 .content {
+    position: absolute;
+  }
+  .titrePart1 #portable {
+    top: 0;
+    transform: rotateY(180deg) translateY(0%);
+  }
+  .titrePart1 #livre {
+    bottom: 0;
+    transform: translateY(0);
   }
 }
 .form_entry_form {

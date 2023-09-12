@@ -1,6 +1,8 @@
 const darkModeBtn = document.querySelector("#darkMode");
 const darkOverlay = document.querySelector(".overlay");
 const darkBurger = document.querySelectorAll(".hamburger span");
+const decoPortable = document.querySelector('#portable img')
+const decoLivre = document.querySelector('#livre img')
 
 const isDarkModeStored = localStorage.getItem("darkMode");
 
@@ -20,6 +22,8 @@ if (isDarkModeStored != null) {
     darkBurger.forEach((element) => {
       element.classList.add("darkBurger");
     });
+    decoPortable.classList.add("darkDeco")
+    decoLivre.classList.add("darkDeco")
   } else {
     setUpDarkMode(false);
   }
@@ -42,6 +46,8 @@ function toggleDarkMode() {
   darkBurger.forEach((burg) => {
     burg.classList.toggle("darkBurger");
   });
+  decoPortable.classList.toggle("darkDeco")
+  decoLivre.classList.toggle("darkDeco")
 }
 
 darkModeBtn.addEventListener("change", toggleDarkMode);
