@@ -3,12 +3,18 @@
     <div class="titreAccueilBarpat">
 
         <div class="titrePart titrePart1">
+            <div class="content content1" id="portable">
+                <img src="public/assets/images/accueil/pc_portable.svg" alt="">
+            </div>
             <span class="lb lb_1 lb1 ">B</span>
             <span class="lb lb_1 lb2 ">A</span>
             <span class="lb lb_1 lb3 ">R</span>
             <span class="lb lb_1 lb4 ">P</span>
             <span class="lb lb_1 lb5 ">A</span>
             <span class="lb lb_1 lb6 ">T</span>
+            <div class="content content2 " id="livre">
+                <img src="public/assets/images/accueil/livre.svg" alt="">
+            </div>
 
         </div>
         <div class="titrePart titrePart2">

@@ -13,9 +13,26 @@
   align-items: end;
   flex-grow: 1;
 }
+.titrePart1 {
+  .content {
+    flex-grow: 1;
+    @include flexMid;
+    img {
+      width: 50%;
+      height: 50%;
+      @include flexMid;
+      filter:drop-shadow(0px 0px 20px $blanc);
+      fill:$blanc;
 
-.titrePart2{
+    }
+    transform: translateY(50%);
+  }
+}
+#portable{
+  fill : white;
+}
 
+.titrePart2 {
   align-items: start;
 }
 .lb {

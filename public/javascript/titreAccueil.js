@@ -11,6 +11,8 @@ const lb10 = document.querySelector(".lb10");
 const lb11 = document.querySelector(".lb11");
 const lb12 = document.querySelector(".lb12");
 const lb13 = document.querySelector(".lb13");
+const portable = document.querySelector('#portable')
+const livre = document.querySelector('#livre')
 
 const isDarkModeStored2 = localStorage.getItem("darkMode");
 
@@ -58,6 +60,12 @@ tlTitre1.to(
   { y: 0, autoAlpha: 1, duration: 0.15, stagger: -0.15, ease: "none" },
   3.25
 );
+tlTitre1.from(
+  portable,
+  { x: -250, autoAlpha: 0, duration: 1, ease: "elastic.out(2, 0.4)"},
+  2.5
+);
+
 
 function effetNeon() {
   lb_1.forEach((element) => {
