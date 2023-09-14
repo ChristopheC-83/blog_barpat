@@ -1,0 +1,25 @@
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 900px;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .container {
+      width: 96%;
+    }
+  }
+  
+  .flex-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .tac{
+  text-align: center;
+  }
+  .bold{
+      font-weight: bold;
+  }
