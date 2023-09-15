@@ -2,14 +2,16 @@
 @import "libs/reset";
 @import "libs/mixins";
 @import "libs/polices";
+@import "libs/raccourcis";
 @import "communs/header_menu";
 @import "communs/footer";
 @import "communs/overlay";
 @import "communs/alertes";
-@import "communs/titreAccueil";
-@import "pages/login";
-@import "pages/profil";
-@import "pages/droits";
+@import "communs/dark_switch";
+@import "pages/accueil";
+@import "pages/parcours";
+@import "pages/pense-betes";
+@import "pages/tricks";
 
 body {
   background-color: #f1f1f1;

@@ -4,9 +4,19 @@
         <a href="<?= URL ?>accueil">
             Accueil
         </a>
-       
+        <a href="<?= URL ?>parcours">
+            Parcours
+        </a>
+        <a href="<?= URL ?>pense-bêtes">
+            Pense-bêtes
+        </a>
+        <a href="<?= URL ?>tricks">
+            Tricks
+        </a>
 
-       
+
+
+
 
     </div>
     <div class="hamburger">
