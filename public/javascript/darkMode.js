@@ -1,6 +1,7 @@
 const darkModeBtn = document.querySelector("#darkMode");
 const darkBurger = document.querySelectorAll(".hamburger span");
 
+const overlay2 = document.querySelector(".overlay");
 const isDarkModeStored = localStorage.getItem("darkMode");
 
 let stateDarkMode = isDarkModeStored;
@@ -9,6 +10,9 @@ function setUpDarkMode(bool) {
   bool
     ? document.body.classList.add("darkMode")
     : document.body.classList.remove("darkMode");
+  bool
+    ? overlay2.classList.add("darkOverlay")
+    : overlay2.classList.remove("darkOverlay");
   stateDarkMode = bool;
   darkModeBtn.checked = bool;
 }
@@ -30,6 +34,7 @@ if (isDarkModeStored != null) {
 
 function toggleDarkMode() {
   document.body.classList.toggle("darkMode");
+  overlay2.classList.toggle("darkOverlay");
   stateDarkMode = !stateDarkMode;
   localStorage.setItem("darkMode", stateDarkMode);
   darkModeBtn.checked = stateDarkMode;

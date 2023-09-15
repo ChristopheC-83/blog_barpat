@@ -231,8 +231,13 @@ header .navigation a {
   text-align: center;
   border-bottom: 1px solid #222;
   padding: 30px;
-  font-size: clamp(16px, 14px + 0.6vw, 22px);
+  font-size: clamp(18px, 14px + 0.8vw, 26px);
   letter-spacing: calc(1px + 0.02vw);
+  transition: all 0.33s;
+}
+header .navigation a:hover {
+  letter-spacing: calc(2px + 0.2vw);
+  font-weight: bold;
 }
 header .navigation .hamburger {
   display: block;
@@ -252,10 +257,14 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(241, 241, 241, 0.3137254902);
+  background-color: rgba(241, 241, 241, 0.4);
   z-index: 2;
-  -webkit-backdrop-filter: blur(2.5px);
-          backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.darkOverlay {
+  background-color: rgba(51, 51, 51, 0.4);
 }
 
 .dnone {

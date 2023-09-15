@@ -24,6 +24,15 @@ try {
         case "accueil":
             pageAccueil();
             break;
+        case "parcours":
+            pageParcours();
+            break;
+        case "tricks":
+            pageTricks();
+            break;
+        case "pense-betes":
+            pagePenseBete();
+            break;
         default:
             throw new Exception("La page demandée n'existe pas.");
     }

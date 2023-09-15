@@ -19,21 +19,21 @@ function closeMenu() {
   overlay.classList.add("dnone");
 }
 
-if(hamburger){
-hamburger.addEventListener("click", () => {
-  if (menuOpen === 0) {
-    menuOpen = 1;
-    spanBurger1.classList.add("spanBurger1Open");
-    spanBurger2.classList.add("spanBurger2Open");
-    spanBurger3.classList.add("spanBurger3Open");
-    voletMenu.classList.add("voletMenuOpen");
-    voletMenu.classList.remove("dnone");
-    overlay.classList.remove("dnone");
-  } else {
-    closeMenu();
-  }
-  console.log(menuOpen);
-});}
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    if (menuOpen === 0) {
+      menuOpen = 1;
+      spanBurger1.classList.add("spanBurger1Open");
+      spanBurger2.classList.add("spanBurger2Open");
+      spanBurger3.classList.add("spanBurger3Open");
+      voletMenu.classList.add("voletMenuOpen");
+      voletMenu.classList.remove("dnone");
+      overlay.classList.remove("dnone");
+    } else {
+      closeMenu();
+    }
+  });
+}
 if (overlay) {
   overlay.addEventListener("click", () => {
     closeMenu();

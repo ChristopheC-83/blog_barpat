@@ -1,12 +1,18 @@
-.overlay{
-    position: absolute;
-    top: 0;bottom: 0;left: 0;right: 0;
-    background-color: #f1f1f150;
-    z-index: 2;
-    backdrop-filter: blur(2.5px);
-
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f1f1f166;
+  z-index: 2;
+  backdrop-filter: blur(5px);
 }
 
-.dnone{
+.darkOverlay {
+  background-color: #33333366;
+}
 
-display: none;}
+.dnone {
+  display: none;
+}

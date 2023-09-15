@@ -7,7 +7,7 @@
         <a href="<?= URL ?>parcours">
             Parcours
         </a>
-        <a href="<?= URL ?>pense-bêtes">
+        <a href="<?= URL ?>pense-betes">
             Pense-bêtes
         </a>
         <a href="<?= URL ?>tricks">
