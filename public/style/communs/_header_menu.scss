@@ -1,7 +1,8 @@
 header {
   width: 100%;
   height: fit-content;
-  position: relative;
+  position: fixed;
+  z-index: 5;
 }
 
 .navigation {
@@ -117,6 +118,7 @@ header {
       font-size: clamp(18px, calc(14px + 0.8vw), 26px);
       letter-spacing: calc(1px + 0.02vw);
       transition: all 0.33s;
+      backdrop-filter: blur(10px);
 
       &:hover {
         letter-spacing: calc(2px + 0.2vw);

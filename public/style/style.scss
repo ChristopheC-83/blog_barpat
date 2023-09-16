@@ -14,7 +14,7 @@
 @import "pages/tricks";
 
 body {
-  background-color: #f1f1f1;
+  background: linear-gradient(13deg, rgba(0,159,253,1) 0%, rgba(234,246,255,1) 100%);
   color: #333;
   min-height: 100vh;
   position: relative;
@@ -29,7 +29,7 @@ body {
 }
 
 .darkMode {
-  background-color: #333;
+  background: linear-gradient(203deg, rgba(0,159,253,1) 0%, rgba(42,42,114,1) 100%);
     color: #f1f1f1;
     
   a{color:$blanc}

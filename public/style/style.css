@@ -98,9 +98,9 @@ p {
 
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 10px;
-  max-width: 900px;
+  max-width: 1200px;
 }
 
 @media screen and (max-width: 900px) {
@@ -127,7 +127,8 @@ header {
   width: 100%;
   height: -moz-fit-content;
   height: fit-content;
-  position: relative;
+  position: fixed;
+  z-index: 5;
 }
 
 .navigation {
@@ -236,6 +237,8 @@ header .navigation a {
   font-size: clamp(18px, 14px + 0.8vw, 26px);
   letter-spacing: calc(1px + 0.02vw);
   transition: all 0.33s;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 header .navigation a:hover {
   letter-spacing: calc(2px + 0.2vw);
@@ -395,7 +398,7 @@ footer {
   }
 }
 body {
-  background-color: #f1f1f1;
+  background: linear-gradient(13deg, rgb(0, 159, 253) 0%, rgb(234, 246, 255) 100%);
   color: #333;
   min-height: 100vh;
   position: relative;
@@ -411,7 +414,7 @@ body a {
 }
 
 .darkMode {
-  background-color: #333;
+  background: linear-gradient(203deg, rgb(0, 159, 253) 0%, rgb(42, 42, 114) 100%);
   color: #f1f1f1;
 }
 .darkMode a {
