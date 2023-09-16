@@ -163,11 +163,13 @@ header {
   width: 80px;
   height: 80px;
   position: absolute;
-  left: 10px;
+  left: 20px;
   top: 40px;
   transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  display: none;
 }
 .hamburger span {
   width: 60px;
@@ -244,6 +246,13 @@ header .navigation .hamburger {
   z-index: 30;
 }
 
+@media screen and (max-width: 900px) {
+  .hamburger {
+    transform: translateY(-50%) scale(0.8);
+    top: 30px;
+    left: 10px;
+  }
+}
 footer {
   width: 100%;
   display: flex;
@@ -334,9 +343,8 @@ footer {
   width: var(--width-of-switch);
   height: var(--height-of-switch);
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 15px;
+  top: 20px;
+  right: 20px;
   z-index: 25;
 }
 .dark-switch .switch input {
@@ -380,6 +388,12 @@ footer {
   box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
 }
 
+@media screen and (max-width: 900px) {
+  .dark-switch .switch {
+    transform: scale(0.8);
+    top: 20%;
+  }
+}
 body {
   background-color: #f1f1f1;
   color: #333;

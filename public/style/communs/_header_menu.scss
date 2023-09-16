@@ -39,11 +39,12 @@ header {
   width: 80px;
   height: 80px;
   position: absolute;
-  left: 10px;
+  left: 20px;
   top: 40px;
   transform: translateY(-50%);
+  @include flexMid;
   cursor: pointer;
-  display: none;
+  // display: none;
 
   span {
     width: 60px;
@@ -127,5 +128,13 @@ header {
       display: block;
       z-index: 30;
     }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .hamburger {
+    transform: translateY(-50%) scale(0.8);
+    top: 30px;
+    left: 10px;
   }
 }
