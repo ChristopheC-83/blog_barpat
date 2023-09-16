@@ -29,4 +29,5 @@ h3 {
 h4,
 p {
   font-size: clamp(14px, calc(12px + 0.4vw), 18px);
+  line-height: clamp(20px, calc(20px + 1vw), 33px);
 }

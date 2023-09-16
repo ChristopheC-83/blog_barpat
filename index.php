@@ -6,6 +6,8 @@ session_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  : "http") . "://" . $_SERVER['HTTP_HOST'] .
     $_SERVER["PHP_SELF"]));
 
+define("imgFolder", "./public/assets/images/");
+
 
 require_once("./controllers/visiteur/visiteur.controller.php");
 require_once("./controllers/functionController.controller.php");

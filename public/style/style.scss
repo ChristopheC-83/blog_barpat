@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   transition: all 0.5s;
-  overflow: hidden;
+  overflow-x: hidden;
   a{color:$noir}
 }
 
