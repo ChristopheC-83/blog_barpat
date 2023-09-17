@@ -77,23 +77,23 @@ a {
 }
 
 h1 {
-  font-size: clamp(25px, 20px + 1.85vw, 45px);
+  font-size: clamp(32px, 24px + 2.2vw, 60px);
   letter-spacing: calc(1px + 0.12vw);
 }
 
 h2 {
-  font-size: clamp(20px, 20px + 1vw, 33px);
+  font-size: clamp(23px, 20px + 1.65vw, 40px);
   letter-spacing: calc(1px + 0.04vw);
 }
 
 h3 {
-  font-size: clamp(16px, 14px + 0.6vw, 22px);
+  font-size: clamp(20px, 20px + 1vw, 33px);
   letter-spacing: calc(1px + 0.02vw);
 }
 
 h4,
 p {
-  font-size: clamp(14px, 12px + 0.4vw, 18px);
+  font-size: clamp(16px, 14px + 0.6vw, 22px);
   line-height: clamp(20px, 20px + 1vw, 33px);
 }
 
@@ -411,25 +411,26 @@ footer {
 .accueil .evolution {
   margin-top: 20px;
   display: flex;
-  max-height: 50vh;
+  max-height: 30vh;
   align-items: center;
   justify-content: space-between;
 }
 .accueil .evolution img {
-  width: 33%;
+  width: 25%;
+  max-height: 30vh;
   z-index: 1;
   border: 3px solid #ffa400;
   border-radius: 10px;
   box-shadow: 1px 1px 10px #ffa400, 2px 2px 20px #222;
 }
-.accueil .evolution #introCromagnon {
-  z-index: 3;
-}
 .accueil .evolution i {
   font-size: 60px;
-  z-index: 2;
   filter: drop-shadow(0px 0px 5px #222);
   color: #ffa400;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
