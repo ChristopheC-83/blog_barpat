@@ -14,6 +14,7 @@ function pageAccueil()
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
+        "js"=>['anim_intro.js'],
         "infosThemes" => $infosThemes,
     ];
     genererPage($data_page);

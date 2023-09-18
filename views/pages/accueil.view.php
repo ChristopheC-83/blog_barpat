@@ -7,7 +7,11 @@
 
         <p>Ici, pas d'ingénieur ou de développeur qui sait tout sur tout.</p>
         <p>Non, juste moi (et c'est déjà pas mal non !?!) et mon pragmatisme !</p>
-        <p>Je vais vous compiler les marches que j'estime essentielles dans votre parcours de développeur web, surtout si vous partez du niveau de Néandertal  (ou pas loin).</p>
+        <p>Je vous compile les étapes que j'estime essentielles dans votre parcours de développeur web.</p> <p>Passons ensemble du niveau de Néandertal (ou pas loin) à celui de dev.</p>
+        <h3>Important</h3>
+        <p>Prendre du plaisir !</p>
+        <p>Toujours faire des test / mini-projets perso</p>
+        <p>Prendre du plaisir !!!</p>
 
     </div>
 
