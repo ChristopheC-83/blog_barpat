@@ -2,7 +2,7 @@
 
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/functionController.controller.php");
-require_once("./models/accueil.model.php");
+require_once("./models/carticles.model.php");
 
 
 function pageAccueil()
@@ -14,10 +14,15 @@ function pageAccueil()
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
-        "js"=>['anim_intro.js'],
+        // "js"=>['anim_intro.js'],
         "infosThemes" => $infosThemes,
     ];
     genererPage($data_page);
+}
+
+function pageArticle($id){
+
+
 }
 function pageParcours()
 {

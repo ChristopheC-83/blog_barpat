@@ -403,41 +403,6 @@ footer {
     top: 20%;
   }
 }
-.accueil h1 {
-  text-align: center;
-}
-.accueil .intro {
-  border: 3px solid #ffa400;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #ffa400, 2px 2px 20px #222;
-  padding: 20px 40px;
-  margin: 30px auto 40px;
-}
-.accueil .evolution {
-  margin-top: 20px;
-  display: flex;
-  max-height: 30vh;
-  align-items: center;
-  justify-content: space-between;
-}
-.accueil .evolution img {
-  width: 25%;
-  max-height: 30vh;
-  z-index: 1;
-  border: 3px solid #ffa400;
-  border-radius: 10px;
-  box-shadow: 1px 1px 10px #ffa400, 2px 2px 20px #222;
-}
-.accueil .evolution i {
-  font-size: 60px;
-  filter: drop-shadow(0px 0px 5px #222);
-  color: #ffa400;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 body {
   background: linear-gradient(13deg, rgb(0, 159, 253) 0%, rgb(234, 246, 255) 100%);
   color: #333;

@@ -26,14 +26,8 @@ try {
         case "accueil":
             pageAccueil();
             break;
-        case "parcours":
-            pageParcours();
-            break;
-        case "tricks":
-            pageTricks();
-            break;
-        case "pense-betes":
-            pagePenseBete();
+        case "article":
+            pageArticle($url[1]); //où url[1] => id_url de la bdd
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");
