@@ -8,10 +8,8 @@
 @import "communs/overlay";
 @import "communs/alertes";
 @import "communs/dark_switch";
+@import "communs/articleCard";
 @import "pages/accueil";
-@import "pages/parcours";
-@import "pages/pense-betes";
-@import "pages/tricks";
 
 body {
   background: linear-gradient(13deg, rgba(0,159,253,1) 0%, rgba(234,246,255,1) 100%);

@@ -1,2 +1,28 @@
 .accueil {
+  .intro {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    h1{
+        margin-bottom: 10px;
+    }
+    h2{
+        margin-top: 10px;
+    }
+    
+  }
+
+  .btnThemesContainer{
+    width: 100%;
+    @include flexMid;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.btnTheme{
+    padding: 10px 20px;
+    border : 1px solid #333;
+    border-radius: 25px;
+}
 }

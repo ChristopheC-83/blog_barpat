@@ -403,6 +403,55 @@ footer {
     top: 20%;
   }
 }
+.allCards {
+  display: flex;
+  margin: 20px 0;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.rocket {
+  background: linear-gradient(12deg, rgb(142, 118, 241) 0%, rgb(203, 190, 255) 100%);
+}
+
+.articleCard {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 1px 1px 5px #222;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.accueil .intro {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.accueil .intro h1 {
+  margin-bottom: 10px;
+}
+.accueil .intro h2 {
+  margin-top: 10px;
+}
+.accueil .btnThemesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.accueil .btnTheme {
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 25px;
+}
+
 body {
   background: linear-gradient(13deg, rgb(0, 159, 253) 0%, rgb(234, 246, 255) 100%);
   color: #333;
