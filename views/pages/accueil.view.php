@@ -9,7 +9,7 @@
          <p>Tous les Articles</p>
       </div>
       <?php foreach ($themes as $theme) : ?>
-         <div class="btnTheme">
+         <div class="btnTheme <?= $theme['theme'] ?> ">
             <p><?= $theme['theme']  ?></p>
          </div>
       <?php endforeach ?>

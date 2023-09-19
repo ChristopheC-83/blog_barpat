@@ -27,7 +27,7 @@ try {
             pageAccueil();
             break;
         case "article":
-            pageArticle($url[1]); //où url[1] => id_url de la bdd
+            pageArticle($url[1]);
             break;
         default:
             throw new Exception("La page demandée n'existe pas.");

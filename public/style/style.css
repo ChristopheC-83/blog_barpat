@@ -406,16 +406,37 @@ footer {
 .allCards {
   display: flex;
   margin: 20px 0;
-  gap: 5px;
+  gap: 20px;
   flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.formations_sources {
+  background: rgb(74, 237, 255);
 }
 
 .rocket {
-  background: linear-gradient(12deg, rgb(142, 118, 241) 0%, rgb(203, 190, 255) 100%);
+  background: rgb(149, 123, 255);
+}
+
+.portfolio {
+  background: rgb(2, 228, 28);
+}
+
+.fiches {
+  background: #f1f1f1;
+}
+
+.tricks {
+  background: #ffa400;
+}
+
+.autres {
+  background: rgb(255, 28, 54);
 }
 
 .articleCard {
-  width: 300px;
+  width: 280px;
   height: 200px;
   border: 1px solid #222;
   border-radius: 5px;
@@ -425,6 +446,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;
+}
+.articleCard:hover {
+  padding: 19px;
+  border: 2px solid #f1f1f1;
+  box-shadow: 0px 0px 10px #222, 0px 0px 5px #222 inset;
 }
 
 .accueil .intro {
@@ -448,8 +475,15 @@ footer {
 }
 .accueil .btnTheme {
   padding: 10px 20px;
-  border: 1px solid #333;
+  border: 2px solid #222;
   border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px #f1f1f1 inset;
+}
+.accueil .btnTheme:hover {
+  padding: 9px 19px;
+  border: 3px solid #f1f1f1;
+  box-shadow: 0px 0px 10px #222, 0px 0px 5px #222 inset;
 }
 
 body {

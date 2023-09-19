@@ -11,7 +11,7 @@ function pageAccueil()
     $themes = getAllThemes();
 
     $data_page = [
-        "meta_description" => "Repaire d'un developpeur, ses tips, soes conseils.",
+        "meta_description" => "Repaire d'un developpeur, ses tips, ses conseils.",
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
@@ -22,7 +22,23 @@ function pageAccueil()
     genererPage($data_page);
 }
 
-function pageArticle($id){
+function pageArticle($id_article)
+{
+
+    echo $id_article;
+    $infosArticle = getInfos($id_article);
+    $themes = getAllThemes();
+    $meta = $infosArticle['titre'];
+
+    $data_page = [
+        "meta_description" => "Partage d'expérience : $meta ",
+        "page_title" => "repaire d'un dev !",
+        "view" => "views/pages/article.view.php",
+        "template" => "views/commons/template.php",
+        // "js"=>['anim_intro.js'],
+        "infosArticle" => $infosArticle,
+    ];
+    genererPage($data_page);
 
 
 }
@@ -34,7 +50,7 @@ function pageErreur($msg)
     $data_page = [
         "meta_description" => "Erreur !",
         "page_title" => "Erreur !",
-        "view" => "views/pages/visiteur/erreur.view.php",
+        "view" => "views/pages/erreur.view.php",
         "template" => "views/commons/template.php",
         "msg" => $msg,
 
