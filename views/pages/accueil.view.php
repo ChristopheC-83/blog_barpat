@@ -2,7 +2,7 @@
 
    <div class="intro">
       <h1>From Scratch !</h1>
-      <h2>Développeur Web, je vous partage<br> mes expériences, mon parcours.</h2>
+      <h3>Développeur Web, je vous partage mes expériences, mon parcours.</h3>
    </div>
    <div class="btnThemesContainer">
       <div class="btnTheme">

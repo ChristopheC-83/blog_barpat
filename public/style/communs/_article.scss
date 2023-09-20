@@ -1,0 +1,51 @@
+article {
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .part {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    p {
+      width: 100%;
+    }
+
+    img {
+      width: 40vw;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px $noir;
+    }
+  }
+
+  .part2 {
+    flex-direction: row-reverse;
+    margin-top: 50px;
+    p{
+        text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  article {
+    .part1,
+    .part2 {
+      flex-direction: column;
+      width: 90%;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }p{
+        text-align: left;
+    }
+    }
+    .part2 {
+      margin-top: 50px;
+    }
+  }
+}

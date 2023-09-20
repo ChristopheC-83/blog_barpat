@@ -107,7 +107,7 @@ p {
   max-width: 1200px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
   .container {
     width: 96%;
   }
@@ -403,6 +403,52 @@ footer {
     top: 20%;
   }
 }
+article h1 {
+  width: 100%;
+  text-align: center;
+}
+article .part {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+article .part p {
+  width: 100%;
+}
+article .part img {
+  width: 40vw;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #222;
+}
+article .part2 {
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+article .part2 p {
+  text-align: right;
+}
+
+@media screen and (max-width: 900px) {
+  article .part1,
+  article .part2 {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+  article .part1 img,
+  article .part2 img {
+    width: 100%;
+  }
+  article .part1 p,
+  article .part2 p {
+    text-align: left;
+  }
+  article .part2 {
+    margin-top: 50px;
+  }
+}
 .allCards {
   display: flex;
   margin: 20px 0;
@@ -455,15 +501,16 @@ footer {
 }
 
 .accueil .intro {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 .accueil .intro h1 {
   margin-bottom: 10px;
 }
-.accueil .intro h2 {
+.accueil .intro h3 {
   margin-top: 10px;
+  width: 100%;
 }
 .accueil .btnThemesContainer {
   width: 100%;
