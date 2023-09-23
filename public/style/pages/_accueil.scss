@@ -12,26 +12,28 @@
     }
   }
 
-  .btnThemesContainer {
-    width: 100%;
-    @include flexMid;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+}
+.btnThemesContainer {
+  width: 100%;
+  @include flexMid;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
 
-  .btnTheme {
-    padding: 10px 20px;
-    border: 2px solid $noir;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0px 0px 5px $blanc inset;
-    // transition: all 0.5s;
+.btnTheme {
+  padding: 10px 20px;
+  border: 2px solid $noir;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px $blanc inset, 0px 0px 20px $noir;
+  color : $noir;
+  // transition: all 0.5s;
 
-    &:hover {
-    //   font-weight: bold;
-      padding: 9px 19px;
-      border: 3px solid $blanc;
-      box-shadow: 0px 0px 10px $noir, 0px 0px 5px $noir inset;
-    }
+  &:hover {
+  //   font-weight: bold;
+    padding: 9px 19px;
+    border: 3px solid $blanc;
+    box-shadow: 0px 0px 10px 5px $noir, 0px 0px 5px 3px $noir inset;
   }
 }

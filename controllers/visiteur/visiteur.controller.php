@@ -37,6 +37,7 @@ function pageArticle($id_article)
         "template" => "views/commons/template.php",
         // "js"=>['anim_intro.js'],
         "infosArticle" => $infosArticle,
+        "themes" => $themes,
     ];
     genererPage($data_page);
 

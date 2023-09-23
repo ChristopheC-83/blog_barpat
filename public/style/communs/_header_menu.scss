@@ -3,7 +3,7 @@ header {
   height: fit-content;
   position: fixed;
   z-index: 5;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(50px);
 }
 
 .navigation {
@@ -47,6 +47,7 @@ header {
   @include flexMid;
   cursor: pointer;
   // display: none;
+    z-index: 20;
 
   span {
     width: 60px;

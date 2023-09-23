@@ -24,13 +24,15 @@ body {
   flex-direction: column;
   transition: all 0.5s;
   overflow-x: hidden;
-  a{color:$noir}
+  a{color:$noir};
   // padding: 0 100px;
 }
 
 .darkMode {
   background: linear-gradient(203deg, rgba(0,159,253,1) 0%, rgba(42,42,114,1) 100%);
     color: #f1f1f1;
+
+    
     
   a{color:$blanc}
 }
