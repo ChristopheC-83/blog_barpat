@@ -6,7 +6,8 @@ const spanBurger3 = document.querySelector(".spanBurger3");
 const hamburger = document.querySelector(".hamburger");
 const voletMenu = document.querySelector(".voletMenu");
 const overlay = document.querySelector(".overlay");
-const titreArticle = document.querySelector('.titre_article')
+
+
 
 
 
@@ -20,7 +21,6 @@ function closeMenu() {
   voletMenu.classList.remove("voletMenuOpen");
   voletMenu.classList.add("dnone");
   overlay.classList.add("dnone");
-  titreArticle.classList.remove("titre_article_masque");
 }
 
 if (hamburger) {
@@ -33,7 +33,6 @@ if (hamburger) {
       voletMenu.classList.add("voletMenuOpen");
       voletMenu.classList.remove("dnone");
       overlay.classList.remove("dnone");
-      titreArticle.classList.add("titre_article_masque");
     } else {
       closeMenu();
     }

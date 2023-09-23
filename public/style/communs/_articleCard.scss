@@ -8,23 +8,35 @@
 
 
 
-.formations_sources{
-    background: rgb(74, 237, 255);
+.formations{
+    background:  rgb(25, 117, 255);
+    color : $noir;
 }
 .rocket{
-    background:  rgb(149, 123, 255);
+    background:  #a939ff;
+    
+    color : $noir;
 }
 .portfolio{
-    background: rgb(2, 228, 28) ;
+    background:#0fff37;
+    color : $noir;
 }
 .fiches{
     background:  $blanc;
+    color : $noir;
 }
 .tricks{
-    background: $orange;
+    background: #fde401;
+    color : $noir;
 }
 .autres{
-    background: rgb(255, 28, 54);
+    background: #ed0000;
+    color : $noir;
+}
+
+.all_theme{
+    background:  #303030;
+    color:$blanc;
 }
 
 

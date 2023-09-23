@@ -1,8 +1,8 @@
 <article class="container">
 
     <div class="btnThemesContainer">
-        <div class="btnTheme">
-            <p>Tous les Articles</p>
+      <div class="btnTheme all_themes">
+            <p>Tous</p>
         </div>
         <?php foreach ($themes as $theme) : ?>
             <div class="btnTheme <?= $theme['theme'] ?> ">
@@ -21,6 +21,7 @@
             <?php endif ?>
         
     </section>
+    <h2 class="titre_article"><?= $infosArticle['titre2'] ?></h2>
 
     <section class="part part2">
         <?php if (isset($infosArticle['image2']) && $infosArticle['image2'] !== '') : ?>
