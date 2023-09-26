@@ -1,0 +1,35 @@
+.btnThemesContainer {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.btnTheme {
+  width: 100px;
+  height: 50px;
+  @include flexMid;
+  border: 0.5px solid $noir;
+  border-radius: 250px;
+  cursor: pointer;
+  box-shadow: 0px 5px 0px 0px $noir;
+  transition: all 0.15s;
+ 
+
+  &:hover {
+    //   font-weight: bold;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px $noir;
+    padding: 4px;
+    // box-shadow: 0px 0px 10px 5px $noir, 0px 0px 5px 3px $noir inset;
+  }
+
+  &:active{
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px $noir, inset 0px 0px 15px #33333390;
+    padding: 4px;
+  }
+}

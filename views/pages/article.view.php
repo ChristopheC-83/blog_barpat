@@ -1,16 +1,6 @@
 <article class="container">
 
-    <div class="btnThemesContainer">
-      <div class="btnTheme all_themes">
-            <p>Tous</p>
-        </div>
-        <?php foreach ($themes as $theme) : ?>
-            <div class="btnTheme <?= $theme['theme'] ?> ">
-                <p><?= $theme['theme']  ?></p>
-            </div>
-        <?php endforeach ?>
-
-    </div>
+    
 
     <h1 class="titre_article"><?= $infosArticle['titre'] ?></h1>
 

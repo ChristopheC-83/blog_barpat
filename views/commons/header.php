@@ -1,8 +1,7 @@
-<header>
+<?php require_once("views/commons/switchDark.php") ?>
+<div class="entete">
+   <h2>Blog d'un Barpat</h2>
+</div>
 
-    <?php require_once("views/commons/menu.php") ?>
-    <?php require_once("views/commons/switchDark.php") ?>
-    
-
-
-</header>
+<?php require_once("views/commons/themes.php") ?>
+<?php require_once("views/commons/footer.php") ?>

@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 1px solid violet;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.entete{
+  text-align: center;
+}

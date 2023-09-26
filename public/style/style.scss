@@ -3,13 +3,15 @@
 @import "libs/mixins";
 @import "libs/polices";
 @import "libs/raccourcis";
-@import "communs/header_menu";
+@import "communs/header";
 @import "communs/footer";
 @import "communs/overlay";
 @import "communs/alertes";
 @import "communs/dark_switch";
 @import "communs/article";
 @import "communs/articleCard";
+@import "communs/btn_themes";
+@import "pages/main";
 @import "pages/accueil";
 
 // *{
@@ -20,26 +22,32 @@ body {background-color:$blanc;
   color: #333;
   min-height: 100vh;
   position: relative;
-  // max-width: 1440px;
-  margin: 0 auto;
   border-bottom: 1px solid transparent;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.5s;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   a{color:$noir};
-  // padding: 0 100px;
 }
 
 .darkMode {
   background-color: $noir;
     color: #f1f1f1;
-
-    
     
   a{color:$blanc}
 }
 
-.bodycontent {
-  flex-grow: 1;
+
+
+header{
+height: 100vh;
+width: 220px;
+position: fixed;
+top: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
 }
+
+.bodycontent{
+  margin-left: 220px;
+}
+
+
