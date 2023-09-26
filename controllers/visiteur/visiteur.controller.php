@@ -22,13 +22,32 @@ function pageAccueil()
     genererPage($data_page);
 }
 
+function pageArticlesSelectionnes($theme)
+{
+    $infosArticles = getAllInfos();
+    $themes = getAllThemes();
+    $articlesParTheme = getArticlesParTheme($theme);
+
+    $data_page = [
+        "meta_description" => "Repaire d'un developpeur, ses tips, ses conseils.",
+        "page_title" => "repaire d'un dev !",
+        "view" => "views/pages/accueil.view.php",
+        "template" => "views/commons/template.php",
+        // "js"=>['anim_intro.js'],
+        "infosArticles" => $infosArticles,
+        "themes" => $themes,
+        "articlesParTheme" => $articlesParTheme,
+
+    ];
+    genererPage($data_page);
+}
+
 function pageArticle($id_article)
 {
 
-    echo $id_article;
-    $infosArticle = getInfos($id_article);
+    $infosArticles = getInfos($id_article);
     $themes = getAllThemes();
-    $meta = $infosArticle['titre'];
+    $meta = $infosArticles['titre'];
 
     $data_page = [
         "meta_description" => "Partage d'expérience : $meta ",
@@ -36,12 +55,10 @@ function pageArticle($id_article)
         "view" => "views/pages/article.view.php",
         "template" => "views/commons/template.php",
         // "js"=>['anim_intro.js'],
-        "infosArticle" => $infosArticle,
+        "infosArticles" => $infosArticles,
         "themes" => $themes,
     ];
     genererPage($data_page);
-
-
 }
 
 

@@ -36,3 +36,16 @@ function getAllThemes()
     $stmt->closeCursor();
     return $infos;
 }
+
+function getArticlesParTheme($theme){
+    {
+        $req = "SELECT * FROM articles WHERE theme =:theme";
+        $stmt = getBDD()->prepare($req);
+        $stmt->bindValue(':theme', $theme, PDO::PARAM_STR);
+        $stmt->execute();
+        $infos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $infos;
+    }
+
+}

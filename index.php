@@ -26,6 +26,11 @@ try {
         case "accueil":
             pageAccueil();
             break;
+        case "selection_articles":
+            $theme = secureHTML($url[1]);
+            echo $theme;
+            pageArticlesSelectionnes($theme);
+            break;
         case "article":
             pageArticle($url[1]);
             break;

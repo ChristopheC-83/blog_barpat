@@ -132,7 +132,6 @@ header {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border: 1px solid violet;
   position: relative;
   top: 0;
   left: 0;
@@ -424,26 +423,28 @@ article .part2 img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   gap: 5px;
 }
 
 .btnTheme {
-  width: 100px;
-  height: 50px;
+  width: 180px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 0.5px solid #222;
-  border-radius: 250px;
+  border-radius: 30px;
   cursor: pointer;
   box-shadow: 0px 5px 0px 0px #222;
   transition: all 0.15s;
+  margin-bottom: 15px;
 }
 .btnTheme:hover {
   transform: translateY(5px);
   box-shadow: 0px 0px 0px 0px #222;
   padding: 4px;
+  font-weight: bold;
 }
 .btnTheme:active {
   transform: translateY(5px);
