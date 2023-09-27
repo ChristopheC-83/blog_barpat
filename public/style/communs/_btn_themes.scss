@@ -9,39 +9,45 @@
 }
 
 .btnTheme {
-  width: 150px;
-  height: clamp(50px, 8%, 75px);
-  @include flexMid;
-  border: 0.5px solid $noir;
-  border-radius: 250px;
+  width: 180px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 10px;
+  // border: 0.5px solid $noir;
   cursor: pointer;
-  box-shadow: 0px 5px 0px 0px $noir;
   transition: all 0.15s;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  transition: all 0.4s 0.15s ease-in-out;
+  p {
+    position: relative;
+    z-index: 5;
+  }
 
   &::before {
-    // background-color: pink;
-    // box-shadow: 0px 0px 40px pink;
     content: "";
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 180px;
+    height: 50px;
+    border-radius: 50px;
     position: absolute;
     @include posMid;
-    z-index: -1;
-    transform: translate(-50%, -50%) scale(0);
-    transition: all 0.5s;
+    transform-origin: left;
+    z-index: 0;
+    transform: translate(calc(-150% + clamp(50px, 8%, 75px)), -50%);
+    transition: all 0.4s ease-in-out;
   }
   &:hover {
     font-weight: bold;
-    transform: translateY(5px);
     box-shadow: 0px 0px 0px 0px $noir;
-    padding: 4px;
+    letter-spacing: 5px;
   }
 
   &:hover::before {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%);
   }
+ 
 }

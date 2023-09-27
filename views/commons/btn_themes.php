@@ -1,14 +1,14 @@
 <div class="btnThemesContainer">
    <div class="btnTheme all_themes" >
-      <a href="<?= URL ?>accueil">
-         <p style="color:#333">Accueil</p>
+      <a href="<?= URL ?>accueil" style="color:#333">
+         <p>Accueil</p>
       </a>
    </div>
 
    <?php foreach ($themes as $theme) : ?>
-      <div class="btnTheme <?= $theme['theme'] ?>">
-         <p style="color:#333"><?= $theme['theme'] ?></p>
-      </div>
+      <a class="btnTheme <?= $theme['theme'] ?>" style="color:#333">
+         <p><?= $theme['theme'] ?></p>
+      </a>
    <?php endforeach ?>
 
 </div>
