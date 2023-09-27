@@ -1,8 +1,6 @@
-
-
 <div class="btnThemesContainer">
    <div class="btnTheme accueil_themes">
-      <a>
+      <a href="<?= URL ?>accueil">
          <p>Accueil</p>
       </a>
    </div>
@@ -12,8 +10,8 @@
       </a>
    </div>
    <?php foreach ($themes as $theme) : ?>
-      <div class="btnTheme <?= $theme['theme'] ?>" >
-         <p><?= $theme['theme']  ?></p>
+      <div class="btnTheme <?= $theme['theme'] ?>">
+         <p><?= $theme['theme'] ?></p>
       </div>
    <?php endforeach ?>
 
