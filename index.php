@@ -2,7 +2,7 @@
 
 session_start();
 
-// variable "URL" valide sur tout le site
+// variable "URL" valide sur tout  le site
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  : "http") . "://" . $_SERVER['HTTP_HOST'] .
     $_SERVER["PHP_SELF"]));
 
