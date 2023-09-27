@@ -29,7 +29,7 @@ function getInfos($id_article)
 
 function getAllThemes()
 {
-    $req = "SELECT * FROM themes";
+    $req = "SELECT * FROM themes ORDER BY id_theme asc";
     $stmt = getBDD()->prepare($req);
     $stmt->execute();
     $infos = $stmt->fetchAll(PDO::FETCH_ASSOC);

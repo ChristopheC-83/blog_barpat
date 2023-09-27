@@ -1,67 +1,80 @@
-.allCards{
-    display: flex;
-    margin: 20px 0;
-    gap: 20px;
-    flex-wrap: wrap;
-    cursor: pointer;
+.allCards {
+  display: flex;
+  margin: 20px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
 
-
-
-.formations{
-    background:  rgb(25, 117, 255);
-    color : $noir;
+.all_themes {
+  background: #f08b7b;
+  &::before {
+    background-color: #e75038;
+    box-shadow: 0px 0px 40px 10px #ff0000;
+  }
 }
-.rocket{
-    background:  #a939ff;
-    color : $noir;
+.formations {
+  background: #fcd279;
+  &::before {
+    background-color: #fabf41;
+    box-shadow: 0px 0px 40px #f8aa00;
+  }
 }
-.portfolio{
-    background:#0fff37;
-    color : $noir;
+.rocket {
+  background: #fff3ae;
+  &::before {
+    background-color: #fae25d;
+    box-shadow: 0px 0px 40px #ffd900;
+  }
 }
-.fiches{
-    background:  $blanc;
-    color : $noir;
+.portfolio {
+  background: #bbffbb;
+  &::before {
+    background-color: #77fc77;
+    box-shadow: 0px 0px 40px #01ff01;
+  }
 }
-.tricks{
-    background: #fde401;
-    color : $noir;
+.fiches {
+  background: #a2edff;
+  &::before {
+    background-color: #57ddff;
+    box-shadow: 0px 0px 40px #00ccff;
+  }
 }
-.autres{
-    background: #ed0000;
-    color : $noir;
+.tricks {
+  background: #c9b1ff;
+  &::before {
+    background-color: #a27aff;
+    box-shadow: 0px 0px 40px #7439ff;
+  }
+}
+.autres {
+  background: #ebd8fc;
+  &::before {
+    background-color: #cf98ff;
+    box-shadow: 0px 0px 40px #b25bff;
+  }
 }
 
-.all_theme{
-    background:  #303030;
-    color:$blanc;
-}
+.articleCard {
+  width: 280px;
+  height: 200px;
+  border: 1px solid $noir;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 1px 1px 5px $noir;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
+  color: $noir;
+  cursor: pointer;
 
-
-
-.articleCard{
-    width: 280px;
-    height: 200px;
-    border : 1px solid $noir;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 1px 1px 5px $noir;
-    flex-shrink:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
-    color : $noir;
-    cursor: pointer;
-
-    &:hover {
-        //   font-weight: bold;
-          padding: 19px;
-          border: 2px solid $blanc;
-          box-shadow: 0px 0px 10px $noir, 0px 0px 5px $noir inset;
-        }
-
-
+  &:hover {
+    //   font-weight: bold;
+    padding: 19px;
+    border: 2px solid $blanc;
+    box-shadow: 0px 0px 10px $noir, 0px 0px 5px $noir inset;
+  }
 }

@@ -363,39 +363,60 @@ article .part2 img {
   cursor: pointer;
 }
 
+.all_themes {
+  background: #f08b7b;
+}
+.all_themes::before {
+  background-color: #e75038;
+  box-shadow: 0px 0px 40px 10px #ff0000;
+}
+
 .formations {
-  background: rgb(25, 117, 255);
-  color: #222;
+  background: #fcd279;
+}
+.formations::before {
+  background-color: #fabf41;
+  box-shadow: 0px 0px 40px #f8aa00;
 }
 
 .rocket {
-  background: #a939ff;
-  color: #222;
+  background: #fff3ae;
+}
+.rocket::before {
+  background-color: #fae25d;
+  box-shadow: 0px 0px 40px #ffd900;
 }
 
 .portfolio {
-  background: #0fff37;
-  color: #222;
+  background: #bbffbb;
+}
+.portfolio::before {
+  background-color: #77fc77;
+  box-shadow: 0px 0px 40px #01ff01;
 }
 
 .fiches {
-  background: #f1f1f1;
-  color: #222;
+  background: #a2edff;
+}
+.fiches::before {
+  background-color: #57ddff;
+  box-shadow: 0px 0px 40px #00ccff;
 }
 
 .tricks {
-  background: #fde401;
-  color: #222;
+  background: #c9b1ff;
+}
+.tricks::before {
+  background-color: #a27aff;
+  box-shadow: 0px 0px 40px #7439ff;
 }
 
 .autres {
-  background: #ed0000;
-  color: #222;
+  background: #ebd8fc;
 }
-
-.all_theme {
-  background: #303030;
-  color: #f1f1f1;
+.autres::before {
+  background-color: #cf98ff;
+  box-shadow: 0px 0px 40px #b25bff;
 }
 
 .articleCard {
@@ -429,8 +450,8 @@ article .part2 img {
 }
 
 .btnTheme {
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: clamp(50px, 8%, 75px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,16 +460,32 @@ article .part2 img {
   cursor: pointer;
   box-shadow: 0px 5px 0px 0px #222;
   transition: all 0.15s;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+.btnTheme::before {
+  content: "";
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  transform: translate(-50%, -50%) scale(0);
+  transition: all 0.5s;
 }
 .btnTheme:hover {
+  font-weight: bold;
   transform: translateY(5px);
   box-shadow: 0px 0px 0px 0px #222;
   padding: 4px;
 }
-.btnTheme:active {
-  transform: translateY(5px);
-  box-shadow: 0px 0px 0px 0px #222, inset 0px 0px 15px rgba(51, 51, 51, 0.5647058824);
-  padding: 4px;
+.btnTheme:hover::before {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .accueil .intro {

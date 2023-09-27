@@ -9,27 +9,39 @@
 }
 
 .btnTheme {
-  width: 100px;
-  height: 50px;
+  width: 150px;
+  height: clamp(50px, 8%, 75px);
   @include flexMid;
   border: 0.5px solid $noir;
   border-radius: 250px;
   cursor: pointer;
   box-shadow: 0px 5px 0px 0px $noir;
   transition: all 0.15s;
- 
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
 
+  &::before {
+    // background-color: pink;
+    // box-shadow: 0px 0px 40px pink;
+    content: "";
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    @include posMid;
+    z-index: -1;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s;
+  }
   &:hover {
-    //   font-weight: bold;
+    font-weight: bold;
     transform: translateY(5px);
     box-shadow: 0px 0px 0px 0px $noir;
     padding: 4px;
-    // box-shadow: 0px 0px 10px 5px $noir, 0px 0px 5px 3px $noir inset;
   }
 
-  &:active{
-    transform: translateY(5px);
-    box-shadow: 0px 0px 0px 0px $noir, inset 0px 0px 15px #33333390;
-    padding: 4px;
+  &:hover::before {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
