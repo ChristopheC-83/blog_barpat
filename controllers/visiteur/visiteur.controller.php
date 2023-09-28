@@ -44,6 +44,28 @@ function pageArticle($id_article)
 
 }
 
+function pageTheme($theme){
+
+    $infosArticles = getAllInfos();
+    $themes = getAllThemes();
+    $theme = oneTheme($theme);
+    $articlesTheme = articlesTheme($theme);
+
+    $data_page = [
+        "meta_description" => "Partage d'expérience : ... ",
+        "page_title" => "repaire d'un dev !",
+        "view" => "views/pages/page_theme.view.php",
+        "template" => "views/commons/template.php",
+        // "js"=>['anim_intro.js'],
+        "infosArticles" => $infosArticles,
+        "themes" => $themes,
+        "theme" => $theme,
+        "articlesTheme" => $articlesTheme,
+    ];
+    genererPage($data_page);
+
+}
+
 
 
 function pageErreur($msg)

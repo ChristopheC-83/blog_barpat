@@ -11,6 +11,17 @@ function getAllInfos()
     $stmt->closeCursor();
     return $infos;
 }
+
+function articlesTheme($theme)
+{
+    $req = "SELECT * FROM articles WHERE theme = :theme";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':theme', $theme, PDO::PARAM_STR);
+    $stmt->execute();
+    $infos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $infos;
+}
 function getInfos($id_article)
 {
     $req = "SELECT * FROM articles 
@@ -23,10 +34,6 @@ function getInfos($id_article)
     $stmt->closeCursor();
     return $infos;
 }
-
-
-
-
 function getAllThemes()
 {
     $req = "SELECT * FROM themes ORDER BY id_theme asc";
@@ -36,3 +43,15 @@ function getAllThemes()
     $stmt->closeCursor();
     return $infos;
 }
+function oneTheme($theme)
+{
+    $req = "SELECT * FROM themes WHERE theme = :theme";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':theme', $theme, PDO::PARAM_STR);
+    $stmt->execute();
+    $infos = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $infos;
+}
+
+

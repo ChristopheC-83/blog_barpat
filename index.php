@@ -27,7 +27,8 @@ try {
             pageAccueil();
             break;
         case "theme":
-            $theme=secureHTML($url[1])
+            // echo($url[1]);
+            $theme=secureHTML($url[1]);
             pageTheme($theme);
             break;
         default:
