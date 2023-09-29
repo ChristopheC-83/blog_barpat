@@ -14,7 +14,9 @@ function getAllInfos()
 
 function articlesTheme($theme)
 {
-    $req = "SELECT * FROM articles WHERE theme = :theme";
+    $req = "SELECT * FROM articles
+     WHERE theme = :theme
+     ";
     $stmt = getBDD()->prepare($req);
     $stmt->bindValue(':theme', $theme, PDO::PARAM_STR);
     $stmt->execute();

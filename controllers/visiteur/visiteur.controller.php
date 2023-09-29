@@ -48,7 +48,7 @@ function pageTheme($theme){
 
     $infosArticles = getAllInfos();
     $themes = getAllThemes();
-    $theme = oneTheme($theme);
+    $themePage = oneTheme($theme);
     $articlesTheme = articlesTheme($theme);
 
     $data_page = [
@@ -59,7 +59,7 @@ function pageTheme($theme){
         // "js"=>['anim_intro.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
-        "theme" => $theme,
+        "themePage" => $themePage,
         "articlesTheme" => $articlesTheme,
     ];
     genererPage($data_page);
@@ -77,6 +77,24 @@ function pageErreur($msg)
         "template" => "views/commons/template.php",
         "msg" => $msg,
 
+    ];
+    genererPage($data_page);
+}
+
+function pageTest($data){
+
+    $infosArticles = getAllInfos();
+    $themes = getAllThemes();
+
+    $data_page = [
+        "meta_description" => "Page Test!",
+        "page_title" => "Page Test!",
+        "view" => "views/pages/pageTest.view.php",
+        "template" => "views/commons/template.php",
+        // "js"=>['anim_intro.js'],
+        "data" => $data,
+        "infosArticles" => $infosArticles,
+        "themes" => $themes,
     ];
     genererPage($data_page);
 }
