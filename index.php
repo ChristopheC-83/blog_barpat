@@ -30,6 +30,11 @@ try {
             $theme=secureHTML($url[1]);
             pageTheme($theme);
             break;
+        case "article":
+            $id_article=secureHTML($url[1]);
+            pageArticle($id_article);
+            break;
+        
         default:
             throw new Exception("La page demandée n'existe pas.");
     }

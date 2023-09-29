@@ -24,7 +24,7 @@ function articlesTheme($theme)
     $stmt->closeCursor();
     return $infos;
 }
-function getInfos($id_article)
+function getInfosArticle($id_article)
 {
     $req = "SELECT * FROM articles 
     WHERE id_article = :id_article

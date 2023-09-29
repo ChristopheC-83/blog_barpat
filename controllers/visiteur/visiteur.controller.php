@@ -25,15 +25,15 @@ function pageAccueil()
 function pageArticle($id_article)
 {
 
-    echo $id_article;
-    $infosArticle = getInfos($id_article);
+    $infosArticle = getInfosArticle($id_article);
     $themes = getAllThemes();
     $meta = $infosArticle['titre'];
+    $templateArticle = $infosArticle['templateArticle'];
 
     $data_page = [
         "meta_description" => "Partage d'expérience : $meta ",
         "page_title" => "repaire d'un dev !",
-        "view" => "views/pages/article.view.php",
+        "view" => "views/pages/$templateArticle.view.php",
         "template" => "views/commons/template.php",
         // "js"=>['anim_intro.js'],
         "infosArticle" => $infosArticle,

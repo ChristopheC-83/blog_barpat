@@ -1,4 +1,4 @@
-<a href="article/<?= $article['id_article']?>/<?= $article['url'] ?>">
+<a href="<?=URL?>article/<?= $article['id_article']?>/<?= $article['url'] ?>">
     <div class="articleCard <?= $article['theme'] ?>">
     
         <p class="titleCard bold">
@@ -8,10 +8,6 @@
         <p class="pitchCard">
             <?= $article['pitch'] ?>
         </p>
-    
-    
-    
-    
     
     </div>
 </a>
