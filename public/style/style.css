@@ -483,12 +483,12 @@ article .part2 img {
   transform: translate(-50%, -50%);
 }
 
-.btnThemeSelected {
+.selected_theme {
   font-weight: bold;
   box-shadow: 0px 0px 0px 0px #222;
   letter-spacing: 5px;
 }
-.btnThemeSelected::before {
+.selected_theme::before {
   transform: translate(-50%, -50%);
 }
 

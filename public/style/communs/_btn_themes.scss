@@ -48,14 +48,15 @@
   &:hover::before {
     transform: translate(-50%, -50%);
   }
- 
 }
 
-.btnThemeSelected{
+.selected_theme {
   &::before {
     transform: translate(-50%, -50%);
-  }  
-    font-weight: bold;
-    box-shadow: 0px 0px 0px 0px $noir;
-    letter-spacing: 5px;
+  }
+  font-weight: bold;
+  box-shadow: 0px 0px 0px 0px $noir;
+  letter-spacing: 5px;
 }
+
+

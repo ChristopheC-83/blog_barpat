@@ -6,7 +6,7 @@ session_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  : "http") . "://" . $_SERVER['HTTP_HOST'] .
     $_SERVER["PHP_SELF"]));
 
-define("imgFolder", "../../public/assets/images/");
+define("imgFolder", URL."public/assets/images/");
 
 
 require_once("./controllers/visiteur/visiteur.controller.php");
@@ -31,7 +31,7 @@ try {
             pageTheme($theme);
             break;
         case "article":
-            $id_article=secureHTML($url[1]);
+            $id_article=secureHTML($url[2]);
             pageArticle($id_article);
             break;
         
