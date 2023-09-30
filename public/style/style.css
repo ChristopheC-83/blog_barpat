@@ -110,6 +110,8 @@ p {
 @media screen and (max-width: 1200px) {
   .container {
     width: 90%;
+    margin: 20px auto;
+    padding-top: 80px;
   }
 }
 .flex-center {
@@ -130,7 +132,8 @@ p {
 @media all and (max-width: 900px) {
   .container {
     width: 90%;
-    margin: 30px auto;
+    margin: 20px auto;
+    padding-top: 80px;
   }
 }
 header {
@@ -364,10 +367,6 @@ article .part2 img {
 }
 
 @media screen and (max-width: 900px) {
-  article.container {
-    width: 100%;
-    padding: 5px;
-  }
   article .part1,
   article .part2 {
     flex-direction: column;
