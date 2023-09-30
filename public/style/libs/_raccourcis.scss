@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 1200px) {
   .container {
-    width: 96%;
+    width: 90%;
     
   }
 }
@@ -25,4 +25,12 @@
 }
 .bold {
   font-weight: bold;
+}
+
+@media all and (max-width : 900px) {
+
+  .container{
+    width: 90%;
+    margin: 30px auto;
+  }
 }

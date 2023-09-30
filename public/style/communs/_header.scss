@@ -1,14 +1,51 @@
 header {
+  height: 100vh;
+  width: 220px;
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  align-items: center;
 }
 
-.entete{
+.entete {
   text-align: center;
+}
+
+.btn_menu_responsive{
+  font-size: 40px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: none;
+  transition: all 0.5s;
+  z-index: 5;
+}
+
+.btn_menu_responsive_return{
+  transform : rotate(180deg) rotateY(360deg);
+}
+
+@media all and (max-width: 900px) {
+  header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    transform : translateX(-100%);
+    transition: all 0.5s ease-in;
+
+  }
+
+  .header_open{
+    transform : translate(0);
+    z-index: 5;
+  }
+
+  .btn_menu_responsive{
+    display: block;
+  }
 }

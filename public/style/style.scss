@@ -17,36 +17,33 @@
 //   border : 1px solid red;
 // }
 
-body {background-color:$blanc;
+body {
+  background-color: $blanc;
   color: #333;
   min-height: 100vh;
-  position: relative;
+  // position: relative;
   border-bottom: 1px solid transparent;
-  // overflow-x: hidden;
-  a{color:$noir};
+  a {
+    color: $noir;
+  }
 }
 
 .darkMode {
   background-color: $noir;
-    color: #f1f1f1;
-    
-  a{color:$blanc}
+  color: #f1f1f1;
+
+  a {
+    color: $blanc;
+  }
 }
 
-
-
-header{
-height: 100vh;
-width: 220px;
-position: fixed;
-top: 0;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
-.bodycontent{
+.bodycontent {
   margin-left: 220px;
 }
 
+@media all and (max-width : 900px) {
+  .bodycontent {
+    margin-left: 0px;
+  }
+}
 

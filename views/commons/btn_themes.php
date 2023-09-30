@@ -8,16 +8,16 @@ if (empty($_GET['page'])) {
 
 ?>
 <div class="btnThemesContainer">
-   <div class="btnTheme all_themes 
-      <?=
-      (empty($url[0]) || $url[0] === 'accueil') ?'selected_theme':'';
-      ?>
-   ">
-      <a href="<?= URL ?>accueil" style="color:#333">
-         <p>Accueil</p>
-      </a>
-   </div>
 
+
+
+   <a href="<?= URL ?>accueil" class="btnTheme all_themes 
+      <?=
+      (empty($url[0]) || $url[0] === 'accueil') ? 'selected_theme' : '';
+      ?>
+   " style="color:#333">
+      <p>Accueil</p>
+   </a>
 
    <?php foreach ($themes as $theme) : ?>
       <a href="<?= URL ?>theme/<?= $theme['theme'] ?>" class="btnTheme
@@ -26,6 +26,5 @@ if (empty($_GET['page'])) {
          <p><?= $theme['theme'] ?></p>
       </a>
    <?php endforeach ?>
-
 
 </div>
