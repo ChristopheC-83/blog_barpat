@@ -10,7 +10,7 @@
 
           <?php foreach ($articlesTheme as $article) : ?>
 
-            <?php require("./views/commons/articleCard.php") ?>
+            <?php require("./views/components/articleCard.php") ?>
 
          <?php endforeach ?> 
 

@@ -1,0 +1,16 @@
+templateArticle1.view.php
+
+h1
+
+text 1 /  image1
+
+h2
+
+image2 / text2
+
+
+##############################################################
+
+
+templateArticle2.view.php
+

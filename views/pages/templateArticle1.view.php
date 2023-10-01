@@ -1,6 +1,7 @@
-<article class="container">
 
-    
+
+
+<article class="container">
 
     <h1 class="titre_article"><?= $infosArticle['titre'] ?></h1>
 
@@ -11,7 +12,10 @@
             <?php endif ?>
         
     </section>
+
+
     <h2 class="titre_article"><?= $infosArticle['titre2'] ?></h2>
+
 
     <section class="part part2">
         <?php if (isset($infosArticle['image2']) && $infosArticle['image2'] !== '') : ?>
@@ -19,5 +23,6 @@
         <?php endif ?>
         <p><?= $infosArticle['texte2'] ?></p>
     </section>
+
 
 </article>

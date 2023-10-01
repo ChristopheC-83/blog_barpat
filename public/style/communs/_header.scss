@@ -38,6 +38,10 @@ header {
     transform : translateX(-100%);
     transition: all 0.5s ease-in;
 
+    h2{
+    margin: 20px 10px;
+    }
+
   }
 
   .header_open{
