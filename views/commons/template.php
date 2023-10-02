@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,9 @@
         <?php require_once("views/commons/header.php") ?>
     </header>
 
-    <div class="btn_menu_responsive"><i class="fa-solid fa-circle-arrow-right "></i></div>
+    <div class="btn_menu_responsive">
+        <i class="fa-solid fa-circle-arrow-right arrow_btn"></i>
+    </div>
 
 
     <div class="overlay dnone"></div>
@@ -40,8 +43,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="<?= URL ?>public/javascript/darkMode.js"></script>
     <script src="<?= URL ?>public/javascript/menu_responsive.js"></script>
+    <script src="<?= URL ?>public/javascript/darkMode.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 

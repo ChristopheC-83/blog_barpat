@@ -2,7 +2,7 @@ templateArticle1.view.php
 
 h1
 
-text 1 /  image1
+text1 /  image1
 
 h2
 
@@ -14,3 +14,14 @@ image2 / text2
 
 templateArticle2.view.php
 
+h1
+
+text1 court
+
+image1 ou video ou slider
+
+h2 facultatif
+
+text2 explicatif
+
+fichier à DL facultatif (à mettre en place)

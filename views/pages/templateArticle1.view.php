@@ -1,28 +1,34 @@
+<!-- 
+$themes
+$infosArticle
+$images
+$textes
+ -->
 
 
-
-<article class="container">
-
-    <h1 class="titre_article"><?= $infosArticle['titre'] ?></h1>
-
-    <section class="part part1">
-        <p><?= $infosArticle['texte1'] ?></p>
-            <?php if (isset($infosArticle['image1']) && $infosArticle['image1'] !== '') : ?>
-                <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $infosArticle['image1'] ?>" alt="<?= $infosArticle['altImg1'] ?>">
-            <?php endif ?>
-        
-    </section>
+<article class="container templateArticle1">
 
 
-    <h2 class="titre_article"><?= $infosArticle['titre2'] ?></h2>
+<h1 class="titre_article"><?= $textes[0]['titre'] ?></h1>
+
+<section class="part part1">
+    <p><?= $textes[0]['texte'] ?></p>
+    <?php if (isset($images[0]['url_img']) && $images[0]['url_img'] !== '') : ?>
+        <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $images[0]['url_img'] ?>" alt="<?= $images[0]['alt_img'] ?>">
+    <?php endif ?>
+
+</section>
 
 
-    <section class="part part2">
-        <?php if (isset($infosArticle['image2']) && $infosArticle['image2'] !== '') : ?>
-            <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $infosArticle['image2'] ?>" alt="<?= $infosArticle['altImg2'] ?>">
-        <?php endif ?>
-        <p><?= $infosArticle['texte2'] ?></p>
-    </section>
+<h2 class="titre_article"><?= $textes[1]['titre'] ?></h2>
+
+
+<section class="part part2">
+    <?php if (isset($images[1]['url_img']) && $images[1]['url_img'] !== '') : ?>
+        <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $images[1]['url_img'] ?>" alt="<?= $images[1]['alt_img'] ?>">
+    <?php endif ?>
+    <p><?= $textes[1]['texte'] ?></p>
+</section>
 
 
 </article>

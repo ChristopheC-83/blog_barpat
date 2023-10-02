@@ -26,6 +26,8 @@ function pageArticle($id_article)
 {
 
     $infosArticle = getInfosArticle($id_article);
+    $images = getImagesById($id_article);
+    $textes = getTextesById($id_article);
     $themes = getAllThemes();
     $meta = $infosArticle['titre'];
     $templateArticle = $infosArticle['templateArticle'];
@@ -36,8 +38,10 @@ function pageArticle($id_article)
         "view" => "views/pages/$templateArticle.view.php",
         "template" => "views/commons/template.php",
         // "js"=>['anim_intro.js'],
-        "infosArticle" => $infosArticle,
         "themes" => $themes,
+        "infosArticle" => $infosArticle,
+        "images" => $images,
+        "textes" => $textes,
     ];
     genererPage($data_page);
 

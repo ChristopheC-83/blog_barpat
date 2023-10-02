@@ -1,30 +1,13 @@
 .allCards {
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  justify-content: space-around;
-  align-items: start;
-  flex-wrap: wrap;
-  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 10px;
-  max-width: 100%;
-  border: 1px solid red;
 
 }
-
 
 .link_card {
-  width: 20vw;
-  min-width: 200px;
-  max-width: 250px;
   height: 200px;
 }
-
-// .spacer_articles{
-//   background-color: gray;
-//   height: 200px;
-//   flex-grow: 1;
-// }
 
 .articleCard {
   width: 100%;
@@ -41,7 +24,6 @@
   cursor: pointer;
 
   &:hover {
-    //   font-weight: bold;
     padding: 19px;
     border: 2px solid $blanc;
     box-shadow: 0px 0px 10px $noir, 0px 0px 5px $noir inset;
@@ -49,10 +31,10 @@
 }
 
 @media all and (max-width: 900px) {
+  .allCards {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
   .link_card {
-    min-width: 180px;
-    width: 18vw;
-    max-width: 230px;
     height: 180px;
   }
   .articleCard {
@@ -60,21 +42,13 @@
   }
 }
 @media all and (max-width: 420px) {
-  .link_card {
-    min-width: 160px;
-    width: 35vw;
-    max-width: 350px;
-    height: 150px;
+  .container{
+  padding: 40px 0 0;
   }
-  .articleCard {
-    padding: 5px;
+  .allCards {
+    grid-template-columns: repeat(2, 1fr);
   }
-}
-@media all and (max-width: 380px) {
   .link_card {
-    min-width: 160px;
-    width: 90vw;
-    max-width: 500px;
     height: 150px;
   }
   .articleCard {

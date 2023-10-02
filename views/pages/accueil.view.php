@@ -9,15 +9,6 @@
       <?php foreach ($infosArticles as $article) : ?>
          <?php require("./views/components/articleCard.php") ?>
       <?php endforeach ?>
-      <?php foreach ($infosArticles as $article) : ?>
-         <?php require("./views/components/articleCard.php") ?>
-      <?php endforeach ?>
-      <?php foreach ($infosArticles as $article) : ?>
-         <?php require("./views/components/articleCard.php") ?>
-      <?php endforeach ?>
-      <?php foreach ($infosArticles as $article) : ?>
-         <?php require("./views/components/articleCard.php") ?>
-      <?php endforeach ?>
-      <!-- <div class="spacer_articles"></div> -->
+    
    </div>
 </div>

@@ -1,12 +1,17 @@
-const btn_menu_responsive = document.querySelector('.btn_menu_responsive')
-const header = document.querySelector('header')
-const overlay = document.querySelector('.overlay')
+// Menu responsive
 
-btn_menu_responsive.addEventListener('click', ()=>{
-    btn_menu_responsive.classList.toggle('btn_menu_responsive_return')
-    header.classList.toggle('header_open')
-    overlay.classList.toggle('dnone')
-    
+const header = document.querySelector("header");
+const overlay = document.querySelector(".overlay");
+const arrow_btn = document.querySelector(".arrow_btn");
 
-})
+arrow_btn.addEventListener("click", () => {
+  arrow_btn.classList.toggle("arrow_btn_return");
+  header.classList.toggle("header_open");
+  overlay.classList.toggle("dnone");
+});
+overlay.addEventListener("click", () => {
+  arrow_btn.classList.toggle("arrow_btn_return");
+  header.classList.toggle("header_open");
+  overlay.classList.toggle("dnone");
+});
 

@@ -10,10 +10,12 @@
 @import "communs/overlay";
 @import "communs/alertes";
 @import "communs/dark_switch";
-@import "communs/article";
 @import "communs/articleCard";
 @import "communs/btn_themes";
 @import "pages/accueil";
+@import "templatesArticles/templateArticle1";
+@import "templatesArticles/templateArticle2";
+@import "templatesArticles/templateArticle3";
 
 // *{
 //   border : 1px solid red;
@@ -43,7 +45,7 @@ body {
   margin-left: 220px;
 }
 
-@media all and (max-width : 900px) {
+@media all and (max-width : 768px) {
   .bodycontent {
     margin-left: 0px;
   }
