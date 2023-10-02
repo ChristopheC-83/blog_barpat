@@ -1,4 +1,5 @@
-<a href="<?=URL?>article/<?= $article['theme'] ?>/<?= $article['id_article']?>/<?= $article['url'] ?>">
+<a href="<?=URL?>article/<?= $article['theme'] ?>/<?= $article['id_article']?>/<?= $article['url'] ?>"
+class="link_card">
     <div class="articleCard <?= $article['theme'] ?>">
     
         <p class="titleCard bold">
