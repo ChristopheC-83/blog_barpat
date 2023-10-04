@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 10px;
-
 }
 
 .link_card {
@@ -30,6 +29,25 @@
   }
 }
 
+.formations_card {
+  background: linear-gradient(25deg, #fabf41 20%, #fcd279 100%);
+}
+.rocket_card {
+  background: linear-gradient(25deg, #fae25d 20%, #fff3ae 100%);
+}
+.portfolio_card {
+  background: linear-gradient(25deg, #77fc77 20%, #bbffbb 100%);
+}
+.fiches_card {
+  background: linear-gradient(25deg, #57ddff 20%, #a2edff 100%);
+}
+.tricks_card {
+  background: linear-gradient(25deg, #a27aff 20%, #c9b1ff 100%);
+}
+.autres_card {
+  background: linear-gradient(25deg, #cf98ff 20%, #ebd8fc 100%);
+}
+
 @media all and (max-width: 900px) {
   .allCards {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -42,8 +60,8 @@
   }
 }
 @media all and (max-width: 420px) {
-  .container{
-  padding: 40px 0 0;
+  .container {
+    padding: 40px 0 0;
   }
   .allCards {
     grid-template-columns: repeat(2, 1fr);
