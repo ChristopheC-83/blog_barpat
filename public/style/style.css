@@ -573,28 +573,32 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
-  article .part1,
-  article .part2 {
+  .templateArticle1 {
+    width: 96%;
+    margin: 0 auto;
+  }
+  .templateArticle1 .part1,
+  .templateArticle1 .part2 {
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
   }
-  article .part1 img,
-  article .part2 img {
+  .templateArticle1 .part1 img,
+  .templateArticle1 .part2 img {
     width: 100%;
   }
-  article .part1 p,
-  article .part2 p {
+  .templateArticle1 .part1 p,
+  .templateArticle1 .part2 p {
     width: 100%;
     text-align: left;
     margin: 30px;
     padding: 10px;
   }
-  article .part2 {
+  .templateArticle1 .part2 {
     flex-direction: column-reverse;
   }
-  article .part2 p {
+  .templateArticle1 .part2 p {
     margin-top: 0px;
   }
   h1,

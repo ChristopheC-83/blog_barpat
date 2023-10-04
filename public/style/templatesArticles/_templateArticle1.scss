@@ -47,7 +47,9 @@
 }
 
 @media screen and (max-width: 900px) {
-  article {
+  .templateArticle1 {
+    width: 96%;
+    margin: 0 auto;
     .part1,
     .part2 {
       flex-direction: column;
