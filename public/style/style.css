@@ -248,10 +248,10 @@ header {
     transition: all 0.5s ease-in;
   }
   header h2 {
-    margin: 20px 10px;
+    margin: 10px 10px;
   }
   .header_open {
-    transform: translate(0);
+    transform: translate(0, 10px);
     z-index: 5;
   }
   .btn_menu_responsive {
@@ -536,7 +536,7 @@ footer {
 
 @media screen and (max-width: 900px) {
   .btnThemesContainer {
-    padding-top: 3vh;
+    padding-top: 2vh;
     justify-content: start;
     gap: 3vh;
   }
@@ -632,7 +632,7 @@ footer {
   }
 }
 body {
-  background-color: #f1f1f1;
+  background: linear-gradient(-12deg, rgba(85, 85, 85, 0.3333333333) 20%, #f1f1f1 60%);
   color: #333;
   min-height: 100vh;
   border-bottom: 1px solid transparent;
@@ -642,7 +642,7 @@ body a {
 }
 
 .darkMode {
-  background-color: #222;
+  background: linear-gradient(-12deg, rgba(241, 241, 241, 0.3137254902) 0%, #222 30%);
   color: #f1f1f1;
 }
 .darkMode a {
