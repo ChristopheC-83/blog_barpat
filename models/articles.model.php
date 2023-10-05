@@ -80,3 +80,18 @@ function getTextesById($id_article)
     $stmt->closeCursor();
     return $infos;
 }
+function getSlider($id_article)
+{
+    $req = "SELECT * FROM slider 
+        WHERE id_article = :id_article
+        ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+    $stmt->execute();
+    $infos = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $infos;
+}
+
+
+

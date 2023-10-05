@@ -25,3 +25,19 @@ h2 facultatif
 text2 explicatif
 
 fichier à DL facultatif (à mettre en place)
+
+#############################################################
+
+templateArticle3.view.php
+
+h1
+
+text1 court
+
+image1 ou video ou slider
+
+h2 facultatif
+
+text2 explicatif
+
+fichier à DL facultatif (à mettre en place)

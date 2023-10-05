@@ -31,21 +31,37 @@ function pageArticle($id_article)
     $themes = getAllThemes();
     $meta = $infosArticle['titre'];
     $templateArticle = $infosArticle['templateArticle'];
+    $slider = getSlider($id_article);
+    $numFiles = 0; 
+    $dossier_slider="";
+    if ($slider && isset($slider['dossier'])) {
+        $dossier_slider = sliderPath . $slider['dossier'];
+        $numFiles = countSlider($dossier_slider);
+    }
 
     $data_page = [
         "meta_description" => "Partage d'expérience : $meta ",
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/$templateArticle.view.php",
         "template" => "views/commons/template.php",
-        // "js"=>['anim_intro.js'],
+        // "js"=>['slider.js'],
         "themes" => $themes,
         "infosArticle" => $infosArticle,
         "images" => $images,
         "textes" => $textes,
+        "slider" => $slider,
+        "numFiles" => $numFiles,
+        "dossier_slider" => $dossier_slider,
     ];
     genererPage($data_page);
 
 
+}
+
+function countSlider($dossier_slider){
+        $files = glob($dossier_slider . "/*");
+        $numFiles = count($files);
+        return $numFiles;
 }
 
 function pageTheme($theme){

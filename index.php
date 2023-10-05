@@ -7,6 +7,8 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
     $_SERVER["PHP_SELF"]));
 
 define("imgFolder", URL."public/assets/images/");
+define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/images/" );
+// A changer lors du déploiment
 
 
 require_once("./controllers/visiteur/visiteur.controller.php");
