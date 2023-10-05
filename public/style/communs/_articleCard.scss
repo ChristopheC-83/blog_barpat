@@ -50,7 +50,7 @@
 
 @media all and (max-width: 900px) {
   .allCards {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   }
   .link_card {
     height: 180px;
@@ -59,9 +59,9 @@
     padding: 10px;
   }
 }
-@media all and (max-width: 420px) {
+@media all and (max-width: 520px) {
   .container {
-    padding: 40px 0 0;
+    padding: 50px 0 0;
   }
   .allCards {
     grid-template-columns: repeat(2, 1fr);
@@ -71,5 +71,15 @@
   }
   .articleCard {
     padding: 5px;
+  }
+}
+
+@media all and (max-width: 340px){
+  .allCards {
+    grid-template-columns: 1fr;
+  }
+  
+  .link_card {
+    height: 100px;
   }
 }
