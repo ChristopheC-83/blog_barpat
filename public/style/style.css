@@ -548,6 +548,7 @@ footer {
 }
 .accueil .intro h1 {
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 .accueil .intro h3 {
   margin-top: 10px;
