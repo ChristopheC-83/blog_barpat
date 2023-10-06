@@ -1,4 +1,4 @@
-.templateArticle2 {
+.templateArticle3 {
     margin-top:80px;
   
     h1,
@@ -49,9 +49,11 @@
       }
     }
   }
+
+  
   
   @media screen and (max-width: 900px) {
-    .templateArticle1 {
+    .templateArticle3 {
       width: 96%;
       margin: 0 auto;
       .part1,

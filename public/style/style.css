@@ -94,7 +94,13 @@ h3 {
   text-shadow: 1px 1px 2px #222;
 }
 
-h4,
+h4 {
+  font-size: clamp(18px, 14px + 0.7vw, 22px);
+  line-height: clamp(22px, 20px + 1.2vw, 35px);
+  text-shadow: 1px 1px 2px #222;
+  font-weight: normal;
+}
+
 p {
   font-size: clamp(16px, 14px + 0.6vw, 20px);
   line-height: clamp(20px, 20px + 1vw, 33px);
@@ -217,6 +223,7 @@ header {
   background-color: #f1f1f1;
   border-radius: 50%;
   transition: all 0.5s;
+  border: 2px solid #333;
 }
 
 .btn_menu_responsive_dark {
@@ -829,21 +836,25 @@ footer {
     margin: 0;
   }
 }
+.iframeVideo {
+  margin: 20px auto;
+}
+
 @media screen and (max-width: 768px) {
   .templateArticle2 .part img {
     width: 66vw !important;
   }
 }
-.templateArticle2 {
+.templateArticle3 {
   margin-top: 80px;
 }
-.templateArticle2 h1,
-.templateArticle2 h2 {
+.templateArticle3 h1,
+.templateArticle3 h2 {
   text-align: center;
   margin: 0;
   margin-bottom: 40px;
 }
-.templateArticle2 .part {
+.templateArticle3 .part {
   width: 100%;
   display: flex;
   align-items: start;
@@ -851,61 +862,61 @@ footer {
   gap: 5%;
   margin-bottom: 30px;
 }
-.templateArticle2 .part p {
+.templateArticle3 .part p {
   width: 100%;
   text-shadow: 1px 1px 2px #f1f1f1;
   line-height: 35px;
 }
-.templateArticle2 .part img {
+.templateArticle3 .part img {
   width: 66vw;
   margin: 40px auto;
   border-radius: 10px;
   box-shadow: 2px 2px 20px #222;
 }
-.templateArticle2 .darkPart p {
+.templateArticle3 .darkPart p {
   text-shadow: 1px 1px 2px #222;
 }
-.templateArticle2 .darkPart img {
+.templateArticle3 .darkPart img {
   box-shadow: 2px 2px 20px #f1f1f1;
 }
-.templateArticle2 .part2 {
+.templateArticle3 .part2 {
   margin-top: 50px;
 }
-.templateArticle2 .part2 p {
+.templateArticle3 .part2 p {
   text-align: left;
 }
-.templateArticle2 .part2 img {
+.templateArticle3 .part2 img {
   left: 0%;
   bottom: 0%;
 }
 
 @media screen and (max-width: 900px) {
-  .templateArticle1 {
+  .templateArticle3 {
     width: 96%;
     margin: 0 auto;
   }
-  .templateArticle1 .part1,
-  .templateArticle1 .part2 {
+  .templateArticle3 .part1,
+  .templateArticle3 .part2 {
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
   }
-  .templateArticle1 .part1 img,
-  .templateArticle1 .part2 img {
+  .templateArticle3 .part1 img,
+  .templateArticle3 .part2 img {
     width: 100%;
   }
-  .templateArticle1 .part1 p,
-  .templateArticle1 .part2 p {
+  .templateArticle3 .part1 p,
+  .templateArticle3 .part2 p {
     width: 100%;
     text-align: left;
     margin: 30px;
     padding: 10px;
   }
-  .templateArticle1 .part2 {
+  .templateArticle3 .part2 {
     flex-direction: column-reverse;
   }
-  .templateArticle1 .part2 p {
+  .templateArticle3 .part2 p {
     margin-top: 0px;
   }
   h1,

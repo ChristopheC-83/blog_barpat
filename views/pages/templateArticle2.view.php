@@ -17,6 +17,8 @@ $textes
                 <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $images[0]['url_img'] ?>" alt="<?= $images[0]['alt_img'] ?>">
             </a>
         <?php endif ?>
+        
+        
 
     </section>
 
