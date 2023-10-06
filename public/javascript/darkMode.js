@@ -5,7 +5,7 @@ const partArticle = document.querySelectorAll(".part");
 
 const overlay2 = document.querySelector(".overlay");
 const btn_menu_responsive = document.querySelector(".btn_menu_responsive");
-
+const flecheSliderBox = document.querySelector(".flecheSliderBox");
 
 const isDarkModeStored = localStorage.getItem("darkMode");
 
@@ -28,9 +28,14 @@ function setUpDarkMode(bool) {
   bool
     ? btn_menu_responsive.classList.add("btn_menu_responsive_dark")
     : btn_menu_responsive.classList.remove("btn_menu_responsive_dark");
-  bool
-    ? arrow_btn.classList.add("arrow_btn_dark")
-    : arrow_btn.classList.remove("arrow_btn_dark");
+  // bool
+  //   ? arrow_btn.classList.add("arrow_btn_dark")
+  //   : arrow_btn.classList.remove("arrow_btn_dark");
+  if (flecheSliderBox) {
+    bool
+      ? flecheSliderBox.classList.add("flecheSliderBox_darkMode")
+      : flecheSliderBox.classList.remove("flecheSliderBox_darkMode");
+  }
 
   stateDarkMode = bool;
   darkModeBtn.checked = bool;
@@ -64,8 +69,9 @@ function toggleDarkMode() {
   });
   btn_menu_responsive.classList.toggle("btn_menu_responsive_dark");
   arrow_btn.classList.toggle("arrow_btn_dark");
+  if (flecheSliderBox) {
+    flecheSliderBox.classList.toggle("flecheSliderBox_darkMode");
+  }
 }
 
 darkModeBtn.addEventListener("change", toggleDarkMode);
-
-

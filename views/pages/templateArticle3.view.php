@@ -26,7 +26,7 @@ $textes
                     <div class="tiretSlider <?= $i === 1 ? "tiretSliderActive" : "" ?>"></div>
                 <?php endfor ?>
             </div>
-            <div class="flecheSliderBox flecheSliderBox_shadow">
+            <div class="flecheSliderBox ">
                 <i class="fa-solid fa-circle-arrow-left flecheSlider flecheSliderGauche"></i>
                 <i class="fa-solid fa-circle-arrow-right flecheSlider flecheSliderDroite"></i>
             </div>
