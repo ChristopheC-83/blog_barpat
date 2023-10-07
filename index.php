@@ -12,6 +12,7 @@ define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/images/");
 
 
 require_once("./controllers/visiteur/visiteur.controller.php");
+require_once("./controllers/admin/admin.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
 
@@ -43,13 +44,28 @@ try {
 
             if (!isset(getInfosArticle($id_article)['id_article'])) {
                 pageErreur("Cet article n'existe pas encore ? <br> Tu es un visiteur du futur ?");
-
             } else {
 
                 if ($url !== getInfosArticle($id_article)['url']) {
                     pageErreur("Il y a un soucis dans ton url <br> On recommence de l'accueil ?");
                 } else {
                     pageArticle($id_article);
+                }
+            }
+            break;
+        case "kikiAdmin":
+            if (!isset($url[1])) {
+                pageAdmin();
+            } else {
+                switch ($url[1]) {
+                    case "create":
+                        pageCreate();
+                        break;
+                    case "update":
+                        pageUpdate();
+                        break;
+                    default:
+                        throw new Exception("La page demandée n'existe pas.");
                 }
             }
             break;

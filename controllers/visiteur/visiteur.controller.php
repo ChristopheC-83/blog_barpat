@@ -1,7 +1,6 @@
 <?php
 
 require_once("./controllers/functionController.controller.php");
-require_once("./controllers/functionController.controller.php");
 require_once("./models/articles.model.php");
 
 
