@@ -1,3 +1,3 @@
-<div class="container">
+<div class="container pagesAdmin">
     <h1>update</h1>
 </div>

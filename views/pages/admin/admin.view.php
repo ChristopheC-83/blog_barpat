@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pagesAdmin">
     <h1>admin</h1>
     <a href="<?= URL?>kikiAdmin/create">Nouveau</a>
     <br>
