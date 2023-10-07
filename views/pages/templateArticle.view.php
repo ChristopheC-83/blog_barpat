@@ -10,7 +10,7 @@ $textes
 
     <?php if (isset($textes[0]['titre'])) : ?>
 
-        <?php require_once("./views/pages/".$infosArticle['templateArticle'].".view.php") ?>
+        <?php require_once("./views/pages/templates/".$infosArticle['templateArticle'].".view.php") ?>
 
     <?php else : ?>
 

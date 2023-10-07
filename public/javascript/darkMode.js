@@ -6,6 +6,7 @@ const partArticle = document.querySelectorAll(".part");
 const overlay2 = document.querySelector(".overlay");
 const btn_menu_responsive = document.querySelector(".btn_menu_responsive");
 const flecheSliderBox = document.querySelector(".flecheSliderBox");
+const articleCards = document.querySelectorAll('.articleCard')
 
 const isDarkModeStored = localStorage.getItem("darkMode");
 
@@ -24,6 +25,13 @@ function setUpDarkMode(bool) {
       })
     : partArticle.forEach((element) => {
         element.classList.remove("darkPart");
+      });
+  bool
+    ? articleCards.forEach((element) => {
+        element.classList.add("articleCard_darkMode");
+      })
+    : articleCards.forEach((element) => {
+        element.classList.remove("articleCard_darkMode");
       });
   bool
     ? btn_menu_responsive.classList.add("btn_menu_responsive_dark")
@@ -71,6 +79,11 @@ function toggleDarkMode() {
   arrow_btn.classList.toggle("arrow_btn_dark");
   if (flecheSliderBox) {
     flecheSliderBox.classList.toggle("flecheSliderBox_darkMode");
+  }
+  if(articleCards){
+    articleCards.forEach(element => {
+      element.classList.toggle('articleCard_darkMode')
+    });
   }
 }
 

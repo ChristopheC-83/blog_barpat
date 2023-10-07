@@ -41,15 +41,16 @@ try {
             $id_article = secureHTML($url[2]);
             $url = secureHTML($url[3]);
 
-            if (isset(getInfosArticle($id_article)['id_article'])) {
+            if (!isset(getInfosArticle($id_article)['id_article'])) {
+                pageErreur("Cet article n'existe pas encore ? <br> Tu es un visiteur du futur ?");
 
-                if ($url === getInfosArticle($id_article)['url']) {
-                    pageArticle($id_article);
-                } else {
-                    echo "soucis";
-                }
             } else {
-                echo "id out";
+
+                if ($url !== getInfosArticle($id_article)['url']) {
+                    pageErreur("Il y a un soucis dans ton url <br> On recommence de l'accueil ?");
+                } else {
+                    pageArticle($id_article);
+                }
             }
             break;
 
