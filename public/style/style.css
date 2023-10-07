@@ -766,6 +766,9 @@ footer {
 .templateArticle2 h2 {
   text-align: left !important;
 }
+.templateArticle2 a {
+  cursor: pointer;
+}
 .templateArticle2 .part {
   width: 100%;
   display: flex;
@@ -855,6 +858,9 @@ footer {
   text-align: center;
   margin: 0;
   margin-bottom: 40px;
+}
+.templateArticle3 a {
+  cursor: pointer;
 }
 .templateArticle3 .part {
   width: 100%;

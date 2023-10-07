@@ -5,14 +5,17 @@ $images
 $textes
  -->
 
+ <!-- un slider central -->
+
 
 <article class="container templateArticle3">
+
     <h1 class="titre_article"><?= $textes[0]['titre'] ?></h1>
 
 
     <section class="part part1">
-        <p><?= $textes[0]['texte'] ?></p>
 
+        <p><?= $textes[0]['texte'] ?></p>
 
         <div class="sliderArticle">
 
@@ -32,11 +35,7 @@ $textes
             </div>
         </div>
 
-
-
-
     </section>
-
 
     <?php if (isset($textes[1]['titre']) && $textes[1]['titre'] !== '') : ?>
         <h2 class="titre_article"><?= $textes[1]['titre'] ?></h2>
