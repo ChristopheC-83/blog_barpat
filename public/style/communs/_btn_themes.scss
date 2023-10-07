@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 5px;
+  position: relative;
 }
 
 .btnTheme {
@@ -49,6 +50,8 @@
     transform: translate(-50%, -50%);
   }
 }
+
+
 
 .selected_theme {
   &::before {
