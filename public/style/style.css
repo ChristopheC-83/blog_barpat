@@ -410,7 +410,7 @@ footer {
 .link_card {
   height: 200px;
   perspective: 1000px;
-  transition: all 0.15s ease-out;
+  transition: all 0.1s;
 }
 
 .articleCard {
@@ -426,6 +426,7 @@ footer {
   justify-content: space-between;
   color: #222;
   cursor: pointer;
+  animation: apparitionCard 0.35s linear;
 }
 .articleCard:hover {
   padding: 19px;
@@ -433,6 +434,17 @@ footer {
   box-shadow: 0px 0px 10px #222, 0px 0px 5px #222 inset;
 }
 
+@keyframes apparitionCard {
+  0% {
+    transform: scale(0) translateY(100px) rotateY(360deg);
+  }
+  50% {
+    transform: scale(0.25) translateY(200px) rotateY(180deg);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .formations_card {
   background: linear-gradient(25deg, #fabf41 20%, #fcd279 100%);
 }
