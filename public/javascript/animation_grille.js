@@ -23,7 +23,7 @@ card3D.forEach((el) => {
 });
 
 // ############################
-// animation acrtes seulement accueil
+// animation cartes seulement accueil
 
 const articleCard = document.querySelectorAll(".articleCard");
 const currentUrl = window.location.href;

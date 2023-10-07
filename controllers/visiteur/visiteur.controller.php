@@ -42,7 +42,7 @@ function pageArticle($id_article)
     $data_page = [
         "meta_description" => "Partage d'expérience : $meta ",
         "page_title" => "repaire d'un dev !",
-        "view" => "views/pages/$templateArticle.view.php",
+        "view" => "views/pages/templateArticle.view.php",
         "template" => "views/commons/template.php",
         // "js"=>['slider.js'],
         "themes" => $themes,
@@ -52,6 +52,7 @@ function pageArticle($id_article)
         "slider" => $slider,
         "numFiles" => $numFiles,
         "dossier_slider" => $dossier_slider,
+        "templateArticle" => $templateArticle,
     ];
     genererPage($data_page);
 
@@ -86,16 +87,27 @@ function pageTheme($theme){
 
 }
 
+function verification($themeChoisi){
+
+
+}
+
 
 
 function pageErreur($msg)
 {
+
+    $infosArticles = getAllInfos();
+    $themes = getAllThemes();
+
     $data_page = [
         "meta_description" => "Erreur !",
         "page_title" => "Erreur !",
         "view" => "views/pages/erreur.view.php",
         "template" => "views/commons/template.php",
         "msg" => $msg,
+        "infosArticles" => $infosArticles,
+        "themes" => $themes,
 
     ];
     genererPage($data_page);

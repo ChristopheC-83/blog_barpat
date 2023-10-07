@@ -6,8 +6,8 @@ session_start();
 define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  : "http") . "://" . $_SERVER['HTTP_HOST'] .
     $_SERVER["PHP_SELF"]));
 
-define("imgFolder", URL."public/assets/images/");
-define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/images/" );
+define("imgFolder", URL . "public/assets/images/");
+define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/images/");
 // A changer lors du déploiment
 
 
@@ -29,14 +29,30 @@ try {
             pageAccueil();
             break;
         case "theme":
-            $theme=secureHTML($url[1]);
-            pageTheme($theme);
+            $themeChoisi = secureHTML($url[1]);
+            $themes = getAllThemes();
+            // echo $themeChoisi;
+            // afficherTableau($themes);
+            // verification($themeChoisi);
+            pageTheme($themeChoisi);
+
             break;
         case "article":
-            $id_article=secureHTML($url[2]);
-            pageArticle($id_article);
+            $id_article = secureHTML($url[2]);
+            $url = secureHTML($url[3]);
+
+            if (isset(getInfosArticle($id_article)['id_article'])) {
+
+                if ($url === getInfosArticle($id_article)['url']) {
+                    pageArticle($id_article);
+                } else {
+                    echo "soucis";
+                }
+            } else {
+                echo "id out";
+            }
             break;
-        
+
         default:
             throw new Exception("La page demandée n'existe pas.");
     }
