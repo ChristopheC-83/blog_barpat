@@ -15,7 +15,7 @@ function pageAccueil()
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
-        "js"=>['animation_grille.js'],
+        "js" => ['animation_grille.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
     ];
@@ -32,8 +32,8 @@ function pageArticle($id_article)
     $meta = $infosArticle['titre'];
     $templateArticle = $infosArticle['templateArticle'];
     $slider = getSlider($id_article);
-    $numFiles = 0; 
-    $dossier_slider="";
+    $numFiles = 0;
+    $dossier_slider = "";
     if ($slider && isset($slider['dossier'])) {
         $dossier_slider = sliderPath . $slider['dossier'];
         $numFiles = countSlider($dossier_slider);
@@ -55,17 +55,17 @@ function pageArticle($id_article)
         "templateArticle" => $templateArticle,
     ];
     genererPage($data_page);
-
-
 }
 
-function countSlider($dossier_slider){
-        $files = glob($dossier_slider . "/*");
-        $numFiles = count($files);
-        return $numFiles;
+function countSlider($dossier_slider)
+{
+    $files = glob($dossier_slider . "/*");
+    $numFiles = count($files);
+    return $numFiles;
 }
 
-function pageTheme($theme){
+function pageTheme($theme)
+{
 
     $infosArticles = getAllInfos();
     $themes = getAllThemes();
@@ -77,19 +77,13 @@ function pageTheme($theme){
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/page_theme.view.php",
         "template" => "views/commons/template.php",
-        "js"=>['animation_grille.js'],
+        "js" => ['animation_grille.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
         "themePage" => $themePage,
         "articlesTheme" => $articlesTheme,
     ];
     genererPage($data_page);
-
-}
-
-function verification($themeChoisi){
-
-
 }
 
 
@@ -113,7 +107,8 @@ function pageErreur($msg)
     genererPage($data_page);
 }
 
-function pageTest($data){
+function pageTest($data)
+{
 
     $infosArticles = getAllInfos();
     $themes = getAllThemes();
