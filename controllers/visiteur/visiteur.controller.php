@@ -15,7 +15,7 @@ function pageAccueil()
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/accueil.view.php",
         "template" => "views/commons/template.php",
-        // "js"=>['anim_intro.js'],
+        "js"=>['animation_grille.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
     ];
@@ -76,7 +76,7 @@ function pageTheme($theme){
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/page_theme.view.php",
         "template" => "views/commons/template.php",
-        // "js"=>['anim_intro.js'],
+        "js"=>['animation_grille.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
         "themePage" => $themePage,

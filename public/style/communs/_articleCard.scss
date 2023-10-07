@@ -6,6 +6,8 @@
 
 .link_card {
   height: 200px;
+  perspective: 1000px;
+  transition: all 0.15s ease-out;
 }
 
 .articleCard {

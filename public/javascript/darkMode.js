@@ -75,3 +75,5 @@ function toggleDarkMode() {
 }
 
 darkModeBtn.addEventListener("change", toggleDarkMode);
+
+
