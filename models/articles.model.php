@@ -95,3 +95,5 @@ function getSlider($id_article)
 
 
 
+
+

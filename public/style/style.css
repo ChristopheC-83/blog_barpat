@@ -708,22 +708,22 @@ footer {
 .containerForm {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .entryForm {
   display: flex;
   flex-direction: column;
-  margin: 10px 5px;
-  gap: 5px;
-  border: 1px solid violet;
+  border: 3px solid rgb(83, 1, 83);
   border-radius: 10px;
-  padding: 10px;
-  background: linear-gradient(-12deg, #444 0%, #aaa 100%);
+  padding: 15px 10px;
+  background: #aaa;
 }
 .entryForm label {
   color: #222;
 }
-.entryForm input, .entryForm select {
+.entryForm input,
+.entryForm select {
   width: 100%;
   min-width: 300px;
   border-radius: 5px;
@@ -732,6 +732,30 @@ footer {
 }
 .entryForm .texteArticle {
   min-height: 80px;
+}
+.entryForm button {
+  width: 50%;
+  font-size: 30px;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  transition: all 0.3s;
+}
+.entryForm button:hover {
+  transform: scale(1.02);
+  background-color: #ccc;
+}
+
+.table {
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 10px;
+  border-radius: 10px;
+}
+.table h3 {
+  margin: 10px;
+  margin-left: 50px;
 }
 
 .templateArticle1 {

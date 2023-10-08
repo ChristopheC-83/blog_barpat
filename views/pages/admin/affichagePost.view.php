@@ -1,0 +1,1 @@
+<?= afficherTableau($infos_Post)?>

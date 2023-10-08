@@ -1,33 +1,57 @@
-.containerForm{
-    display: flex;
-    flex-direction: column;
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-.entryForm{
-    display: flex;
-    flex-direction: column;
-    margin: 10px 5px;
-    gap: 5px;
-    border : 1px solid violet;
+.entryForm {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid rgb(83, 1, 83);
+  border-radius: 10px;
+  padding: 15px 10px;
+  background: #aaa;
+
+  label {
+    color: $noir;
+  }
+
+  input,
+  select {
+    width: 100%;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+  }
+
+  .texteArticle {
+    min-height: 80px;
+  }
+
+  button {
+    width: 50%;
+    font-size: 30px;
     border-radius: 10px;
+    margin: 0 auto;
     padding: 10px;
-    background: linear-gradient(-12deg, #444 00%, #aaa 100%);
-
-    label{
-        color:$noir
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.02);
+      background-color: #ccc;
     }
+  }
+}
 
-    input, select{
-        width: 100%;
-        min-width: 300px;
-        border-radius: 5px;
-        padding: 5px;
-        outline: none;
+.table{
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin: 10px;
+    border-radius: 10px;
+
+    h3{
+        margin: 10px;
+    margin-left: 50px;
     }
-
-    .texteArticle{
-        min-height: 80px;
-    }
-
-
 }

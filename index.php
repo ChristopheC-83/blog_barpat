@@ -58,11 +58,30 @@ try {
                 pageAdmin();
             } else {
                 switch ($url[1]) {
-                    case "create":
-                        pageCreate();
+                    case "create_article":
+                        pageCreateArticle();
                         break;
+
+                    case "creationArticle":
+                        validationCreationArticle($_POST);
+                        break;
+
+
+                    case "write_text":
+                        pageTextes($url[2]);
+                        break;
+
+
+                        
+                    case "insert_photos_slider":
+                        pagesPhotos($id);
+                        break;
+
+
+
+
                     case "update":
-                        pageUpdate();
+                        pageUpdate($id);
                         break;
                     default:
                         throw new Exception("La page demandée n'existe pas.");
