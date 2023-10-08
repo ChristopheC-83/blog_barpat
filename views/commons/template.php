@@ -26,9 +26,6 @@
 
     <div class="overlay dnone"></div>
 
-    <div class="bodycontent">
-        <?= $page_content ?>
-
         <?php
         if (!empty($_SESSION['alert'])) {
             foreach ($_SESSION['alert'] as $alert) {
@@ -37,12 +34,15 @@
                 </div>";
             }
             unset($_SESSION['alert']);
-        }
-        ?>
+        } ?>
+    <div class="bodycontent">
+
+
+        <?= $page_content ?>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+
     <script src="<?= URL ?>public/javascript/menu_responsive.js"></script>
     <script src="<?= URL ?>public/javascript/darkMode.js"></script>
 

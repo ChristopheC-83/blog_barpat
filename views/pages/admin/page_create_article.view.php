@@ -18,9 +18,10 @@
             <div class="entryForm">
                 <label for="templateArticle">Template :</label>
                 <select name="templateArticle" id="templateArticle">
-                    <option value="templateArticle1">templateArticle1</option>
-                    <option value="templateArticle2">templateArticle2</option>
-                    <option value="templateArticle3">templateArticle3</option>
+                    <option value="templateArticle1">templateArticle1 (2photos)</option>
+                    <option value="templateArticle2">templateArticle2 (1 photo)</option>
+                    <option value="templateArticle3">templateArticle3 (1 slider)</option>
+                    <option value="templateArticle4">templateArticle3 (1 video)</option>
                 </select>
             </div>
             <div class="entryForm">

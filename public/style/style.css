@@ -341,6 +341,11 @@ footer {
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  .alert {
+    margin-top: 120px;
+  }
+}
 .dark-switch {
   /* The switch - the box around the slider */
   margin-top: 20px;
@@ -723,9 +728,9 @@ footer {
   color: #222;
 }
 .entryForm input,
-.entryForm select {
+.entryForm select,
+.entryForm textarea {
   width: 100%;
-  min-width: 300px;
   border-radius: 5px;
   padding: 5px;
   outline: none;
@@ -756,6 +761,10 @@ footer {
 .table h3 {
   margin: 10px;
   margin-left: 50px;
+}
+
+.infoArticleEnCours {
+  margin-bottom: 20px;
 }
 
 .templateArticle1 {

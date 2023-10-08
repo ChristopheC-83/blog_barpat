@@ -5,7 +5,7 @@ $images
 $textes
  -->
 
- <!-- 1 seule image centrale -->
+<!-- 1 video centrale -->
 
 
 <article class="container templateArticle2">
@@ -16,13 +16,11 @@ $textes
 
         <p><?= $textes[0]['texte'] ?></p>
 
-        <?php if (isset($images[0]['url_img']) && $images[0]['url_img'] !== '') : ?>
-            <a href="<?= isset($images[0]['lien']) ? $images[0]['lien'] : '' ?>">
-                <img src="<?= imgFolder ?><?= $infosArticle['theme'] ?>/<?= $images[0]['url_img'] ?>" alt="<?= $images[0]['alt_img'] ?>">
-            </a>
-        <?php endif ?>
-        
-        
+        <div class="iframeVideo">
+            <iframe width="560" height="315" src="<?= $images[0]['url_img'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+
 
     </section>
 
@@ -38,4 +36,3 @@ $textes
 </article>
 
 <br><br>
-

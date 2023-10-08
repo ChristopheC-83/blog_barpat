@@ -1,84 +1,86 @@
 <div class="container pagesAdmin">
 
-    <h1>Créer un Article</h1>
+    <h1>Ajouter
+        <?= $infosArticle['templateArticle'] === "templateArticle1" ?  "2 Photos" : "" ?>
+        <?= $infosArticle['templateArticle'] === "templateArticle2" ?  "1 Photo " : "" ?>
+        <?= $infosArticle['templateArticle'] === "templateArticle3" ?  "Dossier Slider" : "" ?>
+        <?= $infosArticle['templateArticle'] === "templateArticle4" ?  "1 video" : "" ?>
+    </h1>
+
+    <div class="infoArticleEnCours">
+        <p><b>id_article =</b> <?= $infosArticle['id_article']  ?></p>
+        <p><b>theme = </b> <?= $infosArticle['theme']  ?></p>
+        <p><b>templateArticle =</b> <?= $infosArticle['templateArticle']  ?></p>
+        <p><b>url =</b> <?= $infosArticle['url']  ?></p>
+        <p><b>titre card =</b> <?= $infosArticle['titre']  ?></p>
+        <p><b>pitch card =</b> <?= $infosArticle['pitch']  ?></p>
+        <?= isset($infosArticle['word_dl']) ? $infosArticle['word_dl'] : ""  ?>
+        <?= isset($infosArticle['pdf_dl']) ? $infosArticle['pdf_dl'] : ""  ?>
+        <p><b>A copier = </b> &lt;h4&gt; &lt;/h4&gt;</p>
+        <p><b>Titre 1 =</b> <?= $titles[0]['titre']  ?></p>
+        <p><b>Titre 2 =</b> <?= $titles[1]['titre']  ?></p>
+
+
+
+    </div>
 
     <div class="table table_articles">
-        <h3>Table "articles"</h3>
-        <form action="<?= URL ?>kikiAdmin/creationArticle" enctype="multipart/form-data" method="POST" class="container containerForm">
+        <form action="<?= URL ?>kikiAdmin/ajoutMedia" enctype="multipart/form-data" method="POST" class="container containerForm">
+
+        <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+
+            <!-- Template 1 -->
+
+            <?php if ($infosArticle['templateArticle'] === "templateArticle1") : ?>
+                <div class="entryForm">
+                    <label for="photo1">Photo 1</label>
+                    <input type="file" name="photo1" id="photo1">
+                </div>
+
+                <div class="entryForm">
+                    <label for="photo2">Photo 2 (ssi templateArticle 1)</label>
+                    <input type="file" name="photo2" id="photo2">
+                </div>
+
+            <?php endif ?>
+
+            <!-- Template 2 -->
+
+            <?php if ($infosArticle['templateArticle'] === "templateArticle2") : ?>
+                <div class="entryForm">
+                    <label for="photo1">Photo 1</label>
+                    <input type="file" name="photo1" id="photo1">
+                </div>
+
+            <?php endif ?>
+
+            <!-- Template 3 -->
+
+            <?php if ($infosArticle['templateArticle'] === "templateArticle3") : ?>
+                <div class="entryForm">
+                    <label for="slider">Dossier Slider</label>
+                    <input type="text" name="slider" id="slider">
+                </div>
+
+            <?php endif ?>
+
+            <!-- Template 4 -->
+
+            <?php if ($infosArticle['templateArticle'] === "templateArticle4") : ?>
+                <div class="entryForm">
+                    <label for="slider">Dossier Slider (ssi templateArticle 3)</label>
+                    <input type="text" name="slider" id="slider">
+                </div>
+
+            <?php endif ?>
+
+
             <div class="entryForm">
-                <label for="articleTheme">Thème : </label>
-                <select name="articleTheme" id="articleTheme">
-                    <option value="formations">1 - Formations</option>
-                    <option value="rocket">2 - Rocket</option>
-                    <option value="portfolio">3 - Portfolio</option>
-                    <option value="fiches">4 - Fiches</option>
-                    <option value="tricks">5 - Tricks</option>
-                    <option value="autres">6 - Autres</option>
-                </select>
+                <button type="submit">On publie !!!</button>
             </div>
-            <div class="entryForm">
-                <label for="templateArticle">Template :</label>
-                <select name="templateArticle" id="templateArticle">
-                    <option value="templateArticle1">templateArticle1</option>
-                    <option value="templateArticle2">templateArticle2</option>
-                    <option value="templateArticle3">templateArticle3</option>
-                </select>
-            </div>
-            <div class="entryForm">
-                <label for="url">URL article</label>
-                <input type="text" name="url" id="url">
-            </div>
-            <div class="entryForm">
-                <label for="titre">Titre Carte</label>
-                <input type="text" name="titre" id="titre">
-            </div>
-            <div class="entryForm">
-                <label for="pitch">Pitch Carte</label>
-                <input type="text" name="pitch" id="pitch">
-            </div>
-            <div class="entryForm">
-                <button type="submit">On envoie table_articles !</button>
-            </div>
-        </form>
-    </div>
-    <div class="entryForm">
-        <label for="titre1">Titre texte 1</label>
-        <input type="text" name="titre1" id="titre1">
-    </div>
-    <div class="entryForm">
-        <label for="texte1">Texte 1</label>
-        <textarea name="texte1" id="texte1" class="texteArticle"></textarea>
-    </div>
-    <div class="entryForm">
-        <label for="titre2">Titre texte 2</label>
-        <input type="text" name="titre2" id="titre2">
-    </div>
-    <div class="entryForm">
-        <label for="texte2">Texte 2</label>
-        <textarea name="texte2" id="texte2" class="texteArticle"></textarea>
-    </div>
-
-    <div class="entryForm">
-        <label for="photo1">Photo 1</label>
-        <input type="file" name="photo1" id="photo1">
-    </div>
-
-    <div class="entryForm">
-        <label for="photo2">Photo 2 (ssi templateArticle 1)</label>
-        <input type="file" name="photo2" id="photo2">
-    </div>
-
-    <div class="entryForm">
-        <label for="slider">Dossier Slider (ssi templateArticle 3)</label>
-        <input type="text" name="slider" id="slider">
-    </div>
-
-    <div class="entryForm">
-        <button type="submit">On publie !!!</button>
-    </div>
 
 
-    <form action=""></form>
+            <form action=""></form>
 
 
-</div>
+    </div>

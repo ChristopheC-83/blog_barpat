@@ -11,22 +11,20 @@
   color: #333;
   text-align: center;
   padding: 5px 0;
-  visibility : 1;
-  animation : disparitionAlerte 2s 3s;
-  animation-fill-mode: forwards
+  visibility: 1;
+  animation: disparitionAlerte 2s 3s;
+  animation-fill-mode: forwards;
 }
 
-@keyframes disparitionAlerte{
-  100%{
-    transform: translateY(-100% ) scale(0);
+@keyframes disparitionAlerte {
+  100% {
+    transform: translateY(-100%) scale(0);
     opacity: 0;
     height: 0;
     padding: 0;
     margin: 0 auto;
     visibility: hidden;
   }
-  
-  
 }
 
 .rouge {
@@ -41,5 +39,8 @@
 .dnone {
   display: none;
 }
-
-
+@media screen and (max-width:768px) {
+  .alert{
+    margin-top: 120px;
+  }
+}

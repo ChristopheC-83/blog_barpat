@@ -60,35 +60,19 @@ function validationCreationArticle($POST)
         ajouterMessageAlerte("Il faut renseigner tous les champs", "rouge");
         header('location:' . URL . "kikiAdmin/create_article");
     } else {
-        createArticle($theme, $templateArticle, $url, $titre, $pitch);
+        createArticleBdd($theme, $templateArticle, $url, $titre, $pitch);
         $allId = getIdFromArticles();
         $lastId = end($allId)['id_article'];
         ajouterMessageAlerte("Creation de l'article " . $lastId . " effectuée !", "vert");
-        header('location:' . URL . "kikiAdmin/create_article/".$lastId);
+        header('location:' . URL . "kikiAdmin/write_text/".$lastId);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // #################################
 // Ajout textes
 function pageTextes($id)
 {
-    $infosArticles = getAllInfos();
+    $infosArticle = getInfosArticle($id);
     $themes = getAllThemes();
 
     $data_page = [
@@ -97,21 +81,47 @@ function pageTextes($id)
         "view" => "views/pages/admin/page_add_text.view.php",
         "template" => "views/commons/template.php",
         // "js" => ['animation_grille.js'],
-        "infosArticles" => $infosArticles,
+        "infosArticle" => $infosArticle,
         "themes" => $themes,
     ];
     genererPage($data_page);
 }
 
+function validationText($POST)
+{
+    $id_article = secureHTML($POST['id_article']);
+    $num_article_1 = secureHTML($POST['num_article_1']);
+    $num_article_2 = secureHTML($POST['num_article_2']);
+    $titre1 = secureHTML($POST['titre1']);
+    $texte1 = secureHTML($POST['texte1']);
+    $titre2 = secureHTML($POST['titre2']);
+    $texte2 = secureHTML($POST['texte2']);
 
-
-
-
-
-
-
-
-
+    if (
+        !isset($id_article) || $id_article === "" ||
+        !isset($num_article_1) || $num_article_1 === "" ||
+        !isset($num_article_2) || $num_article_2 === "" ||
+        !isset($titre1) || $titre1 == "" 
+    ) {
+        if(isset($texte1)){$_SESSION['texte1']=$texte1;}
+        if(isset($titre2)){$_SESSION['titre2']=$titre2;}
+        if(isset($texte2)){$_SESSION['texte2']=$texte2;}
+        ajouterMessageAlerte("Il faut renseigner au moins le champs Titre 1", "rouge");
+        header('location:' . URL . "kikiAdmin/write_text/".$id_article);
+    } else {
+        validationTextBdd($id_article, $num_article_1, $titre1, $texte1);
+        validationTextBdd($id_article, $num_article_2, $titre2, $texte2);
+        $allId = getIdFromArticles();
+        $lastId = end($allId)['id_article'];
+        ajouterMessageAlerte("Les textes de l'article " . $lastId . " ont été sauvegardés !", "vert");
+        if(isset($texte1)){unset($_SESSION['texte1']);}
+        if(isset($titre1)){unset($_SESSION['titre1']);}
+        if(isset($titre2)){unset($_SESSION['titre2']);}
+        if(isset($texte2)){unset($_SESSION['texte2']);}
+        
+        header('location:' . URL . "kikiAdmin/insert_photos_slider/".$lastId);
+    }
+}
 
 
 
@@ -127,20 +137,49 @@ function pageTextes($id)
 
 function pagesPhotos($id)
 {
-    $infosArticles = getAllInfos();
+    $infosArticle = getInfosArticle($id);
     $themes = getAllThemes();
+    $titles = getTextesById($id);
 
     $data_page = [
         "meta_description" => "Page d'aministration",
         "page_title" => "Page d'aministration !",
         "view" => "views/pages/admin/page_add_photos.view.php",
         "template" => "views/commons/template.php",
-        // "js" => ['animation_grille.js'],
-        "infosArticles" => $infosArticles,
+        "infosArticle" => $infosArticle,
         "themes" => $themes,
+        "titles" => $titles,
     ];
     genererPage($data_page);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #################################
+// Mise à jour
 
 function pageUpdate($id)
 {

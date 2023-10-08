@@ -66,23 +66,25 @@ try {
                         validationCreationArticle($_POST);
                         break;
 
-
                     case "write_text":
                         pageTextes($url[2]);
                         break;
-
-
-                        
-                    case "insert_photos_slider":
-                        pagesPhotos($id);
+                    case "validation_text":
+                        validationText($_POST);
                         break;
 
-
-
+                    case "insert_photos_slider":
+                        pagesPhotos($url[2]);
+                        break;
 
                     case "update":
                         pageUpdate($id);
                         break;
+
+                    case "pageTest":
+                        echo "test";
+                        break;
+
                     default:
                         throw new Exception("La page demandée n'existe pas.");
                 }
