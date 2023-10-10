@@ -6,17 +6,7 @@ require_once("./models/images.model.php");
 
 function validation_image($file, $info)
 {
-    // afficherTableau($file);
-    // afficherTableau( $info);
-        $repertoire = $info['repertoire'];
-        // echo "<br>";
-        // echo $repertoire;
-        // echo URL;
-    //     echo "<br>";
-    //     echo $file['tmp_name'];
-
-    
-    // ajoutImage($file, $repertoire);
+    $repertoire = $info['repertoire'];
 
     try {
         ajoutImage($file, $repertoire);
@@ -27,8 +17,8 @@ function validation_image($file, $info)
             secureHTML($info['alt_img1']),
             secureHTML($info['lien1']),
         )) {
-            ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
-            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+            ajouterMessageAlerte("Edition article OK !", "vert");
+            header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
         } else {
             ajouterMessageAlerte("Modfication de l'image non effectuée.", "rouge");
             header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
@@ -41,7 +31,6 @@ function validation_image($file, $info)
 
 function ajoutImage($file, $repertoire)
 {
-    
 
     if (!isset($file['name']) || empty($file['name'])) {
         throw new Exception("Vous devez sélectionner une image.");
@@ -50,7 +39,7 @@ function ajoutImage($file, $repertoire)
     if (!file_exists($repertoire)) mkdir($repertoire, 0777);
 
     $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-    $target_file =  $repertoire.$file['name'];
+    $target_file =  $repertoire . $file['name'];
 
     if (!getimagesize($file["tmp_name"]))
         throw new Exception("Le fichier n'est pas une image");

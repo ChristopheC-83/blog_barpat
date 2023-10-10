@@ -10,12 +10,12 @@ $textes
 
 <article class="container templateArticle3">
 
-    <h1 class="titre_article"><?= $textes[0]['titre'] ?></h1>
+    <h1 class="titre_article"><?= html_entity_decode ($textes[0]['titre']) ?></h1>
 
 
     <section class="part part1">
 
-        <p><?= $textes[0]['texte'] ?></p>
+        <p><?= html_entity_decode ($textes[0]['texte']) ?></p>
 
         <div class="sliderArticle">
 
@@ -38,11 +38,11 @@ $textes
     </section>
 
     <?php if (isset($textes[1]['titre']) && $textes[1]['titre'] !== '') : ?>
-        <h2 class="titre_article"><?= $textes[1]['titre'] ?></h2>
+        <h2 class="titre_article"><?= html_entity_decode ($textes[1]['titre']) ?></h2>
     <?php endif ?>
 
     <section class="part part2">
-        <p><?= $textes[1]['texte'] ?></p>
+        <p><?= html_entity_decode ($textes[1]['texte']) ?></p>
     </section>
 
 

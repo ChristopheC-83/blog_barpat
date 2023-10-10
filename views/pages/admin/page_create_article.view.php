@@ -21,7 +21,7 @@
                     <option value="templateArticle1">templateArticle1 (2photos)</option>
                     <option value="templateArticle2">templateArticle2 (1 photo)</option>
                     <option value="templateArticle3">templateArticle3 (1 slider)</option>
-                    <option value="templateArticle4">templateArticle3 (1 video)</option>
+                    <option value="templateArticle4">templateArticle4 (1 video)</option>
                 </select>
             </div>
             <div class="entryForm">
