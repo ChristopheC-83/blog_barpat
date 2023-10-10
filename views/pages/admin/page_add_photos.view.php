@@ -44,9 +44,11 @@
 
         <!-- Template 2 -->
         <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
+            <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+            <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
             <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
             <input type="hidden" name="num_img1" value=1>
-            <input type="hidden" name="repertoire" value="<?= imgFolder.$infosArticle['theme']  ?>">
+            <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme']."/"  ?>">
 
             <?php if ($infosArticle['templateArticle'] === "templateArticle2") : ?>
                 <div class="entryForm">
@@ -64,8 +66,8 @@
 
             <?php endif ?>
             <div class="entryForm">
-            <button type="submit">On publie !!!</button>
-        </div>
+                <button type="submit">On publie !!!</button>
+            </div>
         </form>
 
         <!-- Template 3 -->

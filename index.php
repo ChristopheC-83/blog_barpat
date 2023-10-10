@@ -82,11 +82,17 @@ try {
                     case "ajout_1_photo":
                         if ($_FILES['photo1']['size'] > 0) {
 
-                            validation_image($_FILES['photo1'], $_POST);
-                            // afficherTableau($_FILES['photo1']);
-                            // afficherTableau( $_POST);
-                        } else {
-                            ajouterMessageAlerte("Image non modifiée", "rouge");
+                            if (validation_image($_FILES['photo1'], $_POST)) {
+                                // afficherTableau($_FILES['photo1']);
+                                // afficherTableau($_POST);
+                                header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
+                            } else {
+                                ajouterMessageAlerte("Image non importée", "rouge");
+                                header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+                            }
+                        } 
+                        else {
+                            ajouterMessageAlerte("Image non importée2", "rouge");
                             header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
                         }
                         break;

@@ -5,17 +5,20 @@
 require_once("./models/images.model.php");
 
 function validation_image($file, $info)
-{   
+{
     // afficherTableau($file);
     // afficherTableau( $info);
-        // $repertoire = $info['repertoire']."/";
+        $repertoire = $info['repertoire'];
         // echo "<br>";
         // echo $repertoire;
-        // echo "<br>";
-        // echo $file['tmp_name'];
+        // echo URL;
+    //     echo "<br>";
+    //     echo $file['tmp_name'];
+
+    
+    // ajoutImage($file, $repertoire);
 
     try {
-        $repertoire = $info['repertoire']."/";
         ajoutImage($file, $repertoire);
         if (ajoutImageBdd(
             secureHTML($info['id_article']),
@@ -23,21 +26,22 @@ function validation_image($file, $info)
             secureHTML($file['name']),
             secureHTML($info['alt_img1']),
             secureHTML($info['lien1']),
-            )) {
+        )) {
             ajouterMessageAlerte("Modfication de l'image effectuée.", "vert");
-            header('location:' . URL . "kikiAdmin/insert_photos_slider/".$_POST['id_article']);
+            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
         } else {
             ajouterMessageAlerte("Modfication de l'image non effectuée.", "rouge");
-            header('location:' . URL . "kikiAdmin/insert_photos_slider/".$_POST['id_article']);
+            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
         }
     } catch (Exception $e) {
         ajouterMessageAlerte($e->getMessage(), "rouge");
-        header('location:' . URL . "kikiAdmin/insert_photos_slider/".$_POST['id_article']);
+        header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
     }
 }
 
 function ajoutImage($file, $repertoire)
 {
+    
 
     if (!isset($file['name']) || empty($file['name'])) {
         throw new Exception("Vous devez sélectionner une image.");
@@ -46,7 +50,7 @@ function ajoutImage($file, $repertoire)
     if (!file_exists($repertoire)) mkdir($repertoire, 0777);
 
     $extension = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION));
-    $target_file=  $repertoire.$file['name'];
+    $target_file =  $repertoire.$file['name'];
 
     if (!getimagesize($file["tmp_name"]))
         throw new Exception("Le fichier n'est pas une image");
@@ -60,6 +64,3 @@ function ajoutImage($file, $repertoire)
         throw new Exception("l'ajout de l'image n'a pas fonctionné");
     else return ($file['name']);
 }
-
-
-
