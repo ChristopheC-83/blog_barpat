@@ -25,62 +25,75 @@
     </div>
 
     <div class="table table_articles">
-        <form action="<?= URL ?>kikiAdmin/ajoutMedia" enctype="multipart/form-data" method="POST" class="container containerForm">
 
-        <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
 
-            <!-- Template 1 -->
+        <!-- Template 1 -->
 
-            <?php if ($infosArticle['templateArticle'] === "templateArticle1") : ?>
-                <div class="entryForm">
-                    <label for="photo1">Photo 1</label>
-                    <input type="file" name="photo1" id="photo1">
-                </div>
+        <?php if ($infosArticle['templateArticle'] === "templateArticle1") : ?>
+            <div class="entryForm">
+                <label for="photo1">Photo 1</label>
+                <input type="file" name="photo1" id="photo1">
+            </div>
 
-                <div class="entryForm">
-                    <label for="photo2">Photo 2 (ssi templateArticle 1)</label>
-                    <input type="file" name="photo2" id="photo2">
-                </div>
+            <div class="entryForm">
+                <label for="photo2">Photo 2</label>
+                <input type="file" name="photo2" id="photo2">
+            </div>
 
-            <?php endif ?>
+        <?php endif ?>
 
-            <!-- Template 2 -->
+        <!-- Template 2 -->
+        <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
+            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+            <input type="hidden" name="num_img1" value=1>
+            <input type="hidden" name="repertoire" value="<?= imgFolder.$infosArticle['theme']  ?>">
 
             <?php if ($infosArticle['templateArticle'] === "templateArticle2") : ?>
                 <div class="entryForm">
-                    <label for="photo1">Photo 1</label>
+                    <label for="photo1">Photo</label>
                     <input type="file" name="photo1" id="photo1">
                 </div>
-
-            <?php endif ?>
-
-            <!-- Template 3 -->
-
-            <?php if ($infosArticle['templateArticle'] === "templateArticle3") : ?>
                 <div class="entryForm">
-                    <label for="slider">Dossier Slider</label>
-                    <input type="text" name="slider" id="slider">
+                    <label for="alt_img1">Description Image</label>
+                    <input type="text" name="alt_img1" id="alt_img1">
+                </div>
+                <div class="entryForm">
+                    <label for="lien1">Lien (facultatif)</label>
+                    <input type="text" name="lien1" id="lien1">
                 </div>
 
             <?php endif ?>
-
-            <!-- Template 4 -->
-
-            <?php if ($infosArticle['templateArticle'] === "templateArticle4") : ?>
-                <div class="entryForm">
-                    <label for="slider">Dossier Slider (ssi templateArticle 3)</label>
-                    <input type="text" name="slider" id="slider">
-                </div>
-
-            <?php endif ?>
-
-
             <div class="entryForm">
-                <button type="submit">On publie !!!</button>
+            <button type="submit">On publie !!!</button>
+        </div>
+        </form>
+
+        <!-- Template 3 -->
+
+        <?php if ($infosArticle['templateArticle'] === "templateArticle3") : ?>
+            <div class="entryForm">
+                <label for="slider">Dossier Slider</label>
+                <input type="text" name="slider" id="slider">
             </div>
 
+        <?php endif ?>
 
-            <form action=""></form>
+        <!-- Template 4 -->
+
+        <?php if ($infosArticle['templateArticle'] === "templateArticle4") : ?>
+            <div class="entryForm">
+                <label for="slider">Dossier Slider (ssi templateArticle 3)</label>
+                <input type="text" name="slider" id="slider">
+            </div>
+
+        <?php endif ?>
+
+
+        <!-- <div class="entryForm">
+            <button type="submit">On publie !!!</button>
+        </div> -->
+
+
 
 
     </div>

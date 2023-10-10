@@ -15,6 +15,7 @@ require_once("./controllers/visiteur/visiteur.controller.php");
 require_once("./controllers/admin/admin.controller.php");
 require_once("./controllers/functionController.controller.php");
 require_once("./controllers/security.controller.php");
+require_once("./controllers/images.controller.php");
 
 
 try {
@@ -77,12 +78,41 @@ try {
                         pagesPhotos($url[2]);
                         break;
 
+
+                    case "ajout_1_photo":
+                        if ($_FILES['photo1']['size'] > 0) {
+
+                            validation_image($_FILES['photo1'], $_POST);
+                            // afficherTableau($_FILES['photo1']);
+                            // afficherTableau( $_POST);
+                        } else {
+                            ajouterMessageAlerte("Image non modifiée", "rouge");
+                            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+                        }
+                        break;
+
+
+
+
+
+
+
+
+
+
+
                     case "update":
                         pageUpdate($id);
                         break;
 
                     case "pageTest":
-                        echo "test";
+                        afficherTableau($_FILES);
+                        // if ($_FILES['photo1']['size'] > 0) {
+                        //     afficherTableau($_POST);
+                        // } else {
+                        //     ajouterMessageAlerte("Image non modifiée", "rouge");
+                        //     header('location:' . URL . "profil");
+                        // }
                         break;
 
                     default:
