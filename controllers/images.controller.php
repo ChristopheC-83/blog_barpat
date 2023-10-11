@@ -28,6 +28,30 @@ function validation_image($file, $info)
         header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
     }
 }
+function validation_image2($file, $info)
+{
+    $repertoire = $info['repertoire'];
+
+    try {
+        ajoutImage($file, $repertoire);
+        if (ajoutImageBdd(
+            secureHTML($info['id_article']),
+            secureHTML($info['num_img2']),
+            secureHTML($file['name']),
+            secureHTML($info['alt_img2']),
+            secureHTML($info['lien2']),
+        )) {
+            ajouterMessageAlerte("Edition article OK !", "vert");
+            header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
+        } else {
+            ajouterMessageAlerte("Modfication de l'image non effectuée.", "rouge");
+            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+        }
+    } catch (Exception $e) {
+        ajouterMessageAlerte($e->getMessage(), "rouge");
+        header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+    }
+}
 
 function ajoutImage($file, $repertoire)
 {

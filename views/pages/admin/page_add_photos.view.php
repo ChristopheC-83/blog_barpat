@@ -30,47 +30,15 @@
         <!-- Template 1 -->
 
         <?php if ($infosArticle['templateArticle'] === "templateArticle1") : ?>
-            <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
-                <div class="entryForm">
-                    <label for="photo1">Photo 1</label>
-                    <input type="file" name="photo1" id="photo1">
-                </div>
-                <div class="entryForm">
-                    <label for="alt_img1">Description Image</label>
-                    <input type="text" name="alt_img1" id="alt_img1">
-                </div>
-                <div class="entryForm">
-                    <label for="lien1">Lien (facultatif)</label>
-                    <input type="text" name="lien1" id="lien1">
-                </div>
-            </form>
-            <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
 
-                <div class="entryForm">
-                    <label for="photo2">Photo 2</label>
-                    <input type="file" name="photo2" id="photo2">
-                </div>
-                <div class="entryForm">
-                    <label for="alt_img1">Description Image</label>
-                    <input type="text" name="alt_img2" id="alt_img2">
-                </div>
-                <div class="entryForm">
-                    <label for="lien1">Lien (facultatif)</label>
-                    <input type="text" name="lien2" id="lien2">
-                </div>
-            </form>
+            <form action="<?= URL ?>kikiAdmin/ajout_2_photos" enctype="multipart/form-data" method="POST" class="containerForm">
 
-        <?php endif ?>
+                <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+                <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
+                <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+                <input type="hidden" name="num_img1" value=1>
+                <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
 
-        <!-- Template 2 -->
-        <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
-            <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
-            <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
-            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
-            <input type="hidden" name="num_img1" value=1>
-            <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
-
-            <?php if ($infosArticle['templateArticle'] === "templateArticle2") : ?>
                 <div class="entryForm">
                     <label for="photo1">Photo</label>
                     <input type="file" name="photo1" id="photo1">
@@ -84,11 +52,54 @@
                     <input type="text" name="lien1" id="lien1">
                 </div>
 
-            <?php endif ?>
-            <div class="entryForm">
-                <button type="submit">On publie !!!</button>
-            </div>
-        </form>
+                <div class="entryForm">
+                    <label for="photo2">Photo</label>
+                    <input type="file" name="photo2" id="photo2">
+                </div>
+                <div class="entryForm">
+                    <label for="alt_img2">Description Image</label>
+                    <input type="text" name="alt_img2" id="alt_img2">
+                </div>
+                <div class="entryForm">
+                    <label for="lien2">Lien (facultatif)</label>
+                    <input type="text" name="lien2" id="lien2">
+                </div>
+                <div class="entryForm">
+                    <button type="submit">On publie 1!!!</button>
+                </div>
+            </form>
+        <?php endif ?>
+
+        <!-- Template 2 -->
+
+        <?php if ($infosArticle['templateArticle'] === "templateArticle2") : ?>
+
+            <form action="<?= URL ?>kikiAdmin/ajout_1_photo" enctype="multipart/form-data" method="POST" class="containerForm">
+
+                <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+                <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
+                <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+                <input type="hidden" name="num_img1" value=1>
+                <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
+
+                <div class="entryForm">
+                    <label for="photo1">Photo</label>
+                    <input type="file" name="photo1" id="photo1">
+                </div>
+                <div class="entryForm">
+                    <label for="alt_img1">Description Image</label>
+                    <input type="text" name="alt_img1" id="alt_img1">
+                </div>
+                <div class="entryForm">
+                    <label for="lien1">Lien (facultatif)</label>
+                    <input type="text" name="lien1" id="lien1">
+                </div>
+
+                <div class="entryForm">
+                    <button type="submit">On publie 2!!!</button>
+                </div>
+            </form>
+        <?php endif ?>
 
         <!-- Template 3 -->
 

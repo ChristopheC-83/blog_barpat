@@ -82,8 +82,24 @@ try {
                     case "ajout_1_photo":
                         if ($_FILES['photo1']['size'] > 0) {
 
+                            // validation_image($_FILES['photo1'], $_POST);
+                            afficherTableau($_FILES['photo1']);
+                            afficherTableau($_POST);
+                        } else {
+                            ajouterMessageAlerte("Image non importée", "rouge");
+                            header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+                        }
+                        break;
+
+                    case "ajout_2_photos":
+                        if ($_FILES['photo1']['size'] > 0) {
+
                             validation_image($_FILES['photo1'], $_POST);
+                            validation_image2($_FILES['photo2'], $_POST);
+                            // validation_image($_FILES['photo1'], $_POST);
+                            // afficherTableau($_FILES);
                             // afficherTableau($_FILES['photo1']);
+                            // afficherTableau($_FILES['photo2']);
                             // afficherTableau($_POST);
                         } else {
                             ajouterMessageAlerte("Image non importée", "rouge");
