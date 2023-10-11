@@ -107,6 +107,8 @@
             <div class="entryForm">
                 <label for="slider">Dossier Slider</label>
                 <input type="text" name="slider" id="slider">
+                <!-- Pour moults fichiers simultanées -->
+                <!-- <input type="file" name="photo1[]" id="photo1" multiple> -->
             </div>
 
         <?php endif ?>

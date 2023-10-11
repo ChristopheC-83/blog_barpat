@@ -96,7 +96,6 @@ try {
 
                             validation_image($_FILES['photo1'], $_POST);
                             validation_image2($_FILES['photo2'], $_POST);
-                            // validation_image($_FILES['photo1'], $_POST);
                             // afficherTableau($_FILES);
                             // afficherTableau($_FILES['photo1']);
                             // afficherTableau($_FILES['photo2']);
