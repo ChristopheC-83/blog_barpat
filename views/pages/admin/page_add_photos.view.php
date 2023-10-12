@@ -37,6 +37,7 @@
                 <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
                 <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
                 <input type="hidden" name="num_img1" value=1>
+                <input type="hidden" name="num_img1" value=2>
                 <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
 
                 <div class="entryForm">
@@ -65,7 +66,7 @@
                     <input type="text" name="lien2" id="lien2">
                 </div>
                 <div class="entryForm">
-                    <button type="submit">On publie 1!!!</button>
+                    <button type="submit">On publie !</button>
                 </div>
             </form>
         <?php endif ?>
@@ -96,21 +97,34 @@
                 </div>
 
                 <div class="entryForm">
-                    <button type="submit">On publie 2!!!</button>
+                    <button type="submit">On publie !</button>
                 </div>
             </form>
         <?php endif ?>
 
         <!-- Template 3 -->
 
+
         <?php if ($infosArticle['templateArticle'] === "templateArticle3") : ?>
-            <div class="entryForm">
+            <form action="<?= URL ?>kikiAdmin/ajout_1_slider" enctype="multipart/form-data" method="POST" class="containerForm">
+
+            <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+                <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
+                <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+                <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
+
                 <label for="slider">Dossier Slider</label>
                 <input type="text" name="slider" id="slider">
                 <!-- Pour moults fichiers simultanées -->
-                <!-- <input type="file" name="photo1[]" id="photo1" multiple> -->
+                <label for="slider_files">Dossier Slider</label>
+                <input type="file" name="photo[]" id="slider_files" multiple>
             </div>
+            
+            <div class="entryForm">
+                    <button type="submit">On publie !</button>
+                </div>
 
+                </form>
         <?php endif ?>
 
         <!-- Template 4 -->

@@ -7,7 +7,8 @@ define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https"  
     $_SERVER["PHP_SELF"]));
 
 define("imgFolder", URL . "public/assets/images/");
-define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/images/");
+define("slidersFolder", URL . "public/assets/sliders/");
+define("sliderPath", "C:/xampp/htdocs/kiki/barpat_blog/public/assets/sliders/");
 // A changer lors du déploiment
 
 
@@ -105,6 +106,21 @@ try {
                             header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
                         }
                         break;
+
+                        case "ajout_1_slider":
+                            // if ($_FILES['photo1']['size'] > 0) {
+    
+                            // validation_image($_FILES['photo1'], $_POST);
+                            echo "files";
+                            afficherTableau($_FILES['photo']);
+                            echo "post";
+                            afficherTableau($_POST);
+                            echo ($_POST['repertoire'].$_POST["slider"]);
+                            // } else {
+                            //     ajouterMessageAlerte("Image non importée", "rouge");
+                            //     header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
+                            // }
+                            break;
 
 
 

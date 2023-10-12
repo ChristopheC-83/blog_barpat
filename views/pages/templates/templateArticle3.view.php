@@ -20,7 +20,7 @@ $textes
         <div class="sliderArticle">
 
             <?php for ($i = 1; $i <= $numFiles; $i++) :  ?>
-                <img src="<?= imgFolder . $slider['dossier'] . "/" . $i . ".png" ?>" alt="slider" class="imgSlider
+                <img src="<?= slidersFolder . $slider['dossier'] . "/" . $i . ".png" ?>" alt="slider" class="imgSlider
             <?= $i === 1 ? "imgSliderActive" : "" ?>
             ">
             <?php endfor ?>
