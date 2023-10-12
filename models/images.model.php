@@ -22,6 +22,22 @@ function ajoutImageBdd($id_article, $num_img, $url_img, $alt_img, $lien)
     return $validationOk;
 }
 
+function ajoutSliderFileBdd($path, $id_article){
+    $req = "INSERT INTO slider
+    (dossier, id_article)
+    values(:dossier, :id_article)
+
+        ";
+$stmt = getBDD()->prepare($req);
+$stmt->bindValue(":dossier", $path, PDO::PARAM_STR);
+$stmt->bindValue(":id_article", $id_article, PDO::PARAM_STR);
+$stmt->execute();
+$validationOk = ($stmt->rowCount() > 0);
+$stmt->closeCursor();
+return $validationOk;
+
+}
+
 
 // function getImageUser($login)
 // {
