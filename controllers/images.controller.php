@@ -112,3 +112,13 @@ function validation_slider($file, $post)
 
     ajoutSliderFileBdd(($post['theme'] . "/" . $post['slider']), $post['id_article']);
 }
+
+function ajouterVideo($lien_video, $id_article, $theme, $url)
+{
+    if (ajouterVideoBd($lien_video, $id_article)) {
+        header('location:' . URL . "article/" . $theme . "/" . $id_article . "/" . $url);
+    } else {
+        ajouterMessageAlerte("Video non importée", "rouge");
+        header('location:' . URL . "kikiAdmin/ajout_1_video/" . $id_article);
+    }
+}

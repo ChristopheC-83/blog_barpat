@@ -17,10 +17,10 @@ $textes
         <p><?= $textes[0]['texte'] ?></p>
 
         <div class="iframeVideo">
-            <iframe width="560" height="315" src="<?= $images[0]['url_img'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="<?= $video['lien_video'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
-
+        <a href="https://www.youtube.com/embed/D629D-eJ-a0?si=Noaq5rBiL03hm04X">Lien de la video</a>
+   
 
     </section>
 

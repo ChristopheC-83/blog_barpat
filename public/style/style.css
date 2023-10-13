@@ -763,6 +763,20 @@ footer {
   margin-left: 50px;
 }
 
+.pagesAdmin h1 {
+  text-align: center;
+}
+.pagesAdmin .btnAdmin {
+  padding: 10px 20px;
+  background: linear-gradient(45deg, rgb(251, 0, 199) 0%, rgb(219, 209, 56) 100%);
+  border-radius: 10px;
+  margin: 20px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .infoArticleEnCours {
   margin-bottom: 20px;
 }

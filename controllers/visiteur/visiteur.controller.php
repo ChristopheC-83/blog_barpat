@@ -31,6 +31,7 @@ function pageArticle($id_article)
     $meta = $infosArticle['titre'];
     $templateArticle = $infosArticle['templateArticle'];
     $slider = getSlider($id_article);
+    $video = getVideo($id_article);
     $numFiles = 0;
     $dossier_slider = "";
     if ($slider && isset($slider['dossier'])) {
@@ -49,6 +50,7 @@ function pageArticle($id_article)
         "images" => $images,
         "textes" => $textes,
         "slider" => $slider,
+        "video" => $video,
         "numFiles" => $numFiles,
         "dossier_slider" => $dossier_slider,
         "templateArticle" => $templateArticle,

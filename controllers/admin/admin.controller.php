@@ -15,7 +15,7 @@ function pageAdmin()
         "page_title" => "Page d'aministration !",
         "view" => "views/pages/admin/admin.view.php",
         "template" => "views/commons/template.php",
-        // "js" => ['animation_grille.js'],
+        "js" => ['administration.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
     ];

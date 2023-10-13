@@ -108,7 +108,7 @@
         <?php if ($infosArticle['templateArticle'] === "templateArticle3") : ?>
             <form action="<?= URL ?>kikiAdmin/ajout_1_slider" enctype="multipart/form-data" method="POST" class="containerForm">
 
-            <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+                <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
                 <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
                 <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
                 <input type="hidden" name="repertoire" value="<?= "public/assets/images/" . $infosArticle['theme'] . "/"  ?>">
@@ -118,31 +118,37 @@
                 <!-- Pour moults fichiers simultanées -->
                 <label for="slider_files">Dossier Slider</label>
                 <input type="file" name="photo[]" id="slider_files" multiple>
-            </div>
-            
-            <div class="entryForm">
+
+
+                <div class="entryForm">
                     <button type="submit">On publie !</button>
                 </div>
 
-                </form>
+            </form>
         <?php endif ?>
 
         <!-- Template 4 -->
 
         <?php if ($infosArticle['templateArticle'] === "templateArticle4") : ?>
-            <div class="entryForm">
-                <label for="slider">Dossier Slider (ssi templateArticle 3)</label>
-                <input type="text" name="slider" id="slider">
-            </div>
+            <form action="<?= URL ?>kikiAdmin/ajout_1_video" enctype="multipart/form-data" method="POST" class="containerForm">
+                <div class="entryForm">
+                    <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+                    <input type="hidden" name="url" value="<?= $infosArticle['url']  ?>">
+                    <input type="hidden" name="theme" value="<?= $infosArticle['theme']  ?>">
+                    <label for="video">Lien de la vidéo :</label>
+                    <input type="text" name="video" id="video">
+                </div>
+                <div class="entryForm">
+                    <button type="submit">On publie !</button>
+                </div>
+
+            </form>
 
         <?php endif ?>
 
-
-        <!-- <div class="entryForm">
-            <button type="submit">On publie !!!</button>
-        </div> -->
 
 
 
 
     </div>
+</div>

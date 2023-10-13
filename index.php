@@ -126,6 +126,32 @@ try {
                         }
                         break;
 
+                    case "ajout_1_video":
+                        $id_article = $_POST['id_article'];
+                        $theme = $_POST['theme'];
+                        $url = $_POST['url'];
+                        $lien_video = $_POST['video'];
+                        // echo $id_article;
+                        // echo "<br>";
+                        // echo $theme;
+                        // echo "<br>";
+                        // echo $url;
+                        // echo "<br>";
+                        // echo $lien_video;
+                        // echo "<br>";
+                        ajouterVideo($lien_video, $id_article, $theme, $url);
+
+                        // if (ajouterVideo($lien_video, $id_article)) {
+                            // header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
+                        // } else {
+
+                        //     ajouterMessageAlerte("Video non importée dès le départ", "rouge");
+                        //     header('location:' . URL . "kikiAdmin/ajout_1_video/" . $_POST['id_article']);
+                        // }
+
+
+                        break;
+
 
 
 

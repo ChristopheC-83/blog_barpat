@@ -1,3 +1,23 @@
-.infoArticleEnCours{
-    margin-bottom: 20px;
+.pagesAdmin {
+  h1 {
+    text-align: center;
+  }
+
+  .btnAdmin {
+    padding: 10px 20px;
+
+    background: linear-gradient(
+      45deg,
+      rgba(251, 0, 199, 1) 0%,
+      rgba(219, 209, 56, 1) 100%
+    );
+    border-radius: 10px;
+    margin: 20px;
+    width: 200px;
+    @include flexMid;
+  }
+}
+
+.infoArticleEnCours {
+  margin-bottom: 20px;
 }

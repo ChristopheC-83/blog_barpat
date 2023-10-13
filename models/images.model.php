@@ -22,45 +22,32 @@ function ajoutImageBdd($id_article, $num_img, $url_img, $alt_img, $lien)
     return $validationOk;
 }
 
-function ajoutSliderFileBdd($path, $id_article){
+function ajoutSliderFileBdd($path, $id_article)
+{
     $req = "INSERT INTO slider
     (dossier, id_article)
     values(:dossier, :id_article)
-
         ";
-$stmt = getBDD()->prepare($req);
-$stmt->bindValue(":dossier", $path, PDO::PARAM_STR);
-$stmt->bindValue(":id_article", $id_article, PDO::PARAM_STR);
-$stmt->execute();
-$validationOk = ($stmt->rowCount() > 0);
-$stmt->closeCursor();
-return $validationOk;
-
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":dossier", $path, PDO::PARAM_STR);
+    $stmt->bindValue(":id_article", $id_article, PDO::PARAM_STR);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
 }
 
-
-// function getImageUser($login)
-// {
-//     $req = "SELECT image FROM user_management WHERE login = :login";
-//     $stmt = getBDD()->prepare($req);
-//     $stmt->bindValue(":login", $login, PDO::PARAM_STR);
-//     $stmt->execute();
-//     $resultat = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $stmt->closeCursor();
-//     return $resultat['image'];
-// }
-
-// function modifImageBD($login, $image, $img_site)
-// {
-//     $req = "UPDATE user_management set image = :image, img_site = :img_site
-//                 WHERE login = :login
-//                 ";
-//     $stmt = getBDD()->prepare($req);
-//     $stmt->bindValue(":login", $login, PDO::PARAM_STR);
-//     $stmt->bindValue(":image", $image, PDO::PARAM_STR);
-//     $stmt->bindValue(":img_site", $img_site, PDO::PARAM_INT);
-//     $stmt->execute();
-//     $validationOk = ($stmt->rowCount() > 0);
-//     $stmt->closeCursor();
-//     return $validationOk;
-// }
+function ajouterVideoBd($lien_video, $id_article)
+{
+    $req = "INSERT INTO videos
+    (lien_video, id_article)
+    values(:lien_video, :id_article)
+        ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(":lien_video", $lien_video, PDO::PARAM_STR);
+    $stmt->bindValue(":id_article", $id_article, PDO::PARAM_STR);
+    $stmt->execute();
+    $validationOk = ($stmt->rowCount() > 0);
+    $stmt->closeCursor();
+    return $validationOk;
+}

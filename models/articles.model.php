@@ -93,7 +93,18 @@ function getSlider($id_article)
     return $infos;
 }
 
-
+function getVideo($id_article)
+{
+    $req = "SELECT * FROM videos 
+        WHERE id_article = :id_article
+        ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->bindValue(':id_article', $id_article, PDO::PARAM_INT);
+    $stmt->execute();
+    $infos = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $infos;
+}
 
 
 
