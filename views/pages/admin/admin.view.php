@@ -1,5 +1,7 @@
 <div class="container pagesAdmin">
-    <h1>Administration</h1>
+    <a href="deconnexion">
+        <h1>Administration</h1>
+    </a>
 
     <div class="btnAdminBox container">
 

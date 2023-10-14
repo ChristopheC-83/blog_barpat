@@ -1,6 +1,10 @@
 const card3D = document.querySelectorAll(".link_card");
 
 card3D.forEach((el) => {
+  el.addEventListener("onmouseover", () => {
+    console.log("je suis over!!!");
+  });
+
   el.addEventListener("mousemove", (e) => {
     let elRect = el.getBoundingClientRect();
     let x = e.clientX - elRect.left;
@@ -20,19 +24,24 @@ card3D.forEach((el) => {
     el.children[0].style.transition = "transform 0.75s";
     el.children[0].style.transform = `rotateX(0deg) rotateY(0deg)`;
   });
+
+  
 });
 
 // ############################
 // animation cartes seulement accueil
 
-const articleCard = document.querySelectorAll(".articleCard");
 const currentUrl = window.location.href;
+const delay = 50;
 
 const isHomepage = "http://localhost:8090/kiki/barpat_blog/";
 const isAccueil = "http://localhost:8090/kiki/barpat_blog/accueil";
 
-articleCard.forEach((element) => {
+card3D.forEach((element) => {
   if (currentUrl === isHomepage || currentUrl === isAccueil) {
+    element.classList.add("dnone");
+    element.classList.remove("dnone");
+
     element.classList.add("apparitionCard");
   }
 });

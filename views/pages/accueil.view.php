@@ -6,6 +6,11 @@
       <h3>Développeur Web, je vous partage mes expériences, mon parcours.</h3>
    </div>
 
+
+   <!-- <?php
+         echo password_hash("mot de passe", PASSWORD_DEFAULT)
+
+         ?> -->
    <!-- <div class="test">
      <a href="https://google.fr">lien</a>
    </div> -->
@@ -19,6 +24,6 @@
       <?php endforeach ?>
 
    </div>
-   
-   
+
+
 </div>
