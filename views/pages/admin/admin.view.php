@@ -1,13 +1,53 @@
 <div class="container pagesAdmin">
-    <h1>Création d'articles</h1>
+    <h1>Administration</h1>
 
-    <div class="btnAdmin">
+    <div class="btnAdminBox container">
 
-        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/create_article">Nouvel Article</a></div>
-        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/write_text">Ajouter du Texte</a></div>
-        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/insert_photos_slider">Ajouter Photos ou Slider</a></div>
-        <div class="btnAdmin"> <a href="<?= URL ?>kikiAdmin/update">MAJ</a></div>
+        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/create_article"><p>Nouvel Article</p></a></div>
+        <div class="btnAdmin" id="btnAddTxt">
+            <p>Ajouter du Texte</p>
+        </div>
+
+
+        <div class="btnAdmin" id="btnAddMedia">
+            <p>Ajouter Media</p>
+        </div>
+
     </div>
+
+    <div class="container listeArticles writeList dnone">
+        <h3>Ecrire du texte pour quel article ? (seuls les vierges apparaissent)</h3>
+
+        <ul>
+            <?php foreach ($articlesWithoutText as $article) : ?>
+
+                <a href="kikiAdmin/write_text/<?= $article['id_article'] ?>">
+                    <li class="articleInList">
+                        <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
+                    </li>
+                </a>
+
+            <?php endforeach ?>
+
+        </ul>
+    </div>
+    <div class="container listeArticles addPhotoList dnone">
+        <h3>Ajouter un média pour quel article ? (seuls les vierges apparaissent)</h3>
+        <ul>
+
+            <?php foreach ($articleWithoutMedia as $article) : ?>
+                <a href="kikiAdmin/insert_photos_slider/<?= $article['id_article'] ?>">
+                    <li class="articleInList">
+                        <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
+                    </li>
+                </a>
+
+            <?php endforeach ?>
+
+        </ul>
+    </div>
+
+
 
 
 </div>

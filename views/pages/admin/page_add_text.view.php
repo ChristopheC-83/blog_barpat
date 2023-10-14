@@ -43,7 +43,7 @@
         </div>
 
         <div class="entryForm">
-            <button type="submit">On ajoute les textes !</button>
+            <button type="submit"><p>Textes OK<br> Aux Médias !</p></button>
         </div>
 
     </form>

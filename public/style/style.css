@@ -106,6 +106,10 @@ p {
   line-height: clamp(20px, 20px + 1vw, 33px);
 }
 
+.flex {
+  display: flex;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;
@@ -450,7 +454,7 @@ footer {
 }
 
 .apparitionCard {
-  animation: apparitionCard 0.5s linear;
+  animation: apparitionCard 0.75s linear forwards;
 }
 
 @keyframes apparitionCard {
@@ -719,13 +723,17 @@ footer {
 .entryForm {
   display: flex;
   flex-direction: column;
-  border: 3px solid rgb(83, 1, 83);
+  border: 5px solid black;
   border-radius: 10px;
   padding: 15px 10px;
-  background: #aaa;
+  background: linear-gradient(34deg, rgba(234, 0, 255, 0.9) 0%, rgba(238, 184, 6, 0.9) 80%);
 }
 .entryForm label {
   color: #222;
+  font-weight: bold;
+  padding-bottom: 5px;
+  font-size: clamp(16px, 14px + 0.6vw, 20px);
+  line-height: clamp(20px, 20px + 1vw, 33px);
 }
 .entryForm input,
 .entryForm select,
@@ -739,16 +747,25 @@ footer {
   min-height: 80px;
 }
 .entryForm button {
-  width: 50%;
+  width: clamp(250px, 50%, 80%);
   font-size: 30px;
   border-radius: 10px;
   margin: 0 auto;
   padding: 10px;
   transition: all 0.3s;
 }
+.entryForm button p {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(34deg, rgb(234, 0, 255) 0%, rgb(238, 184, 6) 80%);
+  color: transparent;
+  font-size: clamp(20px, 20px + 1vw, 29px);
+  letter-spacing: calc(1px + 0.02vw);
+  font-weight: bold;
+}
 .entryForm button:hover {
   transform: scale(1.02);
-  background-color: #ccc;
+  background-color: white;
 }
 
 .table {
@@ -766,19 +783,39 @@ footer {
 .pagesAdmin h1 {
   text-align: center;
 }
+.pagesAdmin .btnAdminBox {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+.pagesAdmin .btnAdminMiniBox {
+  display: flex;
+}
 .pagesAdmin .btnAdmin {
   padding: 10px 20px;
-  background: linear-gradient(45deg, rgb(251, 0, 199) 0%, rgb(219, 209, 56) 100%);
-  border-radius: 10px;
+  background: linear-gradient(34deg, rgb(234, 0, 255) 0%, rgb(238, 184, 6) 80%);
   margin: 20px;
+  border-radius: 10px;
   width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.pagesAdmin .btnAdmin:hover {
+  font-weight: bold;
+}
 
 .infoArticleEnCours {
   margin-bottom: 20px;
+}
+
+#btnAddMedia, #btnAddTxt {
+  cursor: pointer;
 }
 
 .templateArticle1 {

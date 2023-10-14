@@ -9,6 +9,8 @@ function pageAdmin()
 {
     $infosArticles = getAllInfos();
     $themes = getAllThemes();
+    $articlesWithoutText = articleWithoutText();
+    $articleWithoutMedia = articleWithoutMedia();
 
     $data_page = [
         "meta_description" => "Page d'aministration",
@@ -18,9 +20,19 @@ function pageAdmin()
         "js" => ['administration.js'],
         "infosArticles" => $infosArticles,
         "themes" => $themes,
+        "articlesWithoutText" => $articlesWithoutText,
+        "articleWithoutMedia" => $articleWithoutMedia,
     ];
     genererPage($data_page);
 }
+
+
+
+
+
+
+
+
 
 
 // #################################
@@ -64,7 +76,7 @@ function validationCreationArticle($POST)
         $allId = getIdFromArticles();
         $lastId = end($allId)['id_article'];
         ajouterMessageAlerte("Creation de l'article " . $lastId . " effectuée !", "vert");
-        header('location:' . URL . "kikiAdmin/write_text/".$lastId);
+        header('location:' . URL . "kikiAdmin/write_text/" . $lastId);
     }
 }
 
@@ -101,25 +113,39 @@ function validationText($POST)
         !isset($id_article) || $id_article === "" ||
         !isset($num_article_1) || $num_article_1 === "" ||
         !isset($num_article_2) || $num_article_2 === "" ||
-        !isset($titre1) || $titre1 == "" 
+        !isset($titre1) || $titre1 == ""
     ) {
-        if(isset($texte1)){$_SESSION['texte1']=$texte1;}
-        if(isset($titre2)){$_SESSION['titre2']=$titre2;}
-        if(isset($texte2)){$_SESSION['texte2']=$texte2;}
+        if (isset($texte1)) {
+            $_SESSION['texte1'] = $texte1;
+        }
+        if (isset($titre2)) {
+            $_SESSION['titre2'] = $titre2;
+        }
+        if (isset($texte2)) {
+            $_SESSION['texte2'] = $texte2;
+        }
         ajouterMessageAlerte("Il faut renseigner au moins le champs Titre 1", "rouge");
-        header('location:' . URL . "kikiAdmin/write_text/".$id_article);
+        header('location:' . URL . "kikiAdmin/write_text/" . $id_article);
     } else {
         validationTextBdd($id_article, $num_article_1, $titre1, $texte1);
         validationTextBdd($id_article, $num_article_2, $titre2, $texte2);
         $allId = getIdFromArticles();
         $lastId = end($allId)['id_article'];
         ajouterMessageAlerte("Les textes de l'article " . $lastId . " ont été sauvegardés !", "vert");
-        if(isset($texte1)){unset($_SESSION['texte1']);}
-        if(isset($titre1)){unset($_SESSION['titre1']);}
-        if(isset($titre2)){unset($_SESSION['titre2']);}
-        if(isset($texte2)){unset($_SESSION['texte2']);}
-        
-        header('location:' . URL . "kikiAdmin/insert_photos_slider/".$lastId);
+        if (isset($texte1)) {
+            unset($_SESSION['texte1']);
+        }
+        if (isset($titre1)) {
+            unset($_SESSION['titre1']);
+        }
+        if (isset($titre2)) {
+            unset($_SESSION['titre2']);
+        }
+        if (isset($texte2)) {
+            unset($_SESSION['texte2']);
+        }
+
+        header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $lastId);
     }
 }
 

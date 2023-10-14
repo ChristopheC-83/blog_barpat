@@ -3,21 +3,44 @@
     text-align: center;
   }
 
+  .btnAdminBox {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+  }
+
+  .btnAdminMiniBox{
+    display: flex;
+    // flex-wrap: wrap;
+  }
+
   .btnAdmin {
     padding: 10px 20px;
 
     background: linear-gradient(
-      45deg,
-      rgba(251, 0, 199, 1) 0%,
-      rgba(219, 209, 56, 1) 100%
+      34deg,
+      rgb(234, 0, 255) 0%,
+      rgb(238, 184, 6) 80%
     );
-    border-radius: 10px;
     margin: 20px;
+    border-radius: 10px;
     width: 200px;
     @include flexMid;
+    
+  &:hover{
+    font-weight: bold;
+  }
   }
 }
 
 .infoArticleEnCours {
   margin-bottom: 20px;
+}
+
+#btnAddMedia, #btnAddTxt{
+  cursor: pointer;
 }

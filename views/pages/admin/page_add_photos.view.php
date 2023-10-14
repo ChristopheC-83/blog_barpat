@@ -66,7 +66,7 @@
                     <input type="text" name="lien2" id="lien2">
                 </div>
                 <div class="entryForm">
-                    <button type="submit">On publie !</button>
+                    <button type="submit"><p>On publie !</p></button>
                 </div>
             </form>
         <?php endif ?>
@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="entryForm">
-                    <button type="submit">On publie !</button>
+                    <button type="submit"><p>On publie !</p></button>
                 </div>
             </form>
         <?php endif ?>
@@ -121,7 +121,7 @@
 
 
                 <div class="entryForm">
-                    <button type="submit">On publie !</button>
+                    <button type="submit"><p>On publie !</p></button>
                 </div>
 
             </form>
@@ -139,7 +139,7 @@
                     <input type="text" name="video" id="video">
                 </div>
                 <div class="entryForm">
-                    <button type="submit">On publie !</button>
+                    <button type="submit"><p>On publie !</p></button>
                 </div>
 
             </form>

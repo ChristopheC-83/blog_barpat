@@ -37,7 +37,7 @@
                 <input type="text" name="pitch" id="pitch">
             </div>
             <div class="entryForm">
-                <button type="submit">On envoie table_articles !</button>
+                <button type="submit"><p>On crée<br>On ajoute du texte !</p></button>
             </div>
         </form>
     </div>
