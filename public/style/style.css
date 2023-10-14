@@ -782,6 +782,11 @@ footer {
 
 .pagesAdmin h1 {
   text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(34deg, rgb(234, 0, 255) 0%, rgb(238, 184, 6) 80%);
+  color: transparent;
+  text-shadow: none;
 }
 .pagesAdmin .btnAdminBox {
   width: 100%;
@@ -814,7 +819,8 @@ footer {
   margin-bottom: 20px;
 }
 
-#btnAddMedia, #btnAddTxt {
+#btnAddMedia,
+#btnAddTxt {
   cursor: pointer;
 }
 
