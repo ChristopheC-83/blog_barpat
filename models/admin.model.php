@@ -45,3 +45,14 @@ function validationTextBdd($id_article, $num_article, $titre, $texte)
     $stmt->closeCursor();
     return $texte;
 }
+
+function deleteArticleBD($id_article)
+{
+
+    $req = 'DELETE FROM articles WHERE id_article= :id_article ';
+    $stmt = getBdd()->prepare($req);
+    $stmt->bindValue(":id_article", $id_article, PDO::PARAM_INT);
+    $stmt->execute();
+    $stmt->closeCursor();
+    return true;
+}

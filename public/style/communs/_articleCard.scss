@@ -9,6 +9,22 @@
   perspective: 1000px;
   // transition: all 0.1s;
 }
+.delete_article {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background-color: red;
+  color: white;
+  border: 3px solid black;
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: bold;
+  @include flexMid;
+  z-index: 10;
+  cursor: pointer;
+}
 
 .articleCard {
   width: 100%;
@@ -30,13 +46,9 @@
     border: 2px solid $blanc;
     box-shadow: 0px 0px 10px $noir, 0px 0px 5px $noir inset;
   }
-
-
 }
 
-
-.articleCard_darkMode{
-
+.articleCard_darkMode {
   border: 1px solid $blanc;
   box-shadow: 1px 1px 5px $blanc;
   &:hover {

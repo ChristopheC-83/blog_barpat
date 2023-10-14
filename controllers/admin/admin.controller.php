@@ -180,6 +180,21 @@ function pagesPhotos($id)
 }
 
 
+#############################
+//  suppreesion articles
+
+function delete_article($id_article){
+    
+    $infosArticle = getInfosArticle($id_article);
+    if(deleteArticleBD($id_article)){
+        ajouterMessageAlerte("Article ". $infosArticle['titre']." effacé !", "vert");
+        header('location:' . URL );
+    } else{
+        ajouterMessageAlerte("Suppression non effectuée", "rouge");
+        header('location:' . URL );
+    }
+}
+
 
 
 

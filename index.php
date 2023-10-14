@@ -113,9 +113,9 @@ try {
                         case "ajout_1_photo":
                             if ($_FILES['photo1']['size'] > 0) {
 
-                                // validation_image($_FILES['photo1'], $_POST);
-                                afficherTableau($_FILES['photo1']);
-                                afficherTableau($_POST);
+                                validation_image($_FILES['photo1'], $_POST);
+                                // afficherTableau($_FILES['photo1']);
+                                // afficherTableau($_POST);
                             } else {
                                 ajouterMessageAlerte("Image non importée", "rouge");
                                 header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
@@ -182,7 +182,11 @@ try {
 
                             break;
 
+                    case "delete_article":
+                            delete_article($url[2]);
 
+
+                        break;
 
 
 

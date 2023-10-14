@@ -7,10 +7,15 @@ $textes
 
 
 <article class="container">
+    <?php if (estConnecte()) : ?>
+        <a class="delete_article" href="<?= URL ?>kikiAdmin/delete_article/<?= $infosArticle['id_article'] ?>">
+            <p>X</p>
+        </a>
+    <?php endif ?>
 
     <?php if (isset($textes[0]['titre'])) : ?>
 
-        <?php require_once("./views/pages/templates/".$infosArticle['templateArticle'].".view.php") ?>
+        <?php require_once("./views/pages/templates/" . $infosArticle['templateArticle'] . ".view.php") ?>
 
     <?php else : ?>
 

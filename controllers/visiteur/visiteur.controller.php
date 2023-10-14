@@ -44,7 +44,7 @@ function pageArticle($id_article)
         "page_title" => "repaire d'un dev !",
         "view" => "views/pages/templateArticle.view.php",
         "template" => "views/commons/template.php",
-        // "js"=>['slider.js'],
+        "js"=>['administration.js'],
         "themes" => $themes,
         "infosArticle" => $infosArticle,
         "images" => $images,
