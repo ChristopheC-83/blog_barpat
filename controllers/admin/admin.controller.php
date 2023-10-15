@@ -197,11 +197,11 @@ function delete_article($id_article, $elt1, $elt2, $folderToDelete)
     // echo "<br>";
 
     switch (true) {
-        case ($elt1 === null && $elt2 === null && $folderToDelete === null):
+        case ($elt1 === "" && $folderToDelete === null):
             deleteArticleBD($id_article);
             ajouterMessageAlerte("suppression article !!!", "vert");
             return true;
-        case ($folderToDelete !== null && $elt1 === null && $elt2 === null):
+        case ($folderToDelete !== "" && $elt1 === "" ):
             if (deleteFilesSlider($folderToDelete)) {
                 deleteArticleBD($id_article);
                 ajouterMessageAlerte("Dossier Slider et article effacés !!!", "vert");
@@ -210,28 +210,29 @@ function delete_article($id_article, $elt1, $elt2, $folderToDelete)
                 ajouterMessageAlerte("Dossier Slider toujours là !!!", "rouge");
                 return false;
             }
-        case ($elt1 !== null && $elt2 !== null && $folderToDelete === null):
+        case ($elt1 !== "" && $elt2 === "" && $folderToDelete === null):
+            if (unlink($elt1)) {
+                deleteArticleBD($id_article);
+                ajouterMessageAlerte("suppression image 1 ok!!!", "vert");
+                return true;
+            } else {
+                ajouterMessageAlerte("Image 1 T2 toujours là !!!", "rouge");
+                return false;
+            }
+        case ($elt1 !== "" && $elt2 !== "" && $folderToDelete === null):
             if (unlink($elt2)) {
                 if (unlink($elt1)) {
                     deleteArticleBD($id_article);
                     ajouterMessageAlerte("suppression image 1 & 2 ok !!!", "vert");
                     return true;
                 } else {
-                    ajouterMessageAlerte("Images 1  toujours là !!!", "rouge");
+                    ajouterMessageAlerte("Images 1 T1 toujours là !!!", "rouge");
                 }
             } else {
-                ajouterMessageAlerte("Images  2 toujours là !!!", "rouge");
+                ajouterMessageAlerte("Images  2  T1 toujours là !!!", "rouge");
                 return false;
             }
-        case ($elt1 !== null && $elt2 === null && $folderToDelete === null):
-            if (unlink($elt1)) {
-                deleteArticleBD($id_article);
-                ajouterMessageAlerte("suppression image 1 ok!!!", "vert");
-                return true;
-            } else {
-                ajouterMessageAlerte("Image 1 toujours là !!!", "rouge");
-                return false;
-            }
+
         default:
             return false;
     }
