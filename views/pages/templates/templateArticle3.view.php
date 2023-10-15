@@ -9,8 +9,14 @@ $textes
 
 
 <article class="container templateArticle3">
-    
-   
+
+    <?php if (estConnecte()) : ?>
+        <form action="<?= URL ?>kikiAdmin/delete_article_template3" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+            <input type="hidden" name="folderToDelete" value="public/assets/sliders/<?= $slider['dossier'] ?>">
+            <button class="btnDelete">3</button>
+        </form>
+    <?php endif ?>
 
     <h1 class="titre_article"><?= html_entity_decode($textes[0]['titre']) ?></h1>
 

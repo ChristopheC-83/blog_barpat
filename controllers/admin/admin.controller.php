@@ -181,74 +181,69 @@ function pagesPhotos($id)
 
 
 #############################
-//  suppreesion articles
+//  suppression articles
 
-
-function delete_article($id_article, $elt1, $elt2, $folderToDelete)
+function delete_article_template1($id_article, $fileToDelete1, $fileToDelete2)
 {
-
-    // echo $id_article;
-    // echo "<br>";
-    // echo ($elt1==="" ?"":"elt1 = ".$elt1);
-    // echo "<br>";
-    // echo ($elt2==="" ?"":"elt2 = ".$elt2);
-    // echo "<br>";
-    // echo ($folderToDelete==="" ?"":"folderToDelete = ".$folderToDelete);
-    // echo "<br>";
-
-    switch (true) {
-        case ($elt1 === "" && $folderToDelete === null):
+    if (unlink($fileToDelete2)) {
+        if (unlink($fileToDelete1)) {
             deleteArticleBD($id_article);
-            ajouterMessageAlerte("suppression article !!!", "vert");
+            ajouterMessageAlerte("Article template 1 effacé !!!", "vert");
             return true;
-        case ($folderToDelete !== "" && $elt1 === "" ):
-            if (deleteFilesSlider($folderToDelete, $id_article)) {
-              
-                ajouterMessageAlerte("Dossier Slider et article effacés !!!", "vert");
-                return true;
-            } else {
-                ajouterMessageAlerte("Dossier Slider toujours là !!!", "rouge");
-                return false;
-            }
-        case ($elt1 !== "" && $elt2 === "" && $folderToDelete === null):
-            if (unlink($elt1)) {
-                deleteArticleBD($id_article);
-                ajouterMessageAlerte("suppression image 1 ok!!!", "vert");
-                return true;
-            } else {
-                ajouterMessageAlerte("Image 1 T2 toujours là !!!", "rouge");
-                return false;
-            }
-        case ($elt1 !== "" && $elt2 !== "" && $folderToDelete === null):
-            if (unlink($elt2)) {
-                if (unlink($elt1)) {
-                    deleteArticleBD($id_article);
-                    ajouterMessageAlerte("suppression image 1 & 2 ok !!!", "vert");
-                    return true;
-                } else {
-                    ajouterMessageAlerte("Images 1 T1 toujours là !!!", "rouge");
-                }
-            } else {
-                ajouterMessageAlerte("Images  2  T1 toujours là !!!", "rouge");
-                return false;
-            }
-
-        default:
-            return false;
+        } else {
+            ajouterMessageAlerte("Images 1 T1 toujours là !!!", "rouge");
+        }
+    } else {
+        ajouterMessageAlerte("Images  2  T1 toujours là !!!", "rouge");
+        return false;
+    }
+}
+function delete_article_template2($id_article, $fileToDelete1)
+{
+    if (unlink($fileToDelete1)) {
+        deleteArticleBD($id_article);
+        ajouterMessageAlerte("Article template 2 effacé !!!", "vert");
+        return true;
+    } else {
+        ajouterMessageAlerte("Images  2  T1 toujours là !!!", "rouge");
+        return false;
+    }
+}
+function delete_article_template3($id_article, $folderToDelete)
+{
+    if (deleteArticleBD($id_article)) {
+        deleteFilesSlider($folderToDelete);
+        ajouterMessageAlerte("Article template 3 effacé !!!", "vert");
+        return true;
+    } else {
+        ajouterMessageAlerte("Dossier Slider toujours là !!!", "rouge");
+        return false;
+    }
+}
+function delete_article_template4($id_article, )
+{
+    if (deleteArticleBD($id_article)) {
+        ajouterMessageAlerte("Article template 4 effacé !!!", "vert");
+        return true;
+    } else {
+        ajouterMessageAlerte("Dossier Slider toujours là !!!", "rouge");
+        return false;
     }
 }
 
-
-function deleteFilesSlider($folder, $id_article)
+function deleteFilesSlider($folder)
 {
 
     $fichiers = glob($folder . '/*');
     foreach ($fichiers as $fichier) {
-            unlink($fichier);
+        unlink($fichier);
     }
     rmdir($folder);
-    deleteArticleBD($id_article);
 }
+
+
+
+
 
 
 

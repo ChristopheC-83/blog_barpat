@@ -114,8 +114,6 @@ try {
                             if ($_FILES['photo1']['size'] > 0) {
 
                                 validation_image($_FILES['photo1'], $_POST);
-                                // afficherTableau($_FILES['photo1']);
-                                // afficherTableau($_POST);
                             } else {
                                 ajouterMessageAlerte("Image non importée", "rouge");
                                 header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
@@ -137,12 +135,8 @@ try {
                             if ($_FILES['photo']['size'][0] > 0) {
 
                                 if (validation_slider($_FILES['photo'], $_POST)) {
-                                    // echo "files";
-                                    // afficherTableau($_FILES['photo']);
-                                    // echo "post";
-                                    // afficherTableau($_POST);
-                                    // echo ($_POST['repertoire'].$_POST["slider"]);
-                                    // echo ("longueur : ".count(($_FILES['photo']['name'])));
+                                    ajouterMessageAlerte("Slider importé", "vert");
+                                    header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
                                 } else {
                                     header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
                                 }
@@ -157,47 +151,58 @@ try {
                             $theme = $_POST['theme'];
                             $url = $_POST['url'];
                             $lien_video = $_POST['video'];
-                            // echo $id_article;
-                            // echo "<br>";
-                            // echo $theme;
-                            // echo "<br>";
-                            // echo $url;
-                            // echo "<br>";
-                            // echo $lien_video;
-                            // echo "<br>";
-                            ajouterVideo($lien_video, $id_article, $theme, $url);
 
-                            // if (ajouterVideo($lien_video, $id_article)) {
-                            // header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
-                            // } else {
+                            ajouterMessageAlerte("Video bien importée ", "vert");
+                            header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
 
-                            //     ajouterMessageAlerte("Video non importée dès le départ", "rouge");
-                            //     header('location:' . URL . "kikiAdmin/ajout_1_video/" . $_POST['id_article']);
-                            // }
 
 
                             break;
 
-                        case "delete_article":
-                            // afficherTableau($_POST);
+                        case "delete_article_template1":
                             $id_article = $_POST['id_article'];
                             $fileToDelete1 = $_POST['fileToDelete1'];
                             $fileToDelete2 = $_POST['fileToDelete2'];
+
+                            if (delete_article_template1($id_article, $fileToDelete1, $fileToDelete2)) {
+                                ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
+                                header('location:' . URL);
+                            } else {
+                                ajouterMessageAlerte("Echec article " . $id_article, "rouge");
+                                header('location:' . URL);
+                            }
+
+                            break;
+                        case "delete_article_template2":
+                            $id_article = $_POST['id_article'];
+                            $fileToDelete1 = $_POST['fileToDelete1'];
+
+                            if (delete_article_template2($id_article, $fileToDelete1)) {
+                                ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
+                                header('location:' . URL);
+                            } else {
+                                ajouterMessageAlerte("Echec article " . $id_article, "rouge");
+                                header('location:' . URL);
+                            }
+
+                            break;
+                        case "delete_article_template3":
+                            $id_article = $_POST['id_article'];
                             $folderToDelete = $_POST['folderToDelete'];
-                            // if (!isset($_POST['fileToDelete2'])) {
-                            //     $fileToDelete2 = $_POST['fileToDelete2'];
-                            // } else {
-                            //     $fileToDelete2 = null;
-                            // }
-                            // if (!isset($_POST['folderToDelete'])) {
-                            //     $folderToDelete = $_POST['folderToDelete'];
-                            // } else {
-                            //     $folderToDelete = null;
-                            // }
 
-                            // delete_article($id_article, $fileToDelete1, $fileToDelete2,$folderToDelete);
+                            if (delete_article_template3($id_article, $folderToDelete)) {
+                                ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
+                                header('location:' . URL);
+                            } else {
+                                ajouterMessageAlerte("Echec article " . $id_article, "rouge");
+                                header('location:' . URL);
+                            }
 
-                            if (delete_article($id_article, $fileToDelete1, $fileToDelete2,$folderToDelete)) {
+                            break;
+                        case "delete_article_template4":
+                            $id_article = $_POST['id_article'];
+
+                            if (delete_article_template4($id_article)) {
                                 ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
                                 header('location:' . URL);
                             } else {
@@ -207,8 +212,6 @@ try {
 
                             break;
 
-
-// Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, repudiandae laudantium! Hic exercitationem, aperiam autem neque ratione ab est asperiores, repellendus labore, vitae repudiandae qui sit quo atque repellat eius?
 
 
 

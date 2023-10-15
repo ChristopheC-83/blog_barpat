@@ -9,8 +9,13 @@ $textes
 
 
 <article class="container templateArticle2">
-    
-    
+
+    <?php if (estConnecte()) : ?>
+        <form action="<?= URL ?>kikiAdmin/delete_article_template4" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+            <button class="btnDelete">4</button>
+        </form>
+    <?php endif ?>
 
     <h1 class="titre_article"><?= $textes[0]['titre'] ?></h1>
 

@@ -116,9 +116,9 @@ function validation_slider($file, $post)
 function ajouterVideo($lien_video, $id_article, $theme, $url)
 {
     if (ajouterVideoBd($lien_video, $id_article)) {
-        header('location:' . URL . "article/" . $theme . "/" . $id_article . "/" . $url);
+        header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
     } else {
         ajouterMessageAlerte("Video non importée", "rouge");
-        header('location:' . URL . "kikiAdmin/ajout_1_video/" . $id_article);
+        header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
     }
 }

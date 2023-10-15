@@ -10,7 +10,15 @@ $textes
 
 <article class="container templateArticle2">
 
-        <h1 class="titre_article"><?= html_entity_decode($textes[0]['titre']) ?></h1>
+    <?php if (estConnecte()) : ?>
+        <form action="<?= URL ?>kikiAdmin/delete_article_template2" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+            <input type="hidden" name="fileToDelete1" value="public/assets/images/<?= $infosArticle['theme'] ?>/<?= $images[0]['url_img'] ?>">
+            <button class="btnDelete">2</button>
+        </form>
+    <?php endif ?>
+
+    <h1 class="titre_article"><?= html_entity_decode($textes[0]['titre']) ?></h1>
 
     <section class="part part1">
 

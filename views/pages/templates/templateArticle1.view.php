@@ -9,7 +9,16 @@ $textes
 
 <article class="container templateArticle1">
 
-   
+    <?php if (estConnecte()) : ?>
+        <form action="<?= URL ?>kikiAdmin/delete_article_template1" enctype="multipart/form-data" method="POST">
+            <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+            <input type="hidden" name="fileToDelete1" value="public/assets/images/<?= $infosArticle['theme'] ?>/<?= $images[0]['url_img'] ?>">
+            <input type="hidden" name="fileToDelete2" value="public/assets/images/<?= $infosArticle['theme'] ?>/<?= $images[1]['url_img'] ?>">
+            <button class="btnDelete">1</button>
+        </form>
+    <?php endif ?>
+
+
 
     <h1 class="titre_article">
         <?= html_entity_decode($textes[0]['titre']) ?>
