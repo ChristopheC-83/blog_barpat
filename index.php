@@ -127,10 +127,6 @@ try {
 
                                 validation_image($_FILES['photo1'], $_POST);
                                 validation_image2($_FILES['photo2'], $_POST);
-                                // afficherTableau($_FILES);
-                                // afficherTableau($_FILES['photo1']);
-                                // afficherTableau($_FILES['photo2']);
-                                // afficherTableau($_POST);
                             } else {
                                 ajouterMessageAlerte("Image non importée", "rouge");
                                 header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $_POST['id_article']);
@@ -201,7 +197,7 @@ try {
 
                             // delete_article($id_article, $fileToDelete1, $fileToDelete2,$folderToDelete);
 
-                            if (delete_article($id_article, $fileToDelete1, $fileToDelete2,$folder)) {
+                            if (delete_article($id_article, $fileToDelete1, $fileToDelete2,$folderToDelete)) {
                                 ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
                                 header('location:' . URL);
                             } else {

@@ -202,8 +202,8 @@ function delete_article($id_article, $elt1, $elt2, $folderToDelete)
             ajouterMessageAlerte("suppression article !!!", "vert");
             return true;
         case ($folderToDelete !== "" && $elt1 === "" ):
-            if (deleteFilesSlider($folderToDelete)) {
-                deleteArticleBD($id_article);
+            if (deleteFilesSlider($folderToDelete, $id_article)) {
+              
                 ajouterMessageAlerte("Dossier Slider et article effacés !!!", "vert");
                 return true;
             } else {
@@ -239,16 +239,15 @@ function delete_article($id_article, $elt1, $elt2, $folderToDelete)
 }
 
 
-function deleteFilesSlider($folder)
+function deleteFilesSlider($folder, $id_article)
 {
 
     $fichiers = glob($folder . '/*');
     foreach ($fichiers as $fichier) {
-        if (is_file($fichier)) {
             unlink($fichier);
-        }
     }
     rmdir($folder);
+    deleteArticleBD($id_article);
 }
 
 
