@@ -1,12 +1,12 @@
 const card3D = document.querySelectorAll(".link_card");
 
-card3D.forEach((el) => {
-  el.addEventListener("onmouseover", () => {
+card3D.forEach((cards) => {
+  cards.addEventListener("onmouseover", () => {
     console.log("je suis over!!!");
   });
 
-  el.addEventListener("mousemove", (e) => {
-    let elRect = el.getBoundingClientRect();
+  cards.addEventListener("mousemove", (e) => {
+    let elRect = cards.getBoundingClientRect();
     let x = e.clientX - elRect.left;
     let y = e.clientY - elRect.top;
 
@@ -16,16 +16,14 @@ card3D.forEach((el) => {
     let angleY = -(x - midCardWidth) / 5;
     let angleX = (y - midCardHeight) / 5;
 
-    el.children[0].style.transition = "none";
-    el.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+    cards.children[0].style.transition = "none";
+    cards.children[0].style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
   });
 
-  el.addEventListener("mouseleave", () => {
-    el.children[0].style.transition = "transform 0.75s";
-    el.children[0].style.transform = `rotateX(0deg) rotateY(0deg)`;
+  cards.addEventListener("mouseleave", () => {
+    cards.children[0].style.transition = "transform 0.75s";
+    cards.children[0].style.transform = `rotateX(0deg) rotateY(0deg)`;
   });
-
-  
 });
 
 // ############################
@@ -36,12 +34,16 @@ const delay = 50;
 
 const isHomepage = "http://localhost:8090/kiki/barpat_blog/";
 const isAccueil = "http://localhost:8090/kiki/barpat_blog/accueil";
+const isAccueil2 = "http://localhost:8090/kiki/barpat_blog/accueil/";
 
-card3D.forEach((element) => {
-  if (currentUrl === isHomepage || currentUrl === isAccueil) {
-    element.classList.add("dnone");
-    element.classList.remove("dnone");
-
-    element.classList.add("apparitionCard");
+card3D.forEach((card) => {
+  if (
+    currentUrl === isHomepage ||
+    currentUrl === isAccueil ||
+    currentUrl === isAccueil2
+  ) {
+    card.classList.add("dnone");
+    card.classList.remove("dnone");
+    card.classList.add("apparitionCard");
   }
 });

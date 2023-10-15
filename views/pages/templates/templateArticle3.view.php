@@ -9,6 +9,8 @@ $textes
 
 
 <article class="container templateArticle3">
+    
+   
 
     <h1 class="titre_article"><?= html_entity_decode($textes[0]['titre']) ?></h1>
 

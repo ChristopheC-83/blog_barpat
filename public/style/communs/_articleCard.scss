@@ -9,22 +9,7 @@
   perspective: 1000px;
   // transition: all 0.1s;
 }
-.delete_article {
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  background-color: red;
-  color: white;
-  border: 3px solid black;
-  border-radius: 50%;
-  font-size: 30px;
-  font-weight: bold;
-  @include flexMid;
-  z-index: 10;
-  cursor: pointer;
-}
+
 
 .articleCard {
   width: 100%;

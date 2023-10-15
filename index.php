@@ -72,7 +72,7 @@ try {
             break;
         case "deconnexion":
             unset($_SESSION['profil']['login']);
-            if (!isset($_SESSION['profil']['login']) ) {
+            if (!isset($_SESSION['profil']['login'])) {
                 header('location:' . URL . "loginAdmin");
                 ajouterMessageAlerte("Déconnexion OK !", "vert");
             } else {
@@ -182,14 +182,37 @@ try {
 
                             break;
 
-                    case "delete_article":
-                            delete_article($url[2]);
+                        case "delete_article":
+                            // afficherTableau($_POST);
+                            $id_article = $_POST['id_article'];
+                            $fileToDelete1 = $_POST['fileToDelete1'];
+                            $fileToDelete2 = $_POST['fileToDelete2'];
+                            $folderToDelete = $_POST['folderToDelete'];
+                            // if (!isset($_POST['fileToDelete2'])) {
+                            //     $fileToDelete2 = $_POST['fileToDelete2'];
+                            // } else {
+                            //     $fileToDelete2 = null;
+                            // }
+                            // if (!isset($_POST['folderToDelete'])) {
+                            //     $folderToDelete = $_POST['folderToDelete'];
+                            // } else {
+                            //     $folderToDelete = null;
+                            // }
+
+                            // delete_article($id_article, $fileToDelete1, $fileToDelete2,$folderToDelete);
+
+                            if (delete_article($id_article, $fileToDelete1, $fileToDelete2,$folder)) {
+                                ajouterMessageAlerte("Suppression article " . $id_article . " effectué.", "vert");
+                                header('location:' . URL);
+                            } else {
+                                ajouterMessageAlerte("Echec article " . $id_article, "rouge");
+                                header('location:' . URL);
+                            }
+
+                            break;
 
 
-                        break;
-
-
-
+// Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit, repudiandae laudantium! Hic exercitationem, aperiam autem neque ratione ab est asperiores, repellendus labore, vitae repudiandae qui sit quo atque repellat eius?
 
 
 
