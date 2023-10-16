@@ -152,9 +152,9 @@ try {
                             $url = $_POST['url'];
                             $lien_video = $_POST['video'];
 
-                            ajouterMessageAlerte("Video bien importée ", "vert");
-                            header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
-
+                            if (ajouterVideoBd($lien_video, $id_article)) {
+                                header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
+                            }
 
 
                             break;

@@ -28,12 +28,12 @@ if (btnAddMedia) {
   });
 }
 
-// const btnDelete = document.querySelectorAll(".btnDelete");
-// if (btnDelete) {
-//   btnDelete.forEach((btn) => {
-//     btn.addEventListener("click", () => {
-//       confirm("Voulez-vous vraiment effacer cet article ?");
-//       console.log("clic delete");
-//     });
-//   });
-// }
+const btnDelete = document.querySelectorAll(".btnDelete");
+if (btnDelete) {
+  btnDelete.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      confirm("Voulez-vous vraiment effacer cet article ?");
+      console.log("clic delete");
+    });
+  });
+}

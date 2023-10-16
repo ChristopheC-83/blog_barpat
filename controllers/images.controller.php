@@ -85,10 +85,6 @@ function validation_slider($file, $post)
 
     for ($i = 0; $i < $lengthArray; $i++) {
         $target_file = $repertoire . basename($file['name'][$i]);
-        // echo $files['tmp_name'][$i];
-        // echo "<br>";
-        // echo $targetFile ;
-        // echo "<br>";echo "<br>";
         if (!isset($file['name'][$i]) || empty($file['name'][$i])) {
             throw new Exception("Vous devez sélectionner une image.");
         }
@@ -102,8 +98,6 @@ function validation_slider($file, $post)
             throw new Exception("Le fichier n'est pas une image");
         if ($extension !== "jpg" && $extension !== "jpeg" && $extension !== "png" && $extension !== "gif")
             throw new Exception("L'extension du fichier n'est pas reconnu");
-        // if (file_exists($file['name'][$i]))
-        //     throw new Exception("Le fichier existe déjà.");
         if ($file['size'][$i] > 750000)
             throw new Exception("Le fichier est trop volumineux (500ko maximum).");
         if (!move_uploaded_file($file['tmp_name'][$i], $target_file))
@@ -116,6 +110,8 @@ function validation_slider($file, $post)
 function ajouterVideo($lien_video, $id_article, $theme, $url)
 {
     if (ajouterVideoBd($lien_video, $id_article)) {
+        
+        ajouterMessageAlerte("Video bien importée ", "vert");
         header('location:' . URL . "article/" . $_POST['theme'] . "/" . $_POST['id_article'] . "/" . $_POST['url']);
     } else {
         ajouterMessageAlerte("Video non importée", "rouge");
