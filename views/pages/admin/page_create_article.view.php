@@ -10,7 +10,7 @@
                     <option value="formations">1 - Formations</option>
                     <option value="rocket">2 - Rocket</option>
                     <option value="portfolio">3 - Portfolio</option>
-                    <option value="fiches">4 - Fiches</option>
+                    <option value="projets">4 - Projets</option>
                     <option value="tricks">5 - Tricks</option>
                     <option value="autres">6 - Autres</option>
                 </select>

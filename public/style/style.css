@@ -172,10 +172,10 @@ p {
   background-color: #77fc77;
 }
 
-.fiches {
+.projets {
   background: #a2edff;
 }
-.fiches::before {
+.projets::before {
   background-color: #57ddff;
 }
 
@@ -485,7 +485,7 @@ footer {
   background: linear-gradient(25deg, #77fc77 20%, #bbffbb 100%);
 }
 
-.fiches_card {
+.projets_card {
   background: linear-gradient(25deg, #57ddff 20%, #a2edff 100%);
 }
 
@@ -504,8 +504,13 @@ footer {
   .link_card {
     height: 180px;
   }
-  .articleCard {
+  .articleCard,
+  .articleCard_darkMode {
     padding: 10px;
+  }
+  .articleCard:hover,
+  .articleCard_darkMode:hover {
+    padding: 9px;
   }
 }
 @media all and (max-width: 520px) {
