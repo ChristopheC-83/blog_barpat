@@ -11,7 +11,13 @@
         <p><b>pitch card =</b> <?= $infosArticle['pitch']  ?></p>
         <?= isset($infosArticle['word_dl']) ? $infosArticle['word_dl'] : ""  ?>
         <?= isset($infosArticle['pdf_dl']) ? $infosArticle['pdf_dl'] : ""  ?>
-        <p><b>A copier = </b> &lt;h4&gt;  &lt;/h4&gt;</p>
+        <p><b>A copier = </b><br>
+            &lt;br&gt;<br>
+            &lt;h3&gt; &lt;/h3&gt;<br>
+            &lt;h4&gt; &lt;/h4&gt;<br>
+            &lt;p&gt; &lt;/p&gt;<br>
+            &lt;a&gt; &lt;/a&gt;<br>
+        </p>
 
 
     </div>
@@ -34,8 +40,7 @@
         <input type="hidden" name="num_article_2" value=2>
         <div class="entryForm">
             <label for="titre2">Titre 2</label>
-            <input type="text" name="titre2" id="titre2" 
-            value="<?= isset($_SESSION['titre2']) ? $_SESSION['titre2'] : '' ?>">
+            <input type="text" name="titre2" id="titre2" value="<?= isset($_SESSION['titre2']) ? $_SESSION['titre2'] : '' ?>">
         </div>
         <div class="entryForm">
             <label for="texte2">Texte 2</label>
@@ -43,7 +48,9 @@
         </div>
 
         <div class="entryForm">
-            <button type="submit"><p>Textes OK<br> Aux Médias !</p></button>
+            <button type="submit">
+                <p>Textes OK<br> Aux Médias !</p>
+            </button>
         </div>
 
     </form>
