@@ -753,7 +753,7 @@ footer {
   outline: none;
 }
 .entryForm .texteArticle {
-  min-height: 80px;
+  min-height: 150px;
 }
 .entryForm button {
   width: clamp(250px, 50%, 80%);
@@ -829,7 +829,8 @@ footer {
 }
 
 #btnAddMedia,
-#btnAddTxt {
+#btnAddTxt,
+#btnUpdateText {
   cursor: pointer;
 }
 

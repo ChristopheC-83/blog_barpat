@@ -11,6 +11,7 @@ function pageAdmin()
     $themes = getAllThemes();
     $articlesWithoutText = articleWithoutText();
     $articleWithoutMedia = articleWithoutMedia();
+    $articlesWithText = articlesWithText();
 
     $data_page = [
         "meta_description" => "Page d'aministration",
@@ -22,6 +23,7 @@ function pageAdmin()
         "themes" => $themes,
         "articlesWithoutText" => $articlesWithoutText,
         "articleWithoutMedia" => $articleWithoutMedia,
+        "articlesWithText" => $articlesWithText,
     ];
     genererPage($data_page);
 }
@@ -252,22 +254,35 @@ function deleteFilesSlider($folder)
 // #################################
 // Mise à jour
 
-function pageUpdate($id)
+function pageUpdateText($id_article)
 {
     $infosArticles = getAllInfos();
+    $infosArticle = getInfosArticle($id_article);
     $themes = getAllThemes();
+    $text = getTextesById($id_article);
 
     $data_page = [
         "meta_description" => "Page d'aministration",
         "page_title" => "Page d'aministration !",
-        "view" => "views/pages/admin/update.view.php",
+        "view" => "views/pages/admin/page_modif_text.view.php",
         "template" => "views/commons/template.php",
         // "js" => ['animation_grille.js'],
         "infosArticles" => $infosArticles,
+        "infosArticle" => $infosArticle,
         "themes" => $themes,
+        "text" => $text,
     ];
     genererPage($data_page);
 }
+
+
+
+
+
+
+
+
+
 function
 pageAffichagePost($infos_Post)
 {

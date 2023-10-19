@@ -89,6 +89,20 @@ function getTextesById($id_article)
     $stmt->closeCursor();
     return $infos;
 }
+function articlesWithText()
+{
+    $req = "SELECT articles.id_article, articles.titre
+    FROM articles
+    JOIN textes ON articles.id_article = textes.id_article
+    WHERE textes.num_article = 1 
+    ORDER BY articles.id_article desc;
+        ";
+    $stmt = getBDD()->prepare($req);
+    $stmt->execute();
+    $infos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $infos;
+}
 function articleWithoutText()
 {
     $req = "SELECT articles.id_article, articles.titre
