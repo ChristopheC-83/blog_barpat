@@ -218,10 +218,13 @@ try {
 
 
 
-                        case "update":
-                            pageUpdate($id);
+                        case "update_text":
+                            $id_article = secureHTML($url[2]);
+                            pageUpdateText($id_article); 
                             break;
 
+
+                            
                         case "pageTest":
                             afficherTableau($_FILES);
                             // if ($_FILES['photo1']['size'] > 0) {

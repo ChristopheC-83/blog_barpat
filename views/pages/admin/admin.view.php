@@ -14,6 +14,9 @@
         <div class="btnAdmin" id="btnAddMedia">
             <p>Ajouter Media</p>
         </div>
+        <div class="btnAdmin" id="btnUpdateText">
+            <p>Modifier textes</p>
+        </div>
 
     </div>
 
@@ -39,6 +42,21 @@
 
             <?php foreach ($articleWithoutMedia as $article) : ?>
                 <a href="kikiAdmin/insert_photos_slider/<?= $article['id_article'] ?>">
+                    <li class="articleInList">
+                        <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
+                    </li>
+                </a>
+
+            <?php endforeach ?>
+
+        </ul>
+    </div>
+    <div class="container listeArticles updateTextList dnone">
+        <h3>Modifier les textes d'un articles (seuls articles écrits)</h3>
+        <ul>
+
+            <?php foreach ($articlesWithText as $article) : ?>
+                <a href="kikiAdmin/update_text/<?= $article['id_article'] ?>">
                     <li class="articleInList">
                         <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
                     </li>
