@@ -45,10 +45,23 @@ function validationTextBdd($id_article, $num_article, $titre, $texte)
     $stmt->closeCursor();
     return $texte;
 }
+function validationModificationTexteBdd($id_texte, $titre, $texte)
+{
+    $req = 'UPDATE textes set
+    titre=:titre,
+    texte=:texte
+    WHERE id_texte=:id_texte
+    ';
+    $stmt = getBdd()->prepare($req);
+    $stmt->bindValue(":id_texte", $id_texte, PDO::PARAM_STR);
+    $stmt->bindValue(":titre", $titre, PDO::PARAM_STR);
+    $stmt->bindValue(":texte", $texte, PDO::PARAM_STR);
+    $stmt->execute();
+    $stmt->closeCursor();
+}
 
 function deleteArticleBD($id_article)
 {
-
     $req = 'DELETE FROM articles WHERE id_article= :id_article ';
     $stmt = getBdd()->prepare($req);
     $stmt->bindValue(":id_article", $id_article, PDO::PARAM_INT);

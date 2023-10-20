@@ -212,19 +212,19 @@ try {
 
                             break;
 
-
-
-
-
-
-
                         case "update_text":
                             $id_article = secureHTML($url[2]);
-                            pageUpdateText($id_article); 
+                            pageUpdateText($id_article);
+                            break;
+
+                        case "validation_modification_text":
+                            // afficherTableau($_POST);
+                            
+                            validation_modification_text($_POST);
                             break;
 
 
-                            
+
                         case "pageTest":
                             afficherTableau($_FILES);
                             // if ($_FILES['photo1']['size'] > 0) {

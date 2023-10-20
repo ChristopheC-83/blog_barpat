@@ -150,6 +150,23 @@ function validationText($POST)
         header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $lastId);
     }
 }
+function validation_modification_text($POST)
+{
+    $id_article = secureHTML($POST['id_article']);
+    $id_texte_1 = secureHTML($POST['id_texte_1']);
+    $titre1 = secureHTML($POST['titre1']);
+    $texte1 = secureHTML($POST['texte1']);
+    $id_texte_2 = secureHTML($POST['id_texte_2']);
+    $titre2 = secureHTML($POST['titre2']);
+    $texte2 = secureHTML($POST['texte2']);
+    $article = getInfosArticle($id_article);
+    // $num_article_1 = secureHTML($POST['num_article_1']);
+    // $num_article_2 = secureHTML($POST['num_article_2']);
+    validationModificationTexteBdd($id_texte_1, $titre1, $texte1);
+    validationModificationTexteBdd($id_texte_2, $titre2, $texte2);
+    ajouterMessageAlerte("Les textes de l'article " . $article['id_article'] . " ont été modifiés !", "vert");
+    header('location:' . URL . "article/" . $article['theme'] . "/" . $article['id_article'] . "/" . $article['url']);
+}
 
 
 
@@ -222,7 +239,7 @@ function delete_article_template3($id_article, $folderToDelete)
         return false;
     }
 }
-function delete_article_template4($id_article, )
+function delete_article_template4($id_article,)
 {
     if (deleteArticleBD($id_article)) {
         ajouterMessageAlerte("Article template 4 effacé !!!", "vert");
