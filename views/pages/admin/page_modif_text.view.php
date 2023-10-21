@@ -1,7 +1,7 @@
 <div class="container pagesAdmin">
 
 
-<!-- <?= afficherTableau($text)  ?> -->
+<?= afficherTableau($text)  ?>
 
     <h1>Modifions le texte</h1>
 
@@ -25,14 +25,12 @@
 
     </div>
 
-    <form action="<?= URL ?>kikiAdmin/validation_modification_text" method="POST" class="container containerForm">
+    <form action="<?= URL ?>kikiAdmin/validation_text" method="POST" class="container containerForm">
 
 
         <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
 
-        <input type="hidden" name="id_texte_1" value="<?= $text[0]['id_texte']  ?>">
-        <!-- <input type="hidden" name="num_article_1" value=1> -->
-
+        <input type="hidden" name="num_article_1" value=1>
         <div class="entryForm">
             <label for="titre1">Titre 1</label>
             <input type="text" name="titre1" id="titre1" value="<?=$text[0]['titre']?>">
@@ -42,9 +40,7 @@
             <textarea row="10" name="texte1" id="texte1" class="texteArticle" > <?=$text[0]['texte']?></textarea>
         </div>
 
-        
-        <input type="hidden" name="id_texte_2" value="<?= $text[1]['id_texte']  ?>">
-        <!-- <input type="hidden" name="num_article_2" value=2> -->
+        <input type="hidden" name="num_article_2" value=2>
         <div class="entryForm">
             <label for="titre2">Titre 2</label>
             <input type="text" name="titre2" id="titre2" value="<?=$text[1]['titre']?>">

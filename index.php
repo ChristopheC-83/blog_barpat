@@ -225,6 +225,7 @@ try {
 
 
 
+
                         case "pageTest":
                             afficherTableau($_FILES);
                             // if ($_FILES['photo1']['size'] > 0) {
