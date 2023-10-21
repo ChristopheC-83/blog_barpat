@@ -32,18 +32,24 @@ card3D.forEach((cards) => {
 const currentUrl = window.location.href;
 const delay = 50;
 
-const isHomepage = "http://localhost:8090/kiki/barpat_blog/";
+const isHomepage = "http://localhost:8090/kiki/barpat_blog";
+const isHomepage2 = "http://localhost:8090/kiki/barpat_blog/";
 const isAccueil = "http://localhost:8090/kiki/barpat_blog/accueil";
 const isAccueil2 = "http://localhost:8090/kiki/barpat_blog/accueil/";
 
-card3D.forEach((card) => {
-  if (
-    currentUrl === isHomepage ||
-    currentUrl === isAccueil ||
-    currentUrl === isAccueil2
-  ) {
-    card.classList.add("dnone");
-    card.classList.remove("dnone");
-    card.classList.add("apparitionCard");
-  }
+window.addEventListener("DOMContentLoaded", (event) => {
+  card3D.forEach((card) => {
+    if (
+      currentUrl === isHomepage ||
+      currentUrl === isHomepage2 ||
+      currentUrl === isAccueil ||
+      currentUrl === isAccueil2
+    ) {
+      // card.classList.add("dnone");
+      card.classList.remove("dnone");
+      card.classList.add("apparitionCard");
+    } else {
+      card.classList.remove("dnone");
+    }
+  });
 });
