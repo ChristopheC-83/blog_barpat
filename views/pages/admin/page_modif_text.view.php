@@ -25,10 +25,11 @@
 
     </div>
 
-    <form action="<?= URL ?>kikiAdmin/validation_text" method="POST" class="container containerForm">
+    <form action="<?= URL ?>kikiAdmin/validation_modification_text" method="POST" class="container containerForm">
 
 
         <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
+        <input type="hidden" name="id_texte_1" value="<?= $text[0]['id_texte'] ?>">
 
         <input type="hidden" name="num_article_1" value=1>
         <div class="entryForm">
@@ -40,6 +41,7 @@
             <textarea row="10" name="texte1" id="texte1" class="texteArticle" > <?=$text[0]['texte']?></textarea>
         </div>
 
+    <input type="hidden" name="id_texte_2" value="<?= $text[1]['id_texte'] ?>">
         <input type="hidden" name="num_article_2" value=2>
         <div class="entryForm">
             <label for="titre2">Titre 2</label>
@@ -52,7 +54,7 @@
 
         <div class="entryForm">
             <button type="submit">
-                <p>Textes OK<br> Aux Médias !</p>
+                <p>Valider<br>Modifications textes</p>
             </button>
         </div>
 

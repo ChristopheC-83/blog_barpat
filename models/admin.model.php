@@ -58,6 +58,7 @@ function validationModificationTexteBdd($id_texte, $titre, $texte)
     $stmt->bindValue(":texte", $texte, PDO::PARAM_STR);
     $stmt->execute();
     $stmt->closeCursor();
+    return true;
 }
 
 function deleteArticleBD($id_article)
