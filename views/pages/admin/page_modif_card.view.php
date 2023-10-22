@@ -29,7 +29,16 @@
 
 
         <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
-        <input type="hidden" name="id_texte_1" value="<?= $text[0]['id_texte'] ?>">
+
+        <div class="entryForm">
+                <label for="templateArticle">Template :</label>
+                <select name="templateArticle" id="templateArticle">
+                    <option value="templateArticle1" <?= $infosArticle['templateArticle']==="templateArticle1" ? "selected":"" ?>>templateArticle1 (2photos)</option>
+                    <option value="templateArticle2" <?= $infosArticle['templateArticle']==="templateArticle2" ? "selected":"" ?>>templateArticle2 (1 photo)</option>
+                    <option value="templateArticle3" <?= $infosArticle['templateArticle']==="templateArticle3" ? "selected":"" ?>>templateArticle3 (1 slider)</option>
+                    <option value="templateArticle4" <?= $infosArticle['templateArticle']==="templateArticle4" ? "selected":"" ?>>templateArticle4 (1 video)</option>
+                </select>
+            </div>
 
         <input type="hidden" name="num_article_1" value=1>
         <div class="entryForm">
@@ -54,7 +63,7 @@
 
         <div class="entryForm">
             <button type="submit">
-                <p>Valider<br>Modifications textes</p>
+                <p>Valider<br>Modifications Carte</p>
             </button>
         </div>
 

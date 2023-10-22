@@ -296,7 +296,6 @@ function pageUpdateCard($id_article)
     $infosArticles = getAllInfos();
     $infosArticle = getInfosArticle($id_article);
     $themes = getAllThemes();
-    $text = getTextesById($id_article);
 
     $data_page = [
         "meta_description" => "Page d'aministration",
@@ -307,7 +306,6 @@ function pageUpdateCard($id_article)
         "infosArticles" => $infosArticles,
         "infosArticle" => $infosArticle,
         "themes" => $themes,
-        "text" => $text,
     ];
     genererPage($data_page);
 }
