@@ -219,7 +219,6 @@ try {
 
                         case "validation_modification_text":
                             // afficherTableau($_POST);
-
                             validation_modification_text($_POST);
                             break;
 
@@ -230,8 +229,8 @@ try {
                             break;
 
                         case "validation_modification_carte":
-                            afficherTableau($_POST);
-                            // validation_modification_carte($_POST);
+                            // afficherTableau($_POST);
+                            validation_modification_carte($_POST);
                             break;
 
 

@@ -60,6 +60,29 @@ function validationModificationTexteBdd($id_texte, $titre, $texte)
     $stmt->closeCursor();
     return true;
 }
+function validationModificationCarteBdd($id_article, $theme, $templateArticle, $url, $titre, $pitch)
+{
+    $req = 'UPDATE articles set
+    theme=:theme,
+    templateArticle=:templateArticle,
+    url=:url,
+    titre=:titre,
+    pitch=:pitch
+    WHERE id_article = :id_article
+    ';
+    $stmt = getBdd()->prepare($req);
+    $stmt->bindValue(":id_article", $id_article, PDO::PARAM_INT);
+    $stmt->bindValue(":theme", $theme, PDO::PARAM_STR);
+    $stmt->bindValue(":templateArticle", $templateArticle, PDO::PARAM_STR);
+    $stmt->bindValue(":url", $url, PDO::PARAM_STR);
+    $stmt->bindValue(":titre", $titre, PDO::PARAM_STR);
+    $stmt->bindValue(":pitch", $pitch, PDO::PARAM_STR);
+    $stmt->execute();
+    $stmt->closeCursor();
+    return true;
+}
+
+
 
 function deleteArticleBD($id_article)
 {

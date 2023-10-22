@@ -150,31 +150,6 @@ function validationText($POST)
         header('location:' . URL . "kikiAdmin/insert_photos_slider/" . $lastId);
     }
 }
-function validation_modification_text($POST)
-{
-    $id_article = secureHTML($POST['id_article']);
-    $id_texte_1 = secureHTML($POST['id_texte_1']);
-    $titre1 = secureHTML($POST['titre1']);
-    $texte1 = secureHTML($POST['texte1']);
-    $id_texte_2 = secureHTML($POST['id_texte_2']);
-    $titre2 = secureHTML($POST['titre2']);
-    $texte2 = secureHTML($POST['texte2']);
-    $article = getInfosArticle($id_article);
-    // $num_article_1 = secureHTML($POST['num_article_1']);
-    // $num_article_2 = secureHTML($POST['num_article_2']);
-    validationModificationTexteBdd($id_texte_1, $titre1, $texte1);
-    validationModificationTexteBdd($id_texte_2, $titre2, $texte2);
-    ajouterMessageAlerte("Les textes de l'article " . $article['id_article'] . " ont été modifiés !", "vert");
-    header('location:' . URL . "article/" . $article['theme'] . "/" . $article['id_article'] . "/" . $article['url']);
-}
-
-
-
-
-
-
-
-
 
 
 // #################################
@@ -263,11 +238,6 @@ function deleteFilesSlider($folder)
 
 
 
-
-
-
-
-
 // #################################
 // Mise à jour
 
@@ -291,6 +261,27 @@ function pageUpdateText($id_article)
     ];
     genererPage($data_page);
 }
+
+function validation_modification_text($POST)
+{
+    $id_article = secureHTML($POST['id_article']);
+    $id_texte_1 = secureHTML($POST['id_texte_1']);
+    $titre1 = secureHTML($POST['titre1']);
+    $texte1 = secureHTML($POST['texte1']);
+    $id_texte_2 = secureHTML($POST['id_texte_2']);
+    $titre2 = secureHTML($POST['titre2']);
+    $texte2 = secureHTML($POST['texte2']);
+    $article = getInfosArticle($id_article);
+    // $num_article_1 = secureHTML($POST['num_article_1']);
+    // $num_article_2 = secureHTML($POST['num_article_2']);
+    validationModificationTexteBdd($id_texte_1, $titre1, $texte1);
+    validationModificationTexteBdd($id_texte_2, $titre2, $texte2);
+    ajouterMessageAlerte("Les textes de l'article " . $article['id_article'] . " ont été modifiés !", "vert");
+    header('location:' . URL . "article/" . $article['theme'] . "/" . $article['id_article'] . "/" . $article['url']);
+}
+
+
+
 function pageUpdateCard($id_article)
 {
     $infosArticles = getAllInfos();
@@ -311,6 +302,24 @@ function pageUpdateCard($id_article)
 }
 
 
+function validation_modification_carte($POST)
+{
+    $id_article = (int)secureHTML($POST['id_article']);
+    $theme = secureHTML($POST['theme']);
+    $templateArticle = secureHTML($POST['templateArticle']);
+    $url = secureHTML($POST['url']);
+    $titre = secureHTML($POST['titre']);
+    $pitch = secureHTML($POST['pitch']);
+    if (
+        validationModificationCarteBdd($id_article, $theme, $templateArticle, $url, $titre, $pitch)
+    ) {
+        ajouterMessageAlerte("La carte de l'article " . $id_article . " a été modifiée !", "vert");
+        header('location:' . URL . "article/" . $theme. "/" . $id_article . "/" . $url);
+    } else {
+        ajouterMessageAlerte("Echec de la modification !", "rouge");
+        header('location:' . URL . "kikiAdmin/update_card/" . $id_article );
+    }
+}
 
 
 
