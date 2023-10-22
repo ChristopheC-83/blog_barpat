@@ -227,15 +227,12 @@ function delete_article_template4($id_article,)
 
 function deleteFilesSlider($folder)
 {
-
     $fichiers = glob($folder . '/*');
     foreach ($fichiers as $fichier) {
         unlink($fichier);
     }
     rmdir($folder);
 }
-
-
 
 
 // #################################
@@ -287,6 +284,7 @@ function pageUpdateCard($id_article)
     $infosArticles = getAllInfos();
     $infosArticle = getInfosArticle($id_article);
     $themes = getAllThemes();
+    $images = getImagesById($id_article);
 
     $data_page = [
         "meta_description" => "Page d'aministration",
@@ -297,6 +295,7 @@ function pageUpdateCard($id_article)
         "infosArticles" => $infosArticles,
         "infosArticle" => $infosArticle,
         "themes" => $themes,
+        "images" => $images,
     ];
     genererPage($data_page);
 }
@@ -304,20 +303,49 @@ function pageUpdateCard($id_article)
 
 function validation_modification_carte($POST)
 {
+
     $id_article = (int)secureHTML($POST['id_article']);
+    $infosArticle = getInfosArticle($id_article);
     $theme = secureHTML($POST['theme']);
     $templateArticle = secureHTML($POST['templateArticle']);
     $url = secureHTML($POST['url']);
     $titre = secureHTML($POST['titre']);
     $pitch = secureHTML($POST['pitch']);
+
+    if (isset($POST['image1'])) {
+        $image1 = secureHTML($POST['image1']);
+        moveImage("public/assets/images/" . $infosArticle['theme'] . "/" . $image1, "public/assets/images/" . $theme . "/" . $image1);
+        // echo ("public/assets/images/" . $infosArticle['theme'] . "/".$image1);
+        // echo "<br>";
+        // echo ("public/assets/images/" . $theme ."/". $image1);   echo "<br>";   echo "<br>";
+    }
+    if (isset($POST['image2'])) {
+        $image2 = secureHTML($POST['image2']);
+        moveImage("public/assets/images/" . $infosArticle['theme'] . "/" . $image2, "public/assets/images/" . $theme . "/" . $image2);
+        // echo ("public/assets/images/" . $infosArticle['theme'] ."/". $image2);
+        // echo "<br>";
+        // echo ("public/assets/images/" . $theme ."/". $image2);
+    }
+
+
     if (
         validationModificationCarteBdd($id_article, $theme, $templateArticle, $url, $titre, $pitch)
     ) {
         ajouterMessageAlerte("La carte de l'article " . $id_article . " a été modifiée !", "vert");
-        header('location:' . URL . "article/" . $theme. "/" . $id_article . "/" . $url);
+        header('location:' . URL . "article/" . $theme . "/" . $id_article . "/" . $url);
     } else {
         ajouterMessageAlerte("Echec de la modification !", "rouge");
-        header('location:' . URL . "kikiAdmin/update_card/" . $id_article );
+        header('location:' . URL . "kikiAdmin/update_card/" . $id_article);
+    }
+}
+
+function moveImage($source, $destination)
+{
+    if (copy($source, $destination)) {
+        unlink($source);
+        ajouterMessageAlerte("Image déplacée !", "vert");
+    } else {
+        ajouterMessageAlerte("Echec du mouvement de l'image.", "rouge");
     }
 }
 

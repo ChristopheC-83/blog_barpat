@@ -24,18 +24,25 @@
 
 
         <input type="hidden" name="id_article" value="<?= $infosArticle['id_article']  ?>">
-
+        
+        <?php if (isset($images[0])) : ?>
+            <input type="hidden" name="image1" value="<?= $images[0]['url_img'] ?>">
+        <?php endif ?>
+        <?php if (isset($images[1])) : ?>
+            <input type="hidden" name="image2" value="<?= $images[1]['url_img'] ?>">
+        <?php endif ?>
+        
         <div class="entryForm">
-                <label for="theme">Thème : </label>
-                <select name="theme" id="theme">
-                    <option value="formations" <?= $infosArticle['theme'] === "formations" ? "selected" : "" ?>>1 - Formations</option>
-                    <option value="rocket" <?= $infosArticle['theme'] === "rocket" ? "selected" : "" ?>>2 - Rocket</option>
-                    <option value="portfolio" <?= $infosArticle['theme'] === "portfolio" ? "selected" : "" ?>>3 - Portfolio</option>
-                    <option value="projets" <?= $infosArticle['theme'] === "projets" ? "selected" : "" ?>>4 - Projets</option>
-                    <option value="tricks" <?= $infosArticle['theme'] === "tricks" ? "selected" : "" ?>>5 - Tricks</option>
-                    <option value="autres" <?= $infosArticle['theme'] === "autres" ? "selected" : "" ?>>6 - Autres</option>
-                </select>
-            </div>
+            <label for="theme">Thème : </label>
+            <select name="theme" id="theme">
+                <option value="formations" <?= $infosArticle['theme'] === "formations" ? "selected" : "" ?>>1 - Formations</option>
+                <option value="rocket" <?= $infosArticle['theme'] === "rocket" ? "selected" : "" ?>>2 - Rocket</option>
+                <option value="portfolio" <?= $infosArticle['theme'] === "portfolio" ? "selected" : "" ?>>3 - Portfolio</option>
+                <option value="projets" <?= $infosArticle['theme'] === "projets" ? "selected" : "" ?>>4 - Projets</option>
+                <option value="tricks" <?= $infosArticle['theme'] === "tricks" ? "selected" : "" ?>>5 - Tricks</option>
+                <option value="autres" <?= $infosArticle['theme'] === "autres" ? "selected" : "" ?>>6 - Autres</option>
+            </select>
+        </div>
         <div class="entryForm">
             <label for="templateArticle">Template :</label>
             <select name="templateArticle" id="templateArticle">
