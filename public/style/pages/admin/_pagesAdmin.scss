@@ -45,6 +45,17 @@
   }
 }
 
+.articleInList {
+  width: fit-content;
+  padding: 0 10px;
+  transition: all 0.33s;
+  &:hover {
+    font-weight: bold;
+    background-color: gray;
+    border-radius: 5px;
+  }
+}
+
 .infoArticleEnCours {
   margin-bottom: 20px;
 }

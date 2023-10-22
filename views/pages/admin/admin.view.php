@@ -27,6 +27,8 @@
 
     </div>
 
+    <!-- <?= afficherTableau($infosArticles) ?> -->
+
     <div class="container listeArticles writeList dnone">
         <h3>Ecrire du texte pour quel article ? (seuls les vierges apparaissent)</h3>
 
@@ -77,7 +79,7 @@
         <h3>Modifier la carte d'un article</h3>
         <ul>
 
-            <?php foreach ($articles as $article) : ?>
+            <?php foreach ($infosArticles as $article) : ?>
                 <a href="kikiAdmin/update_card/<?= $article['id_article'] ?>">
                     <li class="articleInList">
                         <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
