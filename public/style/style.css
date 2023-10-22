@@ -829,7 +829,8 @@ footer {
 
 #btnAddMedia,
 #btnAddTxt,
-#btnUpdateText {
+#btnUpdateText,
+#btnUpdateCard {
   cursor: pointer;
 }
 

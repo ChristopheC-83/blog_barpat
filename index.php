@@ -223,6 +223,12 @@ try {
                             validation_modification_text($_POST);
                             break;
 
+                        case "update_card":
+
+                            $id_article = secureHTML($url[2]);
+                            pageUpdateCard($id_article);
+                            break;
+
 
 
 

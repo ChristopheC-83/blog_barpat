@@ -291,6 +291,26 @@ function pageUpdateText($id_article)
     ];
     genererPage($data_page);
 }
+function pageUpdateCard($id_article)
+{
+    $infosArticles = getAllInfos();
+    $infosArticle = getInfosArticle($id_article);
+    $themes = getAllThemes();
+    $text = getTextesById($id_article);
+
+    $data_page = [
+        "meta_description" => "Page d'aministration",
+        "page_title" => "Page d'aministration !",
+        "view" => "views/pages/admin/page_modif_card.view.php",
+        "template" => "views/commons/template.php",
+        // "js" => ['animation_grille.js'],
+        "infosArticles" => $infosArticles,
+        "infosArticle" => $infosArticle,
+        "themes" => $themes,
+        "text" => $text,
+    ];
+    genererPage($data_page);
+}
 
 
 

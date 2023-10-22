@@ -5,15 +5,22 @@
 
     <div class="btnAdminBox container">
 
-        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/create_article"><p>Nouvel Article</p></a></div>
+        <div class="btnAdmin"><a href="<?= URL ?>kikiAdmin/create_article">
+                <p>Nouvel Article</p>
+            </a></div>
+
         <div class="btnAdmin" id="btnAddTxt">
             <p>Ajouter du Texte</p>
         </div>
 
-
         <div class="btnAdmin" id="btnAddMedia">
             <p>Ajouter Media</p>
         </div>
+
+        <div class="btnAdmin" id="btnUpdateCard">
+            <p>Modifier Carte</p>
+        </div>
+
         <div class="btnAdmin" id="btnUpdateText">
             <p>Modifier textes</p>
         </div>
@@ -57,6 +64,21 @@
 
             <?php foreach ($articlesWithText as $article) : ?>
                 <a href="kikiAdmin/update_text/<?= $article['id_article'] ?>">
+                    <li class="articleInList">
+                        <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
+                    </li>
+                </a>
+
+            <?php endforeach ?>
+
+        </ul>
+    </div>
+    <div class="container listeArticles updateCardList dnone">
+        <h3>Modifier la carte d'un article</h3>
+        <ul>
+
+            <?php foreach ($articles as $article) : ?>
+                <a href="kikiAdmin/update_card/<?= $article['id_article'] ?>">
                     <li class="articleInList">
                         <p><?= $article['id_article'] ?> => <?= $article['titre'] ?> </p>
                     </li>
